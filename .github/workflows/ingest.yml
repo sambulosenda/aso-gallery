@@ -1,15 +1,15 @@
-name: Daily App Store capture
+name: Daily store capture
 
 on:
   schedule:
     - cron: "17 6 * * *" # 06:17 UTC daily
-  # On PRs that touch ingestion, do a dry run against the live App Store.
+  # On PRs that touch ingestion, do a dry run against the live stores.
   pull_request:
     paths: ["scripts/ingest.ts", "lib/**", "data/tracked.json", ".github/workflows/ingest.yml"]
   workflow_dispatch:
     inputs:
       app:
-        description: "Only this App Store id (optional)"
+        description: "Only this App Store id or Google Play package (optional)"
         required: false
 
 permissions:
@@ -35,7 +35,9 @@ jobs:
         env:
           APP_ID: ${{ inputs.app }}
         run: |
-          if [ "${{ github.event_name }}" = "pull_request" ]; then npm run ingest -- --dry-run --sample 40
+          if [ "${{ github.event_name }}" = "pull_request" ]; then
+            npm run ingest -- --dry-run --sample 30 --store app_store
+            npm run ingest -- --dry-run --sample 30 --store google_play
           elif [ -n "$APP_ID" ]; then npm run ingest -- --app "$APP_ID"
           else npm run ingest; fi
       - name: Commit catalog

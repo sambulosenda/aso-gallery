@@ -1,21 +1,24 @@
-// Captures App Store creative for every tracked app and folds it into
-// data/catalog.json, recording a new version whenever artwork changes.
+// Captures App Store and Google Play creative for every tracked app and folds
+// it into data/catalog.json, recording a new version whenever artwork changes.
 //
 //   npm run ingest                 # all apps in data/tracked.json
 //   npm run ingest -- --app 571800810 --country us
+//   npm run ingest -- --app com.calm.android   # package names are Google Play
 //   npm run ingest -- --dry-run    # print what changed without writing
 //   npm run ingest -- --sample 40  # 40 apps spread across the tracked list
+//   npm run ingest -- --store google_play   # only one store's apps
 //
 // Run it once a day (see .github/workflows/ingest.yml) to build history.
 import fs from "node:fs";
 import path from "node:path";
 import { findHeaderArtwork, lookup, productPageHtml, type LookupResult } from "../lib/appstore";
 import { loadCatalog, saveCatalog, type Catalog } from "../lib/catalog";
+import { parsePlayPage, playPageHtml, sized, type PlayListing } from "../lib/googleplay";
 import { analyze } from "../lib/image";
-import type { App } from "../lib/types";
+import type { App, Store } from "../lib/types";
 import { applyCapture, type CapturedImage } from "../lib/versioning";
 
-type Tracked = { id: string; country: string };
+type Tracked = { id: string; country: string; store?: Store };
 
 const MAX_SCREENSHOTS = 10;
 const CONCURRENCY = 4;
@@ -28,6 +31,7 @@ function args() {
     country: get("--country") ?? "us",
     dryRun: argv.includes("--dry-run"),
     sample: Number(get("--sample")) || 0,
+    store: get("--store") as Store | undefined,
   };
 }
 
@@ -60,21 +64,68 @@ function toApp(r: LookupResult, existing: App | undefined, colors: CapturedImage
   };
 }
 
-async function ingestOne(catalog: Catalog, t: Tracked, today: string): Promise<string[]> {
-  const result = await lookup(t.id, t.country);
-  if (!result) return [`${t.id}: not found in ${t.country} storefront`];
+function playApp(l: PlayListing, existing: App | undefined, colors: CapturedImage["colors"]): App {
+  return {
+    id: existing?.id ?? `gp-${l.packageName.toLowerCase().replace(/[^a-z0-9]+/g, "-")}`,
+    store: "google_play",
+    storeId: l.packageName,
+    name: l.name,
+    developer: l.developer,
+    genre: l.genre,
+    isGame: l.isGame,
+    storeUrl: l.storeUrl,
+    iconColor: colors[0]?.hex ?? "#444444",
+    iconUrl: l.iconUrl ? sized(l.iconUrl, 512) : undefined,
+  };
+}
 
-  const existing = catalog.apps.find((a) => a.storeId === t.id);
-  const icon = result.artworkUrl512 ? await analyze(result.artworkUrl512).catch(() => null) : null;
-  const app = toApp(result, existing, icon?.colors ?? []);
-  catalog.apps = [...catalog.apps.filter((a) => a.storeId !== t.id), app];
-
-  const log: string[] = [];
-  const record = (kind: Parameters<typeof applyCapture>[1]["kind"], images: CapturedImage[]) => {
-    const next = applyCapture(catalog.assets, { appId: app.id, kind, storefront: t.country, images }, today);
+// Replaces the app record and returns a function that folds one capture into the catalog.
+function begin(catalog: Catalog, app: App, storefront: string, today: string, log: string[]) {
+  catalog.apps = [...catalog.apps.filter((a) => !(a.store === app.store && a.storeId === app.storeId)), app];
+  return (kind: Parameters<typeof applyCapture>[1]["kind"], images: CapturedImage[]) => {
+    const next = applyCapture(catalog.assets, { appId: app.id, kind, storefront, images }, today);
     catalog.assets = next.assets;
     if (next.changed) log.push(`${app.name}: new ${kind} version (${images.length} image${images.length === 1 ? "" : "s"})`);
   };
+}
+
+const findApp = (catalog: Catalog, store: Store, storeId: string) => catalog.apps.find((a) => a.store === store && a.storeId === storeId);
+
+// Google Play: screenshots and the feature graphic (Play's header artwork, 1024×500).
+// Play's search results don't show a screenshot card, so there's no search banner.
+async function ingestPlay(catalog: Catalog, t: Tracked, today: string): Promise<string[]> {
+  const html = await playPageHtml(t.id, t.country);
+  if (!html) return [`${t.id}: not listed on Google Play in ${t.country}`];
+  const listing = parsePlayPage(html, t.id);
+
+  const icon = listing.iconUrl ? await analyze(sized(listing.iconUrl, 128)).catch(() => null) : null;
+  const app = playApp(listing, findApp(catalog, "google_play", t.id), icon?.colors ?? []);
+  const log: string[] = [];
+  const record = begin(catalog, app, t.country, today, log);
+
+  // Keep the source size from the page; we only download a bounded rendition.
+  const withSourceSize = (imgs: CapturedImage[], src: { width: number; height: number }[]) =>
+    imgs.map((img, i) => (src[i]?.width ? { ...img, width: src[i].width, height: src[i].height } : img));
+
+  const shots = listing.screenshots.slice(0, MAX_SCREENSHOTS);
+  if (!shots.length) log.push(`${app.name}: no screenshots found`);
+  record("screenshot", withSourceSize(await analyzeAll(shots.map((s) => sized(s.url, 1280))), shots));
+
+  const fg = listing.featureGraphic;
+  if (!fg) log.push(`${app.name}: no feature graphic found`);
+  record("product_header", fg ? withSourceSize(await analyzeAll([sized(fg.url, 1024)]), [fg]) : []);
+  return log;
+}
+
+async function ingestOne(catalog: Catalog, t: Tracked, today: string): Promise<string[]> {
+  if (t.store === "google_play") return ingestPlay(catalog, t, today);
+  const result = await lookup(t.id, t.country);
+  if (!result) return [`${t.id}: not found in ${t.country} storefront`];
+
+  const icon = result.artworkUrl512 ? await analyze(result.artworkUrl512).catch(() => null) : null;
+  const app = toApp(result, findApp(catalog, "app_store", t.id), icon?.colors ?? []);
+  const log: string[] = [];
+  const record = begin(catalog, app, t.country, today, log);
 
   const shots = await analyzeAll(result.screenshotUrls.slice(0, MAX_SCREENSHOTS));
   record("screenshot", shots);
@@ -99,9 +150,10 @@ async function ingestOne(catalog: Catalog, t: Tracked, today: string): Promise<s
 }
 
 async function main() {
-  const { app, country, dryRun, sample } = args();
+  const { app, country, dryRun, sample, store } = args();
   const trackedFile = path.join(process.cwd(), "data", "tracked.json");
-  const all: Tracked[] = app ? [{ id: app, country }] : JSON.parse(fs.readFileSync(trackedFile, "utf8")).apps;
+  // App Store ids are numeric; anything else is a Google Play package name.
+  const all: Tracked[] = app ? [{ id: app, country, store: /^\d+$/.test(app) ? "app_store" : "google_play" }] : (JSON.parse(fs.readFileSync(trackedFile, "utf8")).apps as Tracked[]).filter((t) => !store || (t.store ?? "app_store") === store);
   const step = sample && all.length > sample ? all.length / sample : 1;
   const tracked = step > 1 ? Array.from({ length: sample }, (_, i) => all[Math.floor(i * step)]) : all;
   const catalog: Catalog = loadCatalog() ?? { updatedAt: "", apps: [], assets: [] };
