@@ -1,6 +1,7 @@
 // App Store sources: the public iTunes Lookup API for metadata and screenshots,
 // and the apps.apple.com product page for the header artwork, which the API
 // doesn't expose.
+import { fetchWithRetry } from "./http";
 
 export type LookupResult = {
   trackId: number;
@@ -18,14 +19,14 @@ export type LookupResult = {
 const UA = "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/26.0 Safari/605.1.15";
 
 export async function lookup(id: string, country: string): Promise<LookupResult | null> {
-  const res = await fetch(`https://itunes.apple.com/lookup?id=${id}&country=${country}&entity=software`);
+  const res = await fetchWithRetry(`https://itunes.apple.com/lookup?id=${id}&country=${country}&entity=software`);
   if (!res.ok) throw new Error(`lookup ${id}/${country} → ${res.status}`);
   const json = (await res.json()) as { results: LookupResult[] };
   return json.results.find((r) => String(r.trackId) === id) ?? null;
 }
 
 export async function productPageHtml(id: string, country: string): Promise<string> {
-  const res = await fetch(`https://apps.apple.com/${country}/app/id${id}`, { headers: { "user-agent": UA, "accept-language": "en-US" } });
+  const res = await fetchWithRetry(`https://apps.apple.com/${country}/app/id${id}`, { headers: { "user-agent": UA, "accept-language": "en-US" } });
   if (!res.ok) throw new Error(`product page ${id}/${country} → ${res.status}`);
   return res.text();
 }
@@ -47,8 +48,9 @@ export function findHeaderArtwork(html: string): Artwork | null {
     const width = nearestNumber(uber, "width", url.index!, url.index! + url[0].length);
     const height = nearestNumber(uber, "height", url.index!, url.index! + url[0].length);
     if (!width || !height) continue;
+    const crop = uber.match(/"crop"\s*:\s*"([^"]+)"/)?.[1] ?? "bb";
     const w = Math.min(width, 1920);
-    return { url: fillTemplate(url[1], w, Math.round((w * height) / width)), width, height };
+    return { url: fillTemplate(url[1], w, Math.round((w * height) / width), crop), width, height };
   }
   return null;
 }
@@ -80,6 +82,6 @@ function nearestNumber(text: string, key: string, start: number, end: number, sp
   return best?.v ?? 0;
 }
 
-export function fillTemplate(url: string, w: number, h: number) {
-  return url.replace("{w}", String(w)).replace("{h}", String(h)).replace("{c}", "bb").replace("{f}", "jpg");
+export function fillTemplate(url: string, w: number, h: number, crop = "bb") {
+  return url.replace("{w}", String(w)).replace("{h}", String(h)).replace("{c}", crop).replace("{f}", "jpg");
 }
