@@ -100,3 +100,12 @@ export function untagged(assets: Asset[]): Asset[] {
 export function withTags(asset: Asset, r: TagResult): Asset {
   return { ...asset, tags: tagsOf(r), headline: asset.headline || r.headline };
 }
+
+// A CLI flag's value as a positive integer; undefined when the flag is absent.
+export function positiveInt(get: (flag: string) => string | undefined, flag: string): number | undefined {
+  const raw = get(flag);
+  if (raw === undefined) return undefined;
+  const n = Number(raw);
+  if (!Number.isInteger(n) || n <= 0) throw new Error(`${flag} needs a positive integer, got "${raw}"`);
+  return n;
+}

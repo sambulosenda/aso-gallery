@@ -8,7 +8,7 @@
 import fs from "node:fs";
 import Anthropic from "@anthropic-ai/sdk";
 import { loadCatalog } from "../lib/catalog";
-import { tagImage, untagged, type TagResult } from "../lib/tagging";
+import { positiveInt, tagImage, untagged, type TagResult } from "../lib/tagging";
 import type { Asset } from "../lib/types";
 
 // $ per million input / output tokens.
@@ -24,7 +24,7 @@ function args() {
   const get = (flag: string) => (argv.includes(flag) ? argv[argv.indexOf(flag) + 1] : undefined);
   return {
     models: (get("--models") ?? "claude-opus-5-5,claude-haiku-5-5").split(","),
-    limit: Number(get("--limit")) || 50,
+    limit: positiveInt(get, "--limit") ?? 50,
   };
 }
 

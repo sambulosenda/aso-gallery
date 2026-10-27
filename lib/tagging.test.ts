@@ -1,7 +1,7 @@
 import assert from "node:assert/strict";
 import { test } from "node:test";
 import { betaZodOutputFormat } from "@anthropic-ai/sdk/helpers/beta/zod";
-import { TagResult, untagged, withTags } from "./tagging";
+import { positiveInt, TagResult, untagged, withTags } from "./tagging";
 import type { Asset } from "./types";
 
 const asset = (over: Partial<Asset>): Asset => ({
@@ -40,4 +40,11 @@ test("the schema rejects values outside the filter vocabularies", () => {
   assert.equal(TagResult.safeParse({ ...result, style: "Collage" }).success, false);
   // Converts to a JSON schema the API accepts (no network involved).
   assert.ok(betaZodOutputFormat(TagResult));
+});
+
+test("--limit must be a positive integer when given", () => {
+  const get = (v?: string) => () => v;
+  assert.equal(positiveInt(get(undefined), "--limit"), undefined);
+  assert.equal(positiveInt(get("25"), "--limit"), 25);
+  for (const bad of ["0", "-5", "abc", "1.5"]) assert.throws(() => positiveInt(get(bad), "--limit"), /positive integer/);
 });

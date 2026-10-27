@@ -10,7 +10,7 @@
 // Needs Anthropic credentials (ANTHROPIC_API_KEY, or an `ant auth login` profile).
 import Anthropic from "@anthropic-ai/sdk";
 import { loadCatalog, saveCatalog } from "../lib/catalog";
-import { DEFAULT_MODEL, tagImage, untagged, withTags, type TagResult } from "../lib/tagging";
+import { DEFAULT_MODEL, positiveInt, tagImage, untagged, withTags, type TagResult } from "../lib/tagging";
 
 const CONCURRENCY = 4;
 const SAVE_EVERY = 50;
@@ -18,7 +18,7 @@ const SAVE_EVERY = 50;
 function args() {
   const argv = process.argv.slice(2);
   const get = (flag: string) => (argv.includes(flag) ? argv[argv.indexOf(flag) + 1] : undefined);
-  return { limit: Number(get("--limit")) || 0, dryRun: argv.includes("--dry-run") };
+  return { limit: positiveInt(get, "--limit") ?? 0, dryRun: argv.includes("--dry-run") };
 }
 
 async function main() {
