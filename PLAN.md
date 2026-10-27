@@ -11,6 +11,8 @@ A browsable gallery of store creative: App Store / Google Play screenshots, Appl
 - Submit page (paste store link) and weekly digest signup (UI only)
 
 **v2 (make it real)**
+- Done: App Store ingestion into `data/catalog.json` (see README), daily GitHub Actions capture, hashing + colors, versioning.
+- Still to do: Google Play, OCR for headline copy, auto-tagging, move the catalog to Postgres + R2 once it outgrows a JSON file.
 - Ingestion: iTunes Lookup API for metadata + screenshots; scrape apps.apple.com per storefront for the product page header and
   in-app events; google-play-scraper for feature graphics. Daily cron per tracked app/storefront.
 - Store images in R2/S3 with derived thumbnails; extract dominant colors with sharp + k-means.

@@ -22,6 +22,8 @@ export function History({ app, versions, title, selected, hrefFor }: {
   const after = versions.find((v) => v.version === selected) ?? versions[versions.length - 1];
   const before = versions.find((v) => v.version === after.version - 1);
   const isHeader = after.kind === "product_header";
+  // Header art is wide; a search card or a screenshot set reads best at phone-ish widths.
+  const setGrid = (n: number) => (n > 3 ? "grid-cols-5" : n > 1 ? "grid-cols-3" : "max-w-sm");
 
   return (
     <section className="space-y-4">
@@ -48,7 +50,7 @@ export function History({ app, versions, title, selected, hrefFor }: {
         <>
           <div className="flex flex-wrap gap-2 text-xs">
             <span className="text-muted">What changed in v{after.version}:</span>
-            {describeDiff(before.assets[0], after.assets[0]).map((d) => (
+            {describeDiff(before, after).map((d) => (
               <span key={d} className="rounded bg-panel px-2 py-0.5">{d}</span>
             ))}
           </div>
@@ -64,7 +66,7 @@ export function History({ app, versions, title, selected, hrefFor }: {
               {[before, after].map((v) => (
                 <div key={v.version}>
                   <p className="mb-2 text-xs text-muted">v{v.version} · {versionRange(v)}</p>
-                  <div className={`grid gap-2 ${v.assets.length > 1 ? "grid-cols-3" : ""}`}>
+                  <div className={`grid gap-2 ${setGrid(v.assets.length)}`}>
                     {v.assets.map((a) => <div key={a.id} className="overflow-hidden rounded-lg ring-1 ring-line"><Art asset={a} app={app} /></div>)}
                   </div>
                 </div>
@@ -75,7 +77,7 @@ export function History({ app, versions, title, selected, hrefFor }: {
       ) : (
         <div>
           <p className="mb-2 text-xs text-muted">v{after.version} · {versionRange(after)} · first version we captured</p>
-          <div className={`grid gap-2 ${after.assets.length > 1 ? "grid-cols-3 md:w-1/2" : ""}`}>
+          <div className={`grid gap-2 ${setGrid(after.assets.length)} ${after.assets.length > 1 && after.assets.length <= 3 ? "md:w-1/2" : ""}`}>
             {after.assets.map((a) => <div key={a.id} className="overflow-hidden rounded-lg ring-1 ring-line"><Art asset={a} app={app} /></div>)}
           </div>
         </div>

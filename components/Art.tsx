@@ -23,7 +23,13 @@ function Phone({ screen, accent, className = "" }: { screen: string; accent: str
   );
 }
 
+function Photo({ src, width, height, alt }: { src: string; width: number; height: number; alt: string }) {
+  // eslint-disable-next-line @next/next/no-img-element -- mzstatic already serves sized JPEGs
+  return <img src={src} alt={alt} width={width} height={height} loading="lazy" className="block h-auto w-full" style={{ aspectRatio: `${width} / ${height}` }} />;
+}
+
 export function Screenshot({ asset }: { asset: Asset }) {
+  if (asset.imageUrl) return <Photo src={asset.imageUrl} width={asset.width} height={asset.height} alt="Screenshot" />;
   const [bg, ink, screen] = asset.colors.map((c) => c.hex);
   return (
     <div className="relative aspect-[1290/2796] w-full overflow-hidden" style={{ background: bg }}>
@@ -36,6 +42,7 @@ export function Screenshot({ asset }: { asset: Asset }) {
 }
 
 export function ProductHeader({ asset, app }: { asset: Asset; app: App }) {
+  if (asset.imageUrl) return <Photo src={asset.imageUrl} width={asset.width} height={asset.height} alt={`${app.name} product page header`} />;
   const [bg, ink, screen] = asset.colors.map((c) => c.hex);
   return (
     <div className="relative aspect-[3840/1646] w-full overflow-hidden" style={{ background: `linear-gradient(120deg, ${bg}, ${ink})` }}>
@@ -60,13 +67,23 @@ export function SearchBanner({ asset, app }: { asset: Asset; app: App }) {
         </div>
         <span className="rounded-full bg-neutral-100 px-4 py-1 text-xs font-bold text-blue-600">Get</span>
       </div>
-      <div className="mt-3 grid grid-cols-3 gap-1.5">
-        {[0, 1, 2].map((i) => (
-          <div key={i} className="overflow-hidden rounded-md">
-            <Screenshot asset={{ ...asset, headline: i === 0 ? asset.headline : "", colors: rotate(asset.colors, i) }} />
-          </div>
-        ))}
-      </div>
+      {asset.imageUrls ? (
+        <div className={`mt-3 grid gap-1.5 ${asset.imageUrls.length > 1 ? "grid-cols-3" : ""}`}>
+          {asset.imageUrls.map((src) => (
+            <div key={src} className="overflow-hidden rounded-md">
+              <Photo src={src} width={asset.width} height={asset.height} alt="" />
+            </div>
+          ))}
+        </div>
+      ) : (
+        <div className="mt-3 grid grid-cols-3 gap-1.5">
+          {[0, 1, 2].map((i) => (
+            <div key={i} className="overflow-hidden rounded-md">
+              <Screenshot asset={{ ...asset, headline: i === 0 ? asset.headline : "", colors: rotate(asset.colors, i) }} />
+            </div>
+          ))}
+        </div>
+      )}
     </div>
   );
 }
@@ -76,6 +93,10 @@ function rotate<T>(xs: T[], n: number) {
 }
 
 export function AppIcon({ app, size = 40 }: { app: App; size?: number }) {
+  if (app.iconUrl) {
+    // eslint-disable-next-line @next/next/no-img-element
+    return <img src={app.iconUrl} alt="" width={size} height={size} className="shrink-0 rounded-[22%]" style={{ width: size, height: size }} />;
+  }
   return (
     <div
       className="grid shrink-0 place-items-center rounded-[22%] font-bold"

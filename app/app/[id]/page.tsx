@@ -45,8 +45,11 @@ export default async function AppPage({ params, searchParams }: {
           <div className="overflow-hidden rounded-xl ring-1 ring-line"><Art asset={header} app={app} /></div>
           <dl className="grid grid-cols-2 gap-x-4 gap-y-2 text-sm lg:grid-cols-1">
             {Object.entries({
-              Style: header.tags.style, Layout: header.tags.layout, "Text on art": header.tags.textOnArt,
-              Type: header.tags.typeStyle, Character: header.tags.character ? "Yes" : "No", Goal: header.tags.goal,
+              ...(header.tags && {
+                Style: header.tags.style, Layout: header.tags.layout, "Text on art": header.tags.textOnArt,
+                Type: header.tags.typeStyle, Character: header.tags.character ? "Yes" : "No", Goal: header.tags.goal,
+              }),
+              Storefront: header.storefront.toUpperCase(),
               "Source size": `${header.width} × ${header.height}`, Live: versionRange(headerVersion),
             }).map(([k, v]) => (
               <div key={k} className="flex justify-between gap-2 border-b border-line py-1"><dt className="text-muted">{k}</dt><dd>{v}</dd></div>

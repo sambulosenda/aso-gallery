@@ -1,7 +1,11 @@
+import { loadCatalog } from "./catalog";
 import { buildSeed } from "./seed";
 import type { App, Asset, AssetKind } from "./types";
 
-const { apps, assets } = buildSeed();
+// Real data from `npm run ingest` when it exists, otherwise the sample seed.
+const catalog = loadCatalog();
+export const usingSampleData = !catalog || catalog.apps.length === 0;
+const { apps, assets } = usingSampleData ? buildSeed() : catalog!;
 const appsById = new Map(apps.map((a) => [a.id, a]));
 
 export type Filters = {
@@ -42,8 +46,8 @@ export function listEntries(kind: AssetKind, f: Filters): Entry[] {
       if (f.store && e.app.store !== f.store) return false;
       if (f.type === "apps" && e.app.isGame) return false;
       if (f.type === "games" && !e.app.isGame) return false;
-      if (f.style && e.tags.style !== f.style) return false;
-      if (f.goal && e.tags.goal !== f.goal) return false;
+      if (f.style && e.tags?.style !== f.style) return false;
+      if (f.goal && e.tags?.goal !== f.goal) return false;
       if (f.changed && e.versionCount < 2) return false;
       if (f.color && !e.colors.some((c) => c.pct >= 15 && colorDistance(c.hex, f.color!) < 260)) return false;
       return true;
@@ -91,13 +95,19 @@ export function getApp(id: string) {
 
 export type Change = { app: App; kind: AssetKind; before: Version; after: Version; diff: string[] };
 
-export function describeDiff(before: Asset, after: Asset) {
+// Short labels for what changed between two versions of the same creative.
+export function describeDiff(before: Version, after: Version) {
   const diff: string[] = [];
-  if (before.headline !== after.headline) diff.push("Copy");
-  if (before.colors[0].hex !== after.colors[0].hex) diff.push("Colors");
-  if (before.tags.style !== after.tags.style) diff.push("Style");
-  if (before.tags.layout !== after.tags.layout) diff.push("Layout");
-  if (before.tags.goal !== after.tags.goal) diff.push(`Goal: ${after.tags.goal}`);
+  const [b, a] = [before.assets[0], after.assets[0]];
+  if (before.assets.length !== after.assets.length) diff.push(`${before.assets.length} → ${after.assets.length} images`);
+  if (b.headline !== a.headline) diff.push("Copy");
+  if (b.colors[0]?.hex !== a.colors[0]?.hex) diff.push("Colors");
+  if (b.tags && a.tags) {
+    if (b.tags.style !== a.tags.style) diff.push("Style");
+    if (b.tags.layout !== a.tags.layout) diff.push("Layout");
+    if (b.tags.goal !== a.tags.goal) diff.push(`Goal: ${a.tags.goal}`);
+  }
+  if (!diff.length) diff.push("Artwork");
   return diff;
 }
 
@@ -109,7 +119,7 @@ export function listChanges(kind?: AssetKind): Change[] {
       if (kind && k !== kind) continue;
       const vs = versionsOf(app.id, k);
       for (let i = 1; i < vs.length; i++) {
-        out.push({ app, kind: k, before: vs[i - 1], after: vs[i], diff: describeDiff(vs[i - 1].assets[0], vs[i].assets[0]) });
+        out.push({ app, kind: k, before: vs[i - 1], after: vs[i], diff: describeDiff(vs[i - 1], vs[i]) });
       }
     }
   }
