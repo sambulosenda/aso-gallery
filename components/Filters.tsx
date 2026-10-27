@@ -1,8 +1,9 @@
 import type { Filters as F } from "@/lib/data";
+import { TAG_VALUES } from "@/lib/types";
 
 const COLORS = ["ff3b30", "ff9500", "ffcc00", "34c759", "00c7be", "007aff", "5856d6", "af52de", "ff2d55", "a2845e", "8e8e93", "111111"];
-const STYLES = ["Product UI", "Illustration", "Photo", "3D", "Typography"];
-const GOALS = ["Product", "Feature", "Social proof", "Offer", "Event"];
+const STYLES = TAG_VALUES.style;
+const GOALS = TAG_VALUES.goal;
 
 // Plain GET form so filters live in the URL and are shareable without client JS.
 export function Filters({ action, f, genres }: { action: string; f: F; genres: [string, number][] }) {
@@ -95,7 +96,7 @@ function Radio({ name, value, label, current, count }: { name: string; value: st
   );
 }
 
-function Select({ name, options, current }: { name: string; options: string[]; current?: string }) {
+function Select({ name, options, current }: { name: string; options: readonly string[]; current?: string }) {
   return (
     <select name={name} defaultValue={current ?? ""} className="w-full rounded-lg border border-line bg-panel px-2 py-2">
       <option value="">Any</option>

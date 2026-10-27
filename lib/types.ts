@@ -16,6 +16,25 @@ export type App = {
 
 export type Swatch = { hex: string; pct: number };
 
+// Tag vocabularies, shared by the filters and the auto-tagger.
+export const TAG_VALUES = {
+  style: ["Product UI", "Illustration", "Photo", "3D", "Typography"],
+  layout: ["Full bleed", "Split", "Device frame", "Panorama"],
+  textOnArt: ["None", "Brand only", "Headline", "Headline + body"],
+  typeStyle: ["Sans serif", "Serif", "Display", "Handwritten"],
+  goal: ["Product", "Feature", "Social proof", "Offer", "Event"],
+} as const;
+
+type Of<K extends keyof typeof TAG_VALUES> = (typeof TAG_VALUES)[K][number];
+export type Tags = {
+  style: Of<"style">;
+  layout: Of<"layout">;
+  textOnArt: Of<"textOnArt">;
+  typeStyle: Of<"typeStyle">;
+  character: boolean;
+  goal: Of<"goal">;
+};
+
 export type Asset = {
   id: string;
   appId: string;
@@ -29,14 +48,7 @@ export type Asset = {
   hash?: string; // perceptual hash (dHash, hex) used to detect changed creative
   headline: string;
   colors: Swatch[];
-  tags: null | {
-    style: "Product UI" | "Illustration" | "Photo" | "3D" | "Typography";
-    layout: "Full bleed" | "Split" | "Device frame" | "Panorama";
-    textOnArt: "None" | "Brand only" | "Headline" | "Headline + body";
-    typeStyle: "Sans serif" | "Serif" | "Display" | "Handwritten";
-    character: boolean;
-    goal: "Product" | "Feature" | "Social proof" | "Offer" | "Event";
-  }; // null until tagged
+  tags: Tags | null; // null until tagged (`npm run tag`)
   // Creative history: every store capture that differs from the previous one
   // becomes a new version of the app's set for that kind (all screenshots
   // change together, as they do in App Store Connect).
