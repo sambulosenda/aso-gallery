@@ -3,6 +3,9 @@ name: Daily App Store capture
 on:
   schedule:
     - cron: "17 6 * * *" # 06:17 UTC daily
+  # On PRs that touch ingestion, do a dry run against the live App Store.
+  pull_request:
+    paths: ["scripts/**", "lib/**", "data/tracked.json", ".github/workflows/ingest.yml"]
   workflow_dispatch:
     inputs:
       app:
@@ -13,7 +16,7 @@ permissions:
   contents: write
 
 concurrency:
-  group: ingest
+  group: ingest-${{ github.ref }}
   cancel-in-progress: false
 
 jobs:
@@ -31,8 +34,11 @@ jobs:
         env:
           APP_ID: ${{ inputs.app }}
         run: |
-          if [ -n "$APP_ID" ]; then npm run ingest -- --app "$APP_ID"; else npm run ingest; fi
+          if [ "${{ github.event_name }}" = "pull_request" ]; then npm run ingest -- --dry-run
+          elif [ -n "$APP_ID" ]; then npm run ingest -- --app "$APP_ID"
+          else npm run ingest; fi
       - name: Commit catalog
+        if: github.event_name != 'pull_request'
         run: |
           git config user.name "aso-gallery bot"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
