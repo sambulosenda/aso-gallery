@@ -37,6 +37,10 @@ jobs:
           if [ "${{ github.event_name }}" = "pull_request" ]; then npm run ingest -- --dry-run
           elif [ -n "$APP_ID" ]; then npm run ingest -- --app "$APP_ID"
           else npm run ingest; fi
+      - name: Inspect a product page
+        if: github.event_name == 'pull_request'
+        run: npm run inspect -- 571800810 us | head -c 80000
+
       - name: Commit catalog
         if: github.event_name != 'pull_request'
         run: |

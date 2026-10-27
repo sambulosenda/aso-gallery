@@ -82,6 +82,7 @@ async function ingestOne(catalog: Catalog, t: Tracked, today: string): Promise<s
     const header = findHeaderArtwork(await productPageHtml(t.id, t.country));
     // Keep the source size from the page; we only download a 1920px rendition.
     const images = header ? (await analyzeAll([header.url])).map((img) => ({ ...img, width: header.width, height: header.height })) : [];
+    if (!header) log.push(`${app.name}: no product page header found`);
     record("product_header", images);
   } catch (e) {
     // Don't close the live header just because the page failed to load.
