@@ -9,10 +9,17 @@
     "ingest": "tsx scripts/ingest.ts",
     "test": "node --import tsx --test lib/*.test.ts",
     "inspect": "tsx scripts/inspect-page.ts",
-    "import:asoexamples": "tsx scripts/import-asoexamples.ts"
+    "import:asoexamples": "tsx scripts/import-asoexamples.ts",
+    "d1:build": "tsx scripts/build-d1.ts",
+    "d1:load": "wrangler d1 execute aso-gallery --local --file data/d1.sql",
+    "d1:load:remote": "wrangler d1 execute aso-gallery --remote --file data/d1.sql --yes",
+    "preview": "opennextjs-cloudflare build && opennextjs-cloudflare preview",
+    "deploy": "opennextjs-cloudflare build && opennextjs-cloudflare deploy",
+    "cf-typegen": "wrangler types --env-interface CloudflareEnv cloudflare-env.d.ts"
   },
   "dependencies": {
-    "next": "^15.5.9",
+    "@opennextjs/cloudflare": "^1.20.13",
+    "next": "~15.5.28",
     "react": "19.1.1",
     "react-dom": "19.1.1",
     "sharp": "^0.34.3"
@@ -23,6 +30,7 @@
     "@types/react": "19.1.13",
     "tailwindcss": "4.1.13",
     "tsx": "4.20.5",
-    "typescript": "5.9.2"
+    "typescript": "5.9.2",
+    "wrangler": "^4.154.0"
   }
 }

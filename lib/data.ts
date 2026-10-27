@@ -1,12 +1,13 @@
-import { loadCatalog } from "./catalog";
-import { buildSeed } from "./seed";
+import { getCloudflareContext } from "@opennextjs/cloudflare";
 import type { App, Asset, AssetKind } from "./types";
 
-// Real data from `npm run ingest` when it exists, otherwise the sample seed.
-const catalog = loadCatalog();
-export const usingSampleData = !catalog || catalog.apps.length === 0;
-const { apps, assets } = usingSampleData ? buildSeed() : catalog!;
-const appsById = new Map(apps.map((a) => [a.id, a]));
+// Reads the site's D1 database, loaded from data/catalog.json by
+// scripts/build-d1.ts. Filters and sorts run in SQL against the columns that
+// script precomputes; full objects come back from each row's `data` JSON.
+
+async function db() {
+  return (await getCloudflareContext({ async: true })).env.DB;
+}
 
 export type Filters = {
   q?: string;
@@ -22,59 +23,70 @@ export type Filters = {
 
 export type Entry = Asset & { app: App; versionCount: number };
 
-const setKey = (a: Asset) => `${a.appId}:${a.kind}`;
-const versionCounts = new Map<string, number>();
-for (const a of assets) versionCounts.set(setKey(a), Math.max(versionCounts.get(setKey(a)) ?? 0, a.version));
-const current = assets.filter((a) => a.lastSeenAt === null);
+type EntryRow = { data: string; app: string; version_count: number };
+const toEntry = (r: EntryRow): Entry => ({ ...JSON.parse(r.data), app: JSON.parse(r.app), versionCount: r.version_count });
 
-// Rough perceptual distance in RGB space; good enough for "find blue-ish headers".
-function colorDistance(a: string, b: string) {
-  const p = (h: string) => [1, 3, 5].map((i) => parseInt(h.replace("#", "").padStart(6, "0").slice(i - 1, i + 1), 16));
-  const [r1, g1, b1] = p(a);
-  const [r2, g2, b2] = p(b);
-  return Math.sqrt(2 * (r1 - r2) ** 2 + 4 * (g1 - g2) ** 2 + 3 * (b1 - b2) ** 2);
+export async function usingSampleData() {
+  const row = await (await db()).prepare("SELECT value FROM meta WHERE key = 'sample'").first<{ value: string }>();
+  return row?.value !== "0";
 }
 
-export function listEntries(kind: AssetKind, f: Filters): Entry[] {
+function where(kind: AssetKind, f: Filters) {
+  const clauses = ["a.kind = ?", "a.live = 1"];
+  const params: (string | number)[] = [kind];
+  const add = (clause: string, ...p: (string | number)[]) => { clauses.push(clause); params.push(...p); };
   const q = f.q?.toLowerCase().trim();
-  let out = current
-    .filter((a) => a.kind === kind)
-    .map((a) => ({ ...a, app: appsById.get(a.appId)!, versionCount: versionCounts.get(setKey(a))! }))
-    .filter((e) => {
-      if (q && ![e.app.name, e.app.developer, e.app.genre, e.headline].some((s) => s.toLowerCase().includes(q))) return false;
-      if (f.genre && e.app.genre !== f.genre) return false;
-      if (f.store && e.app.store !== f.store) return false;
-      if (f.type === "apps" && e.app.isGame) return false;
-      if (f.type === "games" && !e.app.isGame) return false;
-      if (f.style && e.tags?.style !== f.style) return false;
-      if (f.goal && e.tags?.goal !== f.goal) return false;
-      if (f.changed && e.versionCount < 2) return false;
-      if (f.color && !e.colors.some((c) => c.pct >= 15 && colorDistance(c.hex, f.color!) < 260)) return false;
-      return true;
-    });
-  out = f.sort === "name"
-    ? out.sort((a, b) => a.app.name.localeCompare(b.app.name))
-    : f.sort === "changes"
-      ? out.sort((a, b) => b.versionCount - a.versionCount || b.firstSeenAt.localeCompare(a.firstSeenAt))
-      : out.sort((a, b) => b.firstSeenAt.localeCompare(a.firstSeenAt));
-  return out;
+  if (q) add("a.search LIKE ? ESCAPE '\\'", `%${q.replace(/[\\%_]/g, "\\$&")}%`);
+  if (f.genre) add("a.genre = ?", f.genre);
+  if (f.store) add("a.store = ?", f.store);
+  if (f.type === "apps") add("a.is_game = 0");
+  if (f.type === "games") add("a.is_game = 1");
+  if (f.style) add("a.style = ?", f.style);
+  if (f.goal) add("a.goal = ?", f.goal);
+  if (f.changed) add("a.version_count >= 2");
+  if (f.color) add("a.swatches LIKE ?", `%,${f.color.toLowerCase()},%`);
+  return { sql: clauses.join(" AND "), params };
 }
 
-export function genreCounts(kind: AssetKind) {
-  const counts = new Map<string, number>();
-  for (const a of current) if (a.kind === kind) {
-    const g = appsById.get(a.appId)!.genre;
-    counts.set(g, (counts.get(g) ?? 0) + 1);
-  }
-  return [...counts.entries()].sort((a, b) => b[1] - a[1]);
+const ORDER: Record<string, string> = {
+  name: "a.app_name COLLATE NOCASE, a.id",
+  changes: "a.version_count DESC, a.first_seen_at DESC, a.id",
+  new: "a.first_seen_at DESC, a.id",
+};
+
+// Headline numbers for a gallery: live creatives, the apps they belong to, and version changes.
+export async function galleryStats(kind: AssetKind) {
+  const row = await (await db()).prepare("SELECT creatives, apps, changes FROM stats WHERE kind = ?").bind(kind)
+    .first<{ creatives: number; apps: number; changes: number }>();
+  return row ?? { creatives: 0, apps: 0, changes: 0 };
+}
+
+// One page of the gallery plus the total number of matches. Unfiltered, the
+// total comes from the precomputed stats instead of counting every row.
+export async function listEntries(kind: AssetKind, f: Filters, limit: number, offset: number) {
+  const d = await db();
+  const w = where(kind, f);
+  const filtered = Object.entries(f).some(([k, v]) => v && k !== "sort");
+  const rows = await d.prepare(`SELECT a.data, a.version_count, p.data AS app FROM assets a JOIN apps p ON p.id = a.app_id
+    WHERE ${w.sql} ORDER BY ${ORDER[f.sort ?? ""] ?? ORDER.new} LIMIT ? OFFSET ?`).bind(...w.params, limit, offset).all<EntryRow>();
+  const total = filtered
+    ? (await d.prepare(`SELECT COUNT(*) AS n FROM assets a WHERE ${w.sql}`).bind(...w.params).first<{ n: number }>())!.n
+    : (await galleryStats(kind)).creatives;
+  return { entries: rows.results.map(toEntry), total };
+}
+
+export async function genreCounts(kind: AssetKind): Promise<[string, number][]> {
+  const { results } = await (await db())
+    .prepare("SELECT genre, n FROM genres WHERE kind = ? ORDER BY n DESC").bind(kind).all<{ genre: string; n: number }>();
+  return results.map((r) => [r.genre, r.n]);
 }
 
 export type Version = { kind: AssetKind; version: number; firstSeenAt: string; lastSeenAt: string | null; assets: Asset[] };
 
-// Groups an app's assets into versions per kind, oldest first.
-function versionsOf(appId: string, kind: AssetKind): Version[] {
+// Groups assets into versions per kind, oldest first.
+function versionsOf(assets: Asset[], kind: AssetKind): Version[] {
   const byVersion = new Map<number, Asset[]>();
-  for (const a of assets) if (a.appId === appId && a.kind === kind) {
+  for (const a of assets) if (a.kind === kind) {
     byVersion.set(a.version, [...(byVersion.get(a.version) ?? []), a]);
   }
   return [...byVersion.entries()]
@@ -82,14 +94,20 @@ function versionsOf(appId: string, kind: AssetKind): Version[] {
     .map(([version, list]) => ({ kind, version, firstSeenAt: list[0].firstSeenAt, lastSeenAt: list[0].lastSeenAt, assets: list }));
 }
 
-export function getApp(id: string) {
-  const app = appsById.get(id);
-  if (!app) return null;
-  const kinds = [...new Set(assets.filter((a) => a.appId === id).map((a) => a.kind))];
+export async function getApp(id: string) {
+  const d = await db();
+  const [appRows, assetRows] = await d.batch<{ data: string }>([
+    d.prepare("SELECT data FROM apps WHERE id = ?").bind(id),
+    d.prepare("SELECT data FROM assets WHERE app_id = ? ORDER BY id").bind(id),
+  ]);
+  if (!appRows.results.length) return null;
+  const app: App = JSON.parse(appRows.results[0].data);
+  const assets: Asset[] = assetRows.results.map((r) => JSON.parse(r.data));
+  const kinds = [...new Set(assets.map((a) => a.kind))];
   return {
     app,
-    assets: current.filter((a) => a.appId === id),
-    history: Object.fromEntries(kinds.map((k) => [k, versionsOf(id, k)])) as Partial<Record<AssetKind, Version[]>>,
+    assets: assets.filter((a) => a.lastSeenAt === null),
+    history: Object.fromEntries(kinds.map((k) => [k, versionsOf(assets, k)])) as Partial<Record<AssetKind, Version[]>>,
   };
 }
 
@@ -111,21 +129,35 @@ export function describeDiff(before: Version, after: Version) {
   return diff;
 }
 
-// Every version change across all apps, newest first.
-export function listChanges(kind?: AssetKind): Change[] {
-  const out: Change[] = [];
-  for (const app of apps) {
-    for (const k of ["product_header", "screenshot", "search_banner"] as AssetKind[]) {
-      if (kind && k !== kind) continue;
-      const vs = versionsOf(app.id, k);
-      for (let i = 1; i < vs.length; i++) {
-        out.push({ app, kind: k, before: vs[i - 1], after: vs[i], diff: describeDiff(vs[i - 1], vs[i]) });
-      }
-    }
+// The most recent version changes across all apps, newest first.
+export async function listChanges(kind?: AssetKind, limit = 100): Promise<Change[]> {
+  const d = await db();
+  const { results: picked } = await d
+    .prepare(`SELECT app_id, kind, version FROM changes ${kind ? "WHERE kind = ?" : ""} ORDER BY first_seen_at DESC LIMIT ?`)
+    .bind(...(kind ? [kind] : []), limit).all<{ app_id: string; kind: AssetKind; version: number }>();
+  if (!picked.length) return [];
+  const ids = JSON.stringify([...new Set(picked.map((c) => c.app_id))]);
+  const [appRows, assetRows] = await d.batch<{ data: string }>([
+    d.prepare("SELECT data FROM apps WHERE id IN (SELECT value FROM json_each(?))").bind(ids),
+    d.prepare("SELECT data FROM assets WHERE app_id IN (SELECT value FROM json_each(?)) ORDER BY id").bind(ids),
+  ]);
+  const apps = new Map(appRows.results.map((r) => { const a: App = JSON.parse(r.data); return [a.id, a]; }));
+  const assetsByApp = new Map<string, Asset[]>();
+  for (const r of assetRows.results) {
+    const a: Asset = JSON.parse(r.data);
+    assetsByApp.set(a.appId, [...(assetsByApp.get(a.appId) ?? []), a]);
   }
-  return out.sort((a, b) => b.after.firstSeenAt.localeCompare(a.after.firstSeenAt));
+  return picked.map((c) => {
+    const vs = versionsOf(assetsByApp.get(c.app_id) ?? [], c.kind);
+    const before = vs.find((v) => v.version === c.version - 1)!;
+    const after = vs.find((v) => v.version === c.version)!;
+    return { app: apps.get(c.app_id)!, kind: c.kind, before, after, diff: describeDiff(before, after) };
+  });
 }
 
-export function relatedApps(app: App, limit = 6) {
-  return apps.filter((a) => a.genre === app.genre && a.id !== app.id).slice(0, limit);
+export async function relatedApps(app: App, limit = 6): Promise<App[]> {
+  const { results } = await (await db())
+    .prepare("SELECT data FROM apps WHERE genre = ? AND id <> ? ORDER BY id LIMIT ?")
+    .bind(app.genre, app.id, limit).all<{ data: string }>();
+  return results.map((r) => JSON.parse(r.data));
 }

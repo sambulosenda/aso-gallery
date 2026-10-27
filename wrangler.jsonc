@@ -1,0 +1,11 @@
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "aso-gallery",
+  "main": ".open-next/worker.js",
+  "compatibility_date": "2026-10-01",
+  "compatibility_flags": ["nodejs_compat", "global_fetch_strictly_public"],
+  "assets": { "directory": ".open-next/assets", "binding": "ASSETS" },
+  "routes": [{ "pattern": "gallery.screenpane.com", "custom_domain": true }],
+  "d1_databases": [{ "binding": "DB", "database_name": "aso-gallery", "database_id": "6140e50c-705e-4bce-9105-ad08a6af1a7c" }],
+  "observability": { "enabled": true }
+}

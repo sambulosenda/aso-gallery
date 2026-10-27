@@ -8,12 +8,15 @@ import "./globals.css";
 const sans = Inter_Tight({ subsets: ["latin"], variable: "--font-inter-tight" });
 const mono = JetBrains_Mono({ subsets: ["latin"], weight: ["400", "500"], variable: "--font-jetbrains-mono" });
 
+// Every page reads D1 per request; nothing can be prerendered at build time.
+export const dynamic = "force-dynamic";
+
 export const metadata: Metadata = {
   title: "ASO Gallery",
   description: "Inspiration for App Store screenshots, product page headers and search banners.",
 };
 
-export default function RootLayout({ children }: { children: React.ReactNode }) {
+export default async function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en" className={`${sans.variable} ${mono.variable}`}>
       <body className="min-h-screen font-sans antialiased">
@@ -24,7 +27,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
             <Link href="/submit" className="ml-auto shrink-0 rounded-full bg-fg px-4 py-2 text-sm font-semibold text-ink hover:bg-accent">Add an app</Link>
           </div>
         </header>
-        {usingSampleData && (
+        {(await usingSampleData()) && (
           <p className="mx-auto max-w-[1440px] px-5 pt-4 text-xs text-muted md:px-12">Showing sample data. Run <code className="font-mono">npm run ingest</code> to capture real App Store listings.</p>
         )}
         <main className="mx-auto max-w-[1440px] px-5 md:px-12">{children}</main>
