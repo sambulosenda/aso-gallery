@@ -29,7 +29,9 @@ async function crawl(): Promise<{ appStore: Map<string, string>; googlePlay: Set
       if (!res.ok) break;
       const html = await res.text();
       let fresh = 0;
+      let links = 0;
       for (const m of html.matchAll(/\/h\/([A-Za-z0-9._-]+?)(?=["'?#\s])/g)) {
+        links++;
         const numeric = m[1].match(/^(\d{6,})-(.*)$/);
         if (numeric) {
           if (!appStore.has(numeric[1])) fresh++;
@@ -40,7 +42,8 @@ async function crawl(): Promise<{ appStore: Map<string, string>; googlePlay: Set
         }
       }
       console.log(`${section} p${page}: ${fresh} new (${appStore.size} App Store, ${googlePlay.size} Google Play)`);
-      if (!fresh || !html.includes(`page=${page + 1}`)) break;
+      // Sections overlap, so a page of already-seen apps is normal; stop only when a page is empty or last.
+      if (!links || !html.includes(`page=${page + 1}`)) break;
       await sleep(1000);
     }
   }
