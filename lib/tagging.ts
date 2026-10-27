@@ -9,7 +9,9 @@ import { z } from "zod";
 import { fetchImage } from "./image";
 import { TAG_VALUES, type Asset, type Tags } from "./types";
 
-export const DEFAULT_MODEL = "claude-opus-5-5";
+// Haiku 5.5 agreed with Opus 5.5 on 86-100% of tags in a 50-image comparison at
+// about 1/25 of the cost (`npm run compare-tags`). Override with TAG_MODEL.
+export const DEFAULT_MODEL = "claude-haiku-5-5";
 
 // Long side of the image we send. Tags don't need full resolution, and image
 // tokens scale with pixel count (a 384×768 screenshot is ~400 tokens).
@@ -65,7 +67,7 @@ export async function tagImage(client: Anthropic, asset: Asset, appName: string,
   const response = await client.beta.messages.parse({
     model,
     max_tokens: 16000,
-    // Refusals are unlikely on store artwork; if one happens, the server reruns it on a fallback model.
+    // Refusals are unlikely on store artwork; where the model supports it, the server reruns one on a fallback model.
     betas: ["server-side-fallback-2026-07-01"],
     fallbacks: "default",
     system: SYSTEM,

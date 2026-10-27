@@ -44,7 +44,7 @@ over the whole catalog is the expensive one.
 ```bash
 npm run tag -- --dry-run --limit 5     # print tags for 5 images, write nothing
 npm run tag -- --limit 500             # tag at most 500 images
-TAG_MODEL=claude-haiku-5-5 npm run tag # use another model (default claude-opus-5-5)
+TAG_MODEL=claude-opus-5-5 npm run tag  # use another model (default claude-haiku-5-5)
 npm run compare-tags -- --limit 50     # tag 50 images with two models, compare agreement and cost
 ```
 

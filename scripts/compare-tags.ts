@@ -8,7 +8,7 @@
 import fs from "node:fs";
 import Anthropic from "@anthropic-ai/sdk";
 import { loadCatalog } from "../lib/catalog";
-import { DEFAULT_MODEL, tagImage, untagged, type TagResult } from "../lib/tagging";
+import { tagImage, untagged, type TagResult } from "../lib/tagging";
 import type { Asset } from "../lib/types";
 
 // $ per million input / output tokens.
@@ -23,7 +23,7 @@ function args() {
   const argv = process.argv.slice(2);
   const get = (flag: string) => (argv.includes(flag) ? argv[argv.indexOf(flag) + 1] : undefined);
   return {
-    models: (get("--models") ?? `${DEFAULT_MODEL},claude-haiku-5-5`).split(","),
+    models: (get("--models") ?? "claude-opus-5-5,claude-haiku-5-5").split(","),
     limit: Number(get("--limit")) || 50,
   };
 }
