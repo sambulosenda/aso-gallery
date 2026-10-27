@@ -1,11 +1,31 @@
 @import "tailwindcss";
 
 @theme {
-  --color-ink: #131412;
-  --color-panel: #1c1d1b;
-  --color-line: #2a2b28;
-  --color-muted: #8a8b86;
+  --font-sans: var(--font-inter-tight), ui-sans-serif, system-ui, sans-serif;
+  --font-mono: var(--font-jetbrains-mono), ui-monospace, monospace;
+
+  --color-ink: #09090a;
+  --color-panel: #111113;
+  --color-raised: #1a1a1d;
+  --color-line: #1f1f22;
+  --color-edge: #2e2e33;
+  --color-fg: #f4f4f2;
+  --color-soft: #a3a39f;
+  --color-muted: #8c8c88;
   --color-accent: #c6f432;
 }
 
-html { background: var(--color-ink); color: #ececea; }
+html { background: var(--color-ink); color: var(--color-fg); }
+::selection { background: var(--color-accent); color: var(--color-ink); }
+
+/* Small uppercase mono labels used for metadata throughout. */
+@utility eyebrow {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+/* Dropdown chips in the filter bar are <details>; hide the default marker. */
+summary::-webkit-details-marker { display: none; }
+summary { list-style: none; }
