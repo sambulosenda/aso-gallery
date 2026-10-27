@@ -17,7 +17,8 @@ const SAVE_EVERY = 50;
 
 function args() {
   const argv = process.argv.slice(2);
-  const get = (flag: string) => (argv.includes(flag) ? argv[argv.indexOf(flag) + 1] : undefined);
+  // A present flag with no operand reads as "", which positiveInt rejects.
+  const get = (flag: string) => (argv.includes(flag) ? (argv[argv.indexOf(flag) + 1] ?? "") : undefined);
   return { limit: positiveInt(get, "--limit") ?? 0, dryRun: argv.includes("--dry-run") };
 }
 

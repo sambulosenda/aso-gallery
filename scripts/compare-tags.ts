@@ -21,7 +21,8 @@ const FIELDS = ["style", "layout", "textOnArt", "typeStyle", "character", "goal"
 
 function args() {
   const argv = process.argv.slice(2);
-  const get = (flag: string) => (argv.includes(flag) ? argv[argv.indexOf(flag) + 1] : undefined);
+  // A present flag with no operand reads as "", which positiveInt rejects.
+  const get = (flag: string) => (argv.includes(flag) ? (argv[argv.indexOf(flag) + 1] ?? "") : undefined);
   return {
     models: (get("--models") ?? "claude-opus-5-5,claude-haiku-5-5").split(","),
     limit: positiveInt(get, "--limit") ?? 50,

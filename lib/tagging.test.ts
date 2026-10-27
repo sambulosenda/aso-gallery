@@ -46,5 +46,5 @@ test("--limit must be a positive integer when given", () => {
   const get = (v?: string) => () => v;
   assert.equal(positiveInt(get(undefined), "--limit"), undefined);
   assert.equal(positiveInt(get("25"), "--limit"), 25);
-  for (const bad of ["0", "-5", "abc", "1.5"]) assert.throws(() => positiveInt(get(bad), "--limit"), /positive integer/);
+  for (const bad of ["", "0", "-5", "abc", "1.5"]) assert.throws(() => positiveInt(get(bad), "--limit"), /positive integer/);
 });
