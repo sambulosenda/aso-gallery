@@ -1,0 +1,25 @@
+{
+  "_comment": "App Store apps captured by `npm run ingest`. id = numeric App Store id, country = storefront.",
+  "apps": [
+    { "id": "571800810", "country": "us", "note": "Calm" },
+    { "id": "493145008", "country": "us", "note": "Headspace" },
+    { "id": "570060128", "country": "us", "note": "Duolingo" },
+    { "id": "324684580", "country": "us", "note": "Spotify" },
+    { "id": "401626263", "country": "us", "note": "Airbnb" },
+    { "id": "1232780281", "country": "us", "note": "Notion" },
+    { "id": "426826309", "country": "us", "note": "Strava" },
+    { "id": "932493382", "country": "gb", "note": "Revolut" },
+    { "id": "1052238659", "country": "gb", "note": "Monzo" },
+    { "id": "612261027", "country": "us", "note": "Wise" },
+    { "id": "1038369065", "country": "us", "note": "Flo" },
+    { "id": "547702041", "country": "us", "note": "Tinder" },
+    { "id": "429047995", "country": "us", "note": "Pinterest" },
+    { "id": "6448311069", "country": "us", "note": "ChatGPT" },
+    { "id": "297368629", "country": "us", "note": "Lose It!" },
+    { "id": "284993459", "country": "us", "note": "Shazam" },
+    { "id": "904237743", "country": "us", "note": "Things 3" },
+    { "id": "553834731", "country": "us", "note": "Candy Crush Saga" },
+    { "id": "1053012308", "country": "us", "note": "Clash Royale" },
+    { "id": "1459645446", "country": "us", "note": "BeReal" }
+  ]
+}

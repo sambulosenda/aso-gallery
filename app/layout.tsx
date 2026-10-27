@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import { usingSampleData } from "@/lib/data";
 import { KINDS } from "@/lib/types";
 import "./globals.css";
 
@@ -22,6 +23,9 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
             <Link href="/submit" className="ml-auto shrink-0 rounded-full border border-line px-3 py-1 text-sm hover:border-accent">+ Add app</Link>
           </div>
         </header>
+        {usingSampleData && (
+          <p className="mx-auto max-w-7xl px-4 pt-4 text-xs text-muted">Showing sample data. Run <code>npm run ingest</code> to capture real App Store listings.</p>
+        )}
         <main className="mx-auto max-w-7xl px-4 py-6">{children}</main>
         <footer className="mx-auto max-w-7xl border-t border-line px-4 py-8 text-sm text-muted">
           <form className="flex max-w-md gap-2">

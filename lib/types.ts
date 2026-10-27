@@ -11,6 +11,7 @@ export type App = {
   isGame: boolean;
   storeUrl: string;
   iconColor: string;
+  iconUrl?: string;
 };
 
 export type Swatch = { hex: string; pct: number };
@@ -23,17 +24,19 @@ export type Asset = {
   orientation: "portrait" | "landscape";
   width: number;
   height: number;
-  imageUrl: string | null; // null in the prototype: art is rendered from palette + headline
+  imageUrl: string | null; // null for sample data: art is rendered from palette + headline
+  imageUrls?: string[]; // search_banner: the screenshots shown in the search result card
+  hash?: string; // perceptual hash (dHash, hex) used to detect changed creative
   headline: string;
   colors: Swatch[];
-  tags: {
+  tags: null | {
     style: "Product UI" | "Illustration" | "Photo" | "3D" | "Typography";
     layout: "Full bleed" | "Split" | "Device frame" | "Panorama";
     textOnArt: "None" | "Brand only" | "Headline" | "Headline + body";
     typeStyle: "Sans serif" | "Serif" | "Display" | "Handwritten";
     character: boolean;
     goal: "Product" | "Feature" | "Social proof" | "Offer" | "Event";
-  };
+  }; // null until tagged
   // Creative history: every store capture that differs from the previous one
   // becomes a new version of the app's set for that kind (all screenshots
   // change together, as they do in App Store Connect).
