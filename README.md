@@ -34,6 +34,22 @@ npm run ingest -- --dry-run                       # don't write
 npm run inspect -- com.calm.android              # what a Play page's data holds, if parsing breaks
 ```
 
+### Tags
+
+Colors come from ingest. Everything else the filters use (style, layout, text on art, type, character, goal) plus the
+headline comes from `npm run tag`, which sends each live, untagged image to Claude (downscaled to 768px) and asks for
+those fields as structured output. Only new or changed creative is untagged, so daily runs are small; the first run
+over the whole catalog is the expensive one.
+
+```bash
+npm run tag -- --dry-run --limit 5     # print tags for 5 images, write nothing
+npm run tag -- --limit 500             # tag at most 500 images
+TAG_MODEL=claude-haiku-5-5 npm run tag # use another model (default claude-opus-5-5)
+```
+
+`.github/workflows/tag.yml` runs it after each daily capture when the repository has an `ANTHROPIC_API_KEY` secret
+(set the `TAG_MODEL` repository variable to change the model).
+
 To track another app, add its App Store id or Google Play package (with `"store": "google_play"`) and storefront to
 `data/tracked.json`.
 

@@ -9,13 +9,16 @@
     "ingest": "tsx scripts/ingest.ts",
     "test": "node --import tsx --test lib/*.test.ts",
     "inspect": "tsx scripts/inspect-page.ts",
+    "tag": "tsx scripts/tag.ts",
     "import:asoexamples": "tsx scripts/import-asoexamples.ts"
   },
   "dependencies": {
+    "@anthropic-ai/sdk": "^1.3.0",
     "next": "^15.5.9",
     "react": "19.1.1",
     "react-dom": "19.1.1",
-    "sharp": "^0.34.3"
+    "sharp": "^0.34.3",
+    "zod": "^4.6.7"
   },
   "devDependencies": {
     "@tailwindcss/postcss": "4.1.13",
