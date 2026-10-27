@@ -1,5 +1,5 @@
 {
-  "_comment": "App Store apps captured by `npm run ingest`. id = numeric App Store id, country = storefront.",
+  "_comment": "Apps captured by `npm run ingest`. id = numeric App Store id or Google Play package name (store: \"google_play\"), country = storefront.",
   "apps": [
     {
       "id": "571800810",
@@ -6760,6 +6760,36 @@
       "id": "6752921928",
       "country": "us",
       "note": "MigraineZen: Headache Forecast"
+    },
+    {
+      "id": "com.calm.android",
+      "country": "us",
+      "store": "google_play",
+      "note": "Calm"
+    },
+    {
+      "id": "com.getsomeheadspace.android",
+      "country": "us",
+      "store": "google_play",
+      "note": "Headspace"
+    },
+    {
+      "id": "com.duolingo",
+      "country": "us",
+      "store": "google_play",
+      "note": "Duolingo"
+    },
+    {
+      "id": "com.spotify.music",
+      "country": "us",
+      "store": "google_play",
+      "note": "Spotify"
+    },
+    {
+      "id": "com.king.candycrushsaga",
+      "country": "us",
+      "store": "google_play",
+      "note": "Candy Crush Saga"
     }
   ]
 }
