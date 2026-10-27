@@ -10,6 +10,7 @@
     "test": "node --import tsx --test lib/*.test.ts",
     "inspect": "tsx scripts/inspect-page.ts",
     "tag": "tsx scripts/tag.ts",
+    "compare-tags": "tsx scripts/compare-tags.ts",
     "import:asoexamples": "tsx scripts/import-asoexamples.ts"
   },
   "dependencies": {

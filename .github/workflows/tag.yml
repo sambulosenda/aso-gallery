@@ -2,8 +2,9 @@ name: Tag creative
 
 # Tags new screenshots and headers with Claude after each daily capture, and
 # commits the catalog. Needs the ANTHROPIC_API_KEY repository secret; without it
-# the job skips tagging. On PRs that touch tagging, tags a few freshly captured
-# images without committing anything.
+# the job skips tagging. On PRs that touch tagging, captures a sample of apps
+# and compares two models on the same 50 images (see the run's summary),
+# committing nothing.
 on:
   workflow_run:
     workflows: ["Daily store capture"]
@@ -16,7 +17,7 @@ on:
         required: false
         default: "10000"
   pull_request:
-    paths: ["scripts/tag.ts", "lib/tagging.ts", ".github/workflows/tag.yml"]
+    paths: ["scripts/tag.ts", "scripts/compare-tags.ts", "lib/tagging.ts", ".github/workflows/tag.yml"]
 
 permissions:
   contents: write
@@ -46,12 +47,11 @@ jobs:
       - name: Check for an API key
         if: env.ANTHROPIC_API_KEY == ''
         run: echo "::warning::ANTHROPIC_API_KEY secret is not set, so nothing was tagged."
-      - name: Tag a sample (PR)
+      - name: Compare models on a sample (PR)
         if: github.event_name == 'pull_request' && env.ANTHROPIC_API_KEY != ''
         run: |
-          npm run ingest -- --app 571800810 --country us
-          npm run ingest -- --app com.calm.android
-          npm run tag -- --dry-run --limit 8
+          npm run ingest -- --sample 12
+          npm run compare-tags -- --limit 50
       - name: Tag
         if: github.event_name != 'pull_request' && env.ANTHROPIC_API_KEY != ''
         run: npm run tag -- --limit "${{ inputs.limit || '10000' }}"
