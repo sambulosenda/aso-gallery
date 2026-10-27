@@ -32,30 +32,41 @@ export async function productPageHtml(id: string, country: string): Promise<stri
 
 export type Artwork = { url: string; width: number; height: number };
 
-// The product page embeds its artwork as JSON objects carrying a mzstatic URL
-// template ("…/{w}x{h}{c}.{f}") with the source width and height. The header
-// is the wide one (2.33:1, e.g. 3840×1646); screenshots and icons are not.
-// Returns the most frequent wide artwork, or null when the app has no header.
+// The product page embeds its data as JSON. Apple calls the header artwork the
+// "uber": the page object carries `"uber": null` when the app has none, or an
+// object holding a mzstatic URL template ("…/{w}x{h}{c}.{f}") with the source
+// width and height (e.g. 3840×1646).
 export function findHeaderArtwork(html: string): Artwork | null {
   const text = html.replace(/\\u002F/gi, "/").replace(/\\\//g, "/");
-  const counts = new Map<string, { art: Artwork; n: number }>();
-  // Width/height sit next to the URL in the same object; key order varies and
-  // the object may nest (backgroundColor), so look in a window around the URL.
-  for (const m of text.matchAll(/"(?:template|url)"\s*:\s*"(https:\/\/[^"]*mzstatic\.com[^"]+)"/g)) {
-    const url = m[1];
-    const width = nearestNumber(text, "width", m.index!, m.index! + m[0].length);
-    const height = nearestNumber(text, "height", m.index!, m.index! + m[0].length);
+  for (const m of text.matchAll(/"uber"\s*:\s*/g)) {
+    const start = m.index! + m[0].length;
+    if (text[start] !== "{") continue; // null: no header on this page
+    const uber = balancedObject(text, start);
+    const url = uber.match(/"(?:template|url)"\s*:\s*"(https:\/\/[^"]*mzstatic\.com[^"]+)"/);
+    if (!url) continue;
+    const width = nearestNumber(uber, "width", url.index!, url.index! + url[0].length);
+    const height = nearestNumber(uber, "height", url.index!, url.index! + url[0].length);
     if (!width || !height) continue;
-    const ratio = width / height;
-    // Landscape iPhone screenshots are ~2.17:1, so the lower bound sits above that.
-    if (ratio < 2.25 || ratio > 2.6 || width < 1600) continue;
-    const art = { url: fillTemplate(url, 1920, Math.round(1920 / ratio)), width, height };
-    const key = url.split("/").slice(0, -1).join("/");
-    const entry = counts.get(key) ?? { art, n: 0 };
-    entry.n++;
-    counts.set(key, entry);
+    const w = Math.min(width, 1920);
+    return { url: fillTemplate(url[1], w, Math.round((w * height) / width)), width, height };
   }
-  return [...counts.values()].sort((a, b) => b.n - a.n)[0]?.art ?? null;
+  return null;
+}
+
+// The JSON object starting at `start` (which must be "{"), as text.
+function balancedObject(text: string, start: number) {
+  let depth = 0;
+  let inString = false;
+  for (let i = start; i < text.length; i++) {
+    const c = text[i];
+    if (inString) {
+      if (c === "\\") i++;
+      else if (c === '"') inString = false;
+    } else if (c === '"') inString = true;
+    else if (c === "{") depth++;
+    else if (c === "}" && --depth === 0) return text.slice(start, i + 1);
+  }
+  return text.slice(start);
 }
 
 function nearestNumber(text: string, key: string, start: number, end: number, span = 250) {
