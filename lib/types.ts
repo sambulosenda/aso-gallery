@@ -34,7 +34,12 @@ export type Asset = {
     character: boolean;
     goal: "Product" | "Feature" | "Social proof" | "Offer" | "Event";
   };
-  capturedAt: string; // ISO date
+  // Creative history: every store capture that differs from the previous one
+  // becomes a new version of the app's set for that kind (all screenshots
+  // change together, as they do in App Store Connect).
+  version: number; // 1 = oldest seen
+  firstSeenAt: string; // ISO date
+  lastSeenAt: string | null; // null while still live on the store
 };
 
 export const KINDS: { slug: string; kind: AssetKind; label: string }[] = [

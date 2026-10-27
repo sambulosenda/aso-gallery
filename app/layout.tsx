@@ -17,6 +17,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
             <Link href="/" className="shrink-0 font-black tracking-tight">ASO<span className="text-accent">gallery</span></Link>
             <nav className="flex shrink-0 gap-4 text-sm text-muted">
               {KINDS.map((k) => <Link key={k.slug} href={`/${k.slug}`} className="hover:text-white">{k.label}</Link>)}
+              <Link href="/changes" className="text-accent hover:text-white">Recently changed</Link>
             </nav>
             <Link href="/submit" className="ml-auto shrink-0 rounded-full border border-line px-3 py-1 text-sm hover:border-accent">+ Add app</Link>
           </div>

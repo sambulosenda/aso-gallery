@@ -55,8 +55,16 @@ export function Filters({ action, f, genres }: { action: string; f: F; genres: [
         </div>
       </Group>
 
+      <Group title="History">
+        <label className="flex cursor-pointer items-center gap-2">
+          <input type="checkbox" name="changed" value="1" defaultChecked={f.changed === "1"} className="accent-[#c6f432]" />
+          <span>Only apps that changed it</span>
+        </label>
+      </Group>
+
       <Group title="Sort">
         <Radio name="sort" value="" label="Newest" current={f.sort} />
+        <Radio name="sort" value="changes" label="Most changed" current={f.sort} />
         <Radio name="sort" value="name" label="App name" current={f.sort} />
       </Group>
 

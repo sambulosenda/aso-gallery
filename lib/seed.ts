@@ -87,6 +87,9 @@ const SPECS: Record<AssetKind, { w: number; h: number; perApp: number }> = {
   paywall: { w: 1290, h: 2796, perApp: 0 },
 };
 
+// Version start dates, oldest first. Real data comes from daily captures.
+const VERSION_DATES = ["2026-05-04", "2026-06-15", "2026-08-02", "2026-09-10", "2026-10-06", "2026-10-21"];
+
 export function buildSeed(): { apps: App[]; assets: Asset[] } {
   const r = rng(42);
   const apps: App[] = [];
@@ -111,35 +114,54 @@ export function buildSeed(): { apps: App[]; assets: Asset[] } {
       iconColor: palette[0],
     };
     apps.push(app);
+    const storefront = pick(r, STOREFRONTS);
 
     (Object.keys(SPECS) as AssetKind[]).forEach((kind) => {
       const spec = SPECS[kind];
-      for (let n = 0; n < spec.perApp; n++) {
-        const day = 1 + Math.floor(r() * 27);
-        assets.push({
-          id: `${app.id}-${kind}-${n}`,
-          appId: app.id,
-          kind,
-          storefront: pick(r, STOREFRONTS),
-          orientation: spec.w > spec.h ? "landscape" : "portrait",
-          width: spec.w,
-          height: spec.h,
-          imageUrl: null,
-          headline: pick(r, HEADLINES),
-          colors: swatches(r, palette),
-          tags: {
-            style: pick(r, STYLES),
-            layout: pick(r, LAYOUTS),
-            textOnArt: pick(r, TEXTS),
-            typeStyle: pick(r, TYPES),
-            character: r() > 0.7,
-            goal: pick(r, GOALS),
-          },
-          capturedAt: `2026-10-${String(day).padStart(2, "0")}`,
-        });
-      }
+      if (!spec.perApp) return;
+      // Pick 1-4 version start dates, keeping the order.
+      const nVersions = pick(r, [1, 1, 1, 2, 2, 3, 4]);
+      const starts = [...VERSION_DATES].sort(() => r() - 0.5).slice(0, nVersions).sort();
+      let pal = palette;
+      let tags = randomTags(r);
+      starts.forEach((start, v) => {
+        // A redesign usually changes the palette or the visual approach; a
+        // refresh just swaps copy. Mix both so history is varied.
+        if (v > 0 && r() > 0.5) pal = PALETTES[Math.floor(r() * PALETTES.length)];
+        if (v > 0 && r() > 0.5) tags = randomTags(r);
+        const end = starts[v + 1] ?? null;
+        for (let n = 0; n < spec.perApp; n++) {
+          assets.push({
+            id: `${app.id}-${kind}-v${v + 1}-${n}`,
+            appId: app.id,
+            kind,
+            storefront,
+            orientation: spec.w > spec.h ? "landscape" : "portrait",
+            width: spec.w,
+            height: spec.h,
+            imageUrl: null,
+            headline: pick(r, HEADLINES),
+            colors: swatches(r, pal),
+            tags,
+            version: v + 1,
+            firstSeenAt: start,
+            lastSeenAt: end,
+          });
+        }
+      });
     });
   });
 
   return { apps, assets };
+}
+
+function randomTags(r: () => number): Asset["tags"] {
+  return {
+    style: pick(r, STYLES),
+    layout: pick(r, LAYOUTS),
+    textOnArt: pick(r, TEXTS),
+    typeStyle: pick(r, TYPES),
+    character: r() > 0.7,
+    goal: pick(r, GOALS),
+  };
 }

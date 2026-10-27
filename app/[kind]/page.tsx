@@ -46,9 +46,14 @@ export default async function Gallery({ params, searchParams }: {
           <ul className={`grid gap-4 ${GRID[def.kind]}`}>
             {entries.map((e) => (
               <li key={e.id}>
-                <Link href={`/app/${e.app.id}`} className="group block">
-                  <div className="overflow-hidden rounded-xl ring-1 ring-line transition group-hover:ring-accent">
+                <Link href={`/app/${e.app.id}${e.versionCount > 1 ? `?${e.kind}=${e.version}` : ""}`} className="group block">
+                  <div className="relative overflow-hidden rounded-xl ring-1 ring-line transition group-hover:ring-accent">
                     <Art asset={e} app={e.app} />
+                    {e.versionCount > 1 && (
+                      <span className="absolute bottom-2 left-2 rounded-full bg-black/70 px-2 py-0.5 text-[11px] text-white">
+                        {e.versionCount} versions
+                      </span>
+                    )}
                   </div>
                   <div className="mt-2 flex items-center justify-between gap-2 text-sm">
                     <span className="truncate font-medium">{e.app.name}</span>

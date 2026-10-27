@@ -1,19 +1,34 @@
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { AppIcon, Art } from "@/components/Art";
+import { History, versionRange } from "@/components/History";
 import { getApp, relatedApps } from "@/lib/data";
-import { KINDS } from "@/lib/types";
+import { KINDS, type AssetKind } from "@/lib/types";
 
-export default async function AppPage({ params }: { params: Promise<{ id: string }> }) {
+const ORDER: AssetKind[] = ["product_header", "screenshot", "search_banner"];
+
+export default async function AppPage({ params, searchParams }: {
+  params: Promise<{ id: string }>;
+  searchParams: Promise<Record<string, string | undefined>>;
+}) {
   const { id } = await params;
+  const sp = await searchParams;
   const found = getApp(id);
   if (!found) notFound();
-  const { app, assets } = found;
+  const { app, assets, history } = found;
   const header = assets.find((a) => a.kind === "product_header");
+  const headerVersion = history.product_header?.at(-1);
   const related = relatedApps(app);
 
+  // Selected version per kind lives in the URL (?product_header=2) so a comparison can be linked.
+  const hrefFor = (kind: AssetKind) => (v: number) => {
+    const next = new URLSearchParams(Object.entries(sp).filter((e): e is [string, string] => !!e[1]));
+    next.set(kind, String(v));
+    return `/app/${app.id}?${next}`;
+  };
+
   return (
-    <article className="space-y-10">
+    <article className="space-y-12">
       <div className="flex flex-wrap items-center gap-4">
         <AppIcon app={app} size={64} />
         <div className="flex-1">
@@ -25,14 +40,14 @@ export default async function AppPage({ params }: { params: Promise<{ id: string
         </a>
       </div>
 
-      {header && (
+      {header && headerVersion && (
         <div className="grid gap-6 lg:grid-cols-[1fr_280px]">
           <div className="overflow-hidden rounded-xl ring-1 ring-line"><Art asset={header} app={app} /></div>
           <dl className="grid grid-cols-2 gap-x-4 gap-y-2 text-sm lg:grid-cols-1">
             {Object.entries({
               Style: header.tags.style, Layout: header.tags.layout, "Text on art": header.tags.textOnArt,
               Type: header.tags.typeStyle, Character: header.tags.character ? "Yes" : "No", Goal: header.tags.goal,
-              "Source size": `${header.width} × ${header.height}`, Captured: header.capturedAt,
+              "Source size": `${header.width} × ${header.height}`, Live: versionRange(headerVersion),
             }).map(([k, v]) => (
               <div key={k} className="flex justify-between gap-2 border-b border-line py-1"><dt className="text-muted">{k}</dt><dd>{v}</dd></div>
             ))}
@@ -43,16 +58,18 @@ export default async function AppPage({ params }: { params: Promise<{ id: string
         </div>
       )}
 
-      {KINDS.filter((k) => k.kind !== "product_header").map((k) => {
-        const list = assets.filter((a) => a.kind === k.kind);
-        if (!list.length) return null;
+      {ORDER.map((kind) => {
+        const versions = history[kind];
+        if (!versions?.length) return null;
         return (
-          <section key={k.slug}>
-            <h2 className="mb-3 text-lg font-semibold">{k.label}</h2>
-            <div className={`grid gap-4 ${k.kind === "screenshot" ? "grid-cols-3 sm:grid-cols-5" : "sm:grid-cols-2 lg:grid-cols-3"}`}>
-              {list.map((a) => <div key={a.id} className="overflow-hidden rounded-xl ring-1 ring-line"><Art asset={a} app={app} /></div>)}
-            </div>
-          </section>
+          <History
+            key={kind}
+            app={app}
+            versions={versions}
+            title={KINDS.find((k) => k.kind === kind)!.label}
+            selected={Number(sp[kind]) || versions.length}
+            hrefFor={hrefFor(kind)}
+          />
         );
       })}
 
