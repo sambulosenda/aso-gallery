@@ -29,3 +29,7 @@ npm run ingest -- --dry-run                       # don't write
 ```
 
 To track another app, add its App Store id and storefront to `data/tracked.json`.
+
+`npm run import:asoexamples` adds every App Store app featured on asoexamples.com (crawled politely, one page per
+second) and picks a storefront each one is sold in. The "Import apps" workflow runs it on GitHub, where Apple and the
+site are reachable.

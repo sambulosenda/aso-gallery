@@ -8,7 +8,8 @@
     "start": "next start",
     "ingest": "tsx scripts/ingest.ts",
     "test": "node --import tsx --test lib/*.test.ts",
-    "inspect": "tsx scripts/inspect-page.ts"
+    "inspect": "tsx scripts/inspect-page.ts",
+    "import:asoexamples": "tsx scripts/import-asoexamples.ts"
   },
   "dependencies": {
     "next": "^15.5.9",
