@@ -1,10 +1,11 @@
 import sharp from "sharp";
+import { fetchWithRetry } from "./http";
 import type { Swatch } from "./types";
 
 export type Analysis = { width: number; height: number; hash: string; colors: Swatch[] };
 
 export async function fetchImage(url: string): Promise<Buffer> {
-  const res = await fetch(url);
+  const res = await fetchWithRetry(url);
   if (!res.ok) throw new Error(`GET ${url} → ${res.status}`);
   return Buffer.from(await res.arrayBuffer());
 }
