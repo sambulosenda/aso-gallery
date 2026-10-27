@@ -16,6 +16,10 @@ on:
         description: "Most images to tag this run (caps spend)"
         required: false
         default: "10000"
+      compare:
+        description: "Instead of tagging, compare two models on 50 freshly captured images"
+        type: boolean
+        default: false
   pull_request:
     paths: ["scripts/tag.ts", "scripts/compare-tags.ts", "lib/tagging.ts", ".github/workflows/tag.yml"]
 
@@ -47,16 +51,16 @@ jobs:
       - name: Check for an API key
         if: env.ANTHROPIC_API_KEY == ''
         run: echo "::warning::ANTHROPIC_API_KEY secret is not set, so nothing was tagged."
-      - name: Compare models on a sample (PR)
-        if: github.event_name == 'pull_request' && env.ANTHROPIC_API_KEY != ''
+      - name: Compare models on a sample (PR, or on demand)
+        if: (github.event_name == 'pull_request' || inputs.compare) && env.ANTHROPIC_API_KEY != ''
         run: |
           npm run ingest -- --sample 12
           npm run compare-tags -- --limit 50
       - name: Tag
-        if: github.event_name != 'pull_request' && env.ANTHROPIC_API_KEY != ''
+        if: github.event_name != 'pull_request' && !inputs.compare && env.ANTHROPIC_API_KEY != ''
         run: npm run tag -- --limit "${{ inputs.limit || '10000' }}"
       - name: Commit catalog
-        if: github.event_name != 'pull_request' && env.ANTHROPIC_API_KEY != ''
+        if: github.event_name != 'pull_request' && !inputs.compare && env.ANTHROPIC_API_KEY != ''
         run: |
           git config user.name "aso-gallery bot"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
