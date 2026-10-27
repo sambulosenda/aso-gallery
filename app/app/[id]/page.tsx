@@ -6,6 +6,13 @@ import { getApp, relatedApps } from "@/lib/data";
 import { KINDS, type AssetKind } from "@/lib/types";
 
 const ORDER: AssetKind[] = ["product_header", "screenshot", "search_banner"];
+const NOUN: Partial<Record<AssetKind, string>> = { product_header: "header", screenshot: "screenshot set", search_banner: "search banner" };
+
+// Light swatches need dark hex labels.
+function labelColor(hex: string) {
+  const n = parseInt(hex.slice(1), 16);
+  return 0.299 * (n >> 16) + 0.587 * ((n >> 8) & 255) + 0.114 * (n & 255) > 150 ? "#111" : "#fff";
+}
 
 export default async function AppPage({ params, searchParams }: {
   params: Promise<{ id: string }>;
@@ -18,48 +25,79 @@ export default async function AppPage({ params, searchParams }: {
   const { app, assets, history } = found;
   const header = assets.find((a) => a.kind === "product_header");
   const headerVersion = history.product_header?.at(-1);
-  const related = relatedApps(app);
+  // The spec strip describes the header when there is one, else the first live screenshot.
+  const lead = header ?? assets.find((a) => a.kind === "screenshot");
+  const related = relatedApps(app, 8);
+  const storeName = app.store === "app_store" ? "App Store" : "Google Play";
 
   // Selected version per kind lives in the URL (?product_header=2) so a comparison can be linked.
   const hrefFor = (kind: AssetKind) => (v: number) => {
     const next = new URLSearchParams(Object.entries(sp).filter((e): e is [string, string] => !!e[1]));
     next.set(kind, String(v));
-    return `/app/${app.id}?${next}`;
+    return `/app/${app.id}?${next}#${kind}-v${v}`;
+  };
+
+  const specs = {
+    ...(lead?.tags && {
+      Style: lead.tags.style, Layout: lead.tags.layout, "Text on art": lead.tags.textOnArt,
+      Type: lead.tags.typeStyle, Character: lead.tags.character ? "Yes" : "No", Goal: lead.tags.goal,
+    }),
+    Storefront: (lead?.storefront ?? "us").toUpperCase(),
+    ...(header && { "Header size": `${header.width} × ${header.height}` }),
+    ...(headerVersion && { "Header live": versionRange(headerVersion) }),
   };
 
   return (
-    <article className="space-y-12">
-      <div className="flex flex-wrap items-center gap-4">
-        <AppIcon app={app} size={64} />
-        <div className="flex-1">
-          <h1 className="text-3xl font-bold">{app.name}</h1>
-          <p className="text-muted">{app.developer} · {app.genre}</p>
-        </div>
-        <a href={app.storeUrl} target="_blank" rel="noreferrer" className="rounded-full bg-accent px-4 py-2 text-sm font-semibold text-ink">
-          View on {app.store === "app_store" ? "App Store" : "Google Play"}
-        </a>
-      </div>
+    <article>
+      <nav aria-label="Breadcrumb" className="flex flex-wrap gap-2 pt-8 text-sm text-muted">
+        <Link href="/screenshots" className="text-soft hover:text-fg">Gallery</Link><span aria-hidden>/</span>
+        <Link href={`/screenshots?genre=${encodeURIComponent(app.genre)}`} className="text-soft hover:text-fg">{app.genre}</Link><span aria-hidden>/</span>
+        <span className="text-fg">{app.name}</span>
+      </nav>
 
-      {header && headerVersion && (
-        <div className="grid gap-6 lg:grid-cols-[1fr_280px]">
-          <div className="overflow-hidden rounded-xl ring-1 ring-line"><Art asset={header} app={app} /></div>
-          <dl className="grid grid-cols-2 gap-x-4 gap-y-2 text-sm lg:grid-cols-1">
-            {Object.entries({
-              ...(header.tags && {
-                Style: header.tags.style, Layout: header.tags.layout, "Text on art": header.tags.textOnArt,
-                Type: header.tags.typeStyle, Character: header.tags.character ? "Yes" : "No", Goal: header.tags.goal,
-              }),
-              Storefront: header.storefront.toUpperCase(),
-              "Source size": `${header.width} × ${header.height}`, Live: versionRange(headerVersion),
-            }).map(([k, v]) => (
-              <div key={k} className="flex justify-between gap-2 border-b border-line py-1"><dt className="text-muted">{k}</dt><dd>{v}</dd></div>
-            ))}
-            <div className="col-span-2 flex h-6 overflow-hidden rounded lg:col-span-1">
-              {header.colors.map((c) => <span key={c.hex} title={`${c.hex} ${c.pct}%`} style={{ background: c.hex, width: `${c.pct}%` }} />)}
-            </div>
-          </dl>
+      {header && (
+        <div className="relative mt-6 overflow-hidden rounded-[28px] shadow-[0_0_0_1px_rgba(255,255,255,0.06),0_40px_80px_-40px_rgba(0,0,0,0.9)]">
+          <Art asset={header} app={app} />
+          {headerVersion && (
+            <span className="eyebrow absolute bottom-4 left-4 rounded-full bg-black/55 px-3 py-1.5 text-fg backdrop-blur">
+              {header.width} × {header.height} · Live since {versionRange(headerVersion).split(" – ")[0]}
+            </span>
+          )}
         </div>
       )}
+
+      <section className="flex flex-wrap items-center justify-between gap-8 pt-10">
+        <div className="flex min-w-0 items-center gap-6">
+          <AppIcon app={app} size={96} />
+          <div className="min-w-0">
+            <h1 className="text-[clamp(44px,7vw,96px)] font-semibold leading-[0.9] tracking-[-0.05em]">{app.name}</h1>
+            <p className="mt-2.5 text-[17px] text-soft">{app.developer} · {app.genre} · {app.store === "app_store" ? "iOS" : "Android"}</p>
+          </div>
+        </div>
+        <a href={app.storeUrl} target="_blank" rel="noreferrer" className="flex h-12 items-center rounded-full bg-fg px-6 text-[15px] font-semibold text-ink hover:bg-accent">
+          View on {storeName}
+        </a>
+      </section>
+
+      <section aria-label="Details" className="pt-10">
+        <dl className="grid grid-cols-[repeat(auto-fit,minmax(150px,1fr))] border-y border-line">
+          {Object.entries(specs).map(([k, v]) => (
+            <div key={k} className="py-5 pr-5">
+              <dt className="eyebrow text-muted">{k}</dt>
+              <dd className="mt-2 text-[17px] font-medium">{v}</dd>
+            </div>
+          ))}
+        </dl>
+        {lead && lead.colors.length > 0 && (
+          <div className="mt-5 flex h-10 overflow-hidden rounded-[10px]" aria-label="Palette">
+            {lead.colors.map((c) => (
+              <span key={c.hex} title={`${c.hex} ${c.pct}%`} className="flex min-w-0 items-end overflow-hidden px-2 pb-1.5 font-mono text-[10px]" style={{ background: c.hex, flexGrow: c.pct, color: labelColor(c.hex) }}>
+                {c.pct >= 8 && c.hex.toUpperCase()}
+              </span>
+            ))}
+          </div>
+        )}
+      </section>
 
       {ORDER.map((kind) => {
         const versions = history[kind];
@@ -70,6 +108,7 @@ export default async function AppPage({ params, searchParams }: {
             app={app}
             versions={versions}
             title={KINDS.find((k) => k.kind === kind)!.label}
+            noun={NOUN[kind]!}
             selected={Number(sp[kind]) || versions.length}
             hrefFor={hrefFor(kind)}
           />
@@ -77,15 +116,21 @@ export default async function AppPage({ params, searchParams }: {
       })}
 
       {related.length > 0 && (
-        <section>
-          <h2 className="mb-3 text-lg font-semibold">More in {app.genre}</h2>
-          <div className="flex flex-wrap gap-4">
+        <section className="pt-28">
+          <h2 className="mb-7 text-[32px] font-semibold tracking-[-0.035em]">More in {app.genre}</h2>
+          <ul className="grid grid-cols-[repeat(auto-fill,minmax(240px,1fr))] gap-3">
             {related.map((r) => (
-              <Link key={r.id} href={`/app/${r.id}`} className="flex items-center gap-2 rounded-xl border border-line px-3 py-2 hover:border-accent">
-                <AppIcon app={r} size={28} /><span className="text-sm">{r.name}</span>
-              </Link>
+              <li key={r.id}>
+                <Link href={`/app/${r.id}`} className="flex items-center gap-3.5 rounded-[18px] border border-line bg-panel p-3.5 transition hover:border-accent">
+                  <AppIcon app={r} size={48} />
+                  <span className="min-w-0">
+                    <span className="block truncate font-semibold">{r.name}</span>
+                    <span className="block truncate text-[13px] text-muted">{r.developer}</span>
+                  </span>
+                </Link>
+              </li>
             ))}
-          </div>
+          </ul>
         </section>
       )}
     </article>
