@@ -20,14 +20,14 @@ export default async function AppPage({ params, searchParams }: {
 }) {
   const { id } = await params;
   const sp = await searchParams;
-  const found = getApp(id);
+  const found = await getApp(id);
   if (!found) notFound();
   const { app, assets, history } = found;
   const header = assets.find((a) => a.kind === "product_header");
   const headerVersion = history.product_header?.at(-1);
   // The spec strip describes the header when there is one, else the first live screenshot.
   const lead = header ?? assets.find((a) => a.kind === "screenshot");
-  const related = relatedApps(app, 8);
+  const related = await relatedApps(app, 8);
   const storeName = app.store === "app_store" ? "App Store" : "Google Play";
 
   // Selected version per kind lives in the URL (?product_header=2) so a comparison can be linked.

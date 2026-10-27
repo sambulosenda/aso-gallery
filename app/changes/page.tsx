@@ -14,7 +14,7 @@ const TABS: { kind?: AssetKind; label: string }[] = [
 export default async function Changes({ searchParams }: { searchParams: Promise<{ kind?: string }> }) {
   const { kind } = await searchParams;
   const active = TABS.find((t) => t.kind === kind) ?? TABS[0];
-  const changes = listChanges(active.kind);
+  const changes = await listChanges(active.kind);
 
   return (
     <div>

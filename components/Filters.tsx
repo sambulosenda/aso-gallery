@@ -1,11 +1,8 @@
 "use client";
 
 import type { Filters as F } from "@/lib/data";
+import { COLORS } from "@/lib/palette";
 
-const COLORS: [string, string][] = [
-  ["ff3b30", "Red"], ["ff9500", "Orange"], ["ffcc00", "Yellow"], ["34c759", "Green"], ["00c7be", "Teal"], ["007aff", "Blue"],
-  ["5856d6", "Indigo"], ["af52de", "Purple"], ["ff2d55", "Pink"], ["a2845e", "Brown"], ["8e8e93", "Gray"], ["111111", "Black"],
-];
 const STYLES = ["Product UI", "Illustration", "Photo", "3D", "Typography"];
 const GOALS = ["Product", "Feature", "Social proof", "Offer", "Event"];
 const SORTS: [string, string][] = [["", "Newest"], ["changes", "Most changed"], ["name", "App name"]];

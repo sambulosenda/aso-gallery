@@ -2,7 +2,7 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import { AppIcon, Art } from "@/components/Art";
 import { Filters } from "@/components/Filters";
-import { genreCounts, listChanges, listEntries, type Entry, type Filters as F } from "@/lib/data";
+import { galleryStats, genreCounts, listEntries, type Entry, type Filters as F } from "@/lib/data";
 import { KINDS } from "@/lib/types";
 
 const GRID: Record<string, string> = {
@@ -19,6 +19,7 @@ const HEADLINES: Record<string, [string, string]> = {
   paywall: ["The screens that make the money.", "Coming soon."],
 };
 
+const PAGE_SIZE = 120;
 const DAY = 86_400_000;
 // "New" badge for sets that changed in the last week.
 function changedAgo(e: Entry) {
@@ -41,11 +42,19 @@ export default async function Gallery({ params, searchParams }: {
   if (!def) notFound();
 
   const raw = await searchParams;
-  const f: F = Object.fromEntries(Object.entries(raw).filter(([, v]) => v)) as F;
-  const entries = listEntries(def.kind, f);
-  const all = listEntries(def.kind, {});
-  const appCount = new Set(all.map((e) => e.appId)).size;
-  const changeCount = def.kind === "paywall" ? 0 : listChanges(def.kind).length;
+  const { page: pageParam, ...rest } = raw;
+  const f: F = Object.fromEntries(Object.entries(rest).filter(([, v]) => v)) as F;
+  const page = Math.max(1, Math.floor(Number(pageParam)) || 1);
+  const [{ entries: shown, total }, stats, genres] = await Promise.all([
+    listEntries(def.kind, f, PAGE_SIZE, (page - 1) * PAGE_SIZE),
+    galleryStats(def.kind),
+    genreCounts(def.kind),
+  ]);
+  const pageCount = Math.max(1, Math.ceil(total / PAGE_SIZE));
+  const pageHref = (n: number) => {
+    const qs = new URLSearchParams({ ...(f as Record<string, string>), ...(n > 1 ? { page: String(n) } : {}) }).toString();
+    return `/${slug}${qs ? `?${qs}` : ""}`;
+  };
   const [lead, tail] = HEADLINES[def.kind];
 
   return (
@@ -61,25 +70,25 @@ export default async function Gallery({ params, searchParams }: {
           <dt className="eyebrow text-muted">Apps</dt>
           <dt className="eyebrow text-muted">Creatives</dt>
           <dt className="eyebrow text-muted">Changes</dt>
-          <dd className="text-[32px] font-semibold tracking-[-0.03em]">{appCount.toLocaleString("en-US")}</dd>
-          <dd className="text-[32px] font-semibold tracking-[-0.03em]">{all.length.toLocaleString("en-US")}</dd>
-          <dd className="text-[32px] font-semibold tracking-[-0.03em] text-accent">{changeCount.toLocaleString("en-US")}</dd>
+          <dd className="text-[32px] font-semibold tracking-[-0.03em]">{stats.apps.toLocaleString("en-US")}</dd>
+          <dd className="text-[32px] font-semibold tracking-[-0.03em]">{stats.creatives.toLocaleString("en-US")}</dd>
+          <dd className="text-[32px] font-semibold tracking-[-0.03em] text-accent">{stats.changes.toLocaleString("en-US")}</dd>
         </dl>
       </section>
 
       <div className="z-10 md:sticky md:top-16 -mx-2 px-2 pb-2 pt-1">
-        <Filters action={`/${slug}`} f={f} genres={genreCounts(def.kind)} />
+        <Filters action={`/${slug}`} f={f} genres={genres} />
       </div>
-      <p className="mt-4 font-mono text-xs text-muted">{entries.length.toLocaleString("en-US")} results</p>
+      <p className="mt-4 font-mono text-xs text-muted">{total.toLocaleString("en-US")} results</p>
 
       <section aria-label={def.label} className="pt-6">
         {def.kind === "paywall" ? (
           <Empty>Nothing here yet. Paywalls are the next collection we&apos;re building.</Empty>
-        ) : entries.length === 0 ? (
+        ) : total === 0 ? (
           <Empty>No matches. Try loosening a filter.</Empty>
         ) : (
           <ul className={`grid ${GRID[def.kind]}`}>
-            {entries.map((e) => {
+            {shown.map((e) => {
               const ago = changedAgo(e);
               return (
                 <li key={e.id}>
@@ -101,6 +110,13 @@ export default async function Gallery({ params, searchParams }: {
               );
             })}
           </ul>
+        )}
+        {pageCount > 1 && (
+          <nav aria-label="Pagination" className="mt-14 flex items-center justify-center gap-6 font-mono text-xs text-soft">
+            {page > 1 ? <Link href={pageHref(page - 1)} className="rounded-full border border-edge px-4 py-2 hover:text-fg">← Prev</Link> : <span className="px-4 py-2 opacity-40">← Prev</span>}
+            <span>Page {page} of {pageCount.toLocaleString("en-US")}</span>
+            {page < pageCount ? <Link href={pageHref(page + 1)} className="rounded-full border border-edge px-4 py-2 hover:text-fg">Next →</Link> : <span className="px-4 py-2 opacity-40">Next →</span>}
+          </nav>
         )}
       </section>
     </>
