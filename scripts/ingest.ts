@@ -4,6 +4,7 @@
 //   npm run ingest                 # all apps in data/tracked.json
 //   npm run ingest -- --app 571800810 --country us
 //   npm run ingest -- --dry-run    # print what changed without writing
+//   npm run ingest -- --sample 40  # 40 apps spread across the tracked list
 //
 // Run it once a day (see .github/workflows/ingest.yml) to build history.
 import fs from "node:fs";
@@ -17,11 +18,17 @@ import { applyCapture, type CapturedImage } from "../lib/versioning";
 type Tracked = { id: string; country: string };
 
 const MAX_SCREENSHOTS = 10;
+const CONCURRENCY = 4;
 
 function args() {
   const argv = process.argv.slice(2);
   const get = (flag: string) => (argv.includes(flag) ? argv[argv.indexOf(flag) + 1] : undefined);
-  return { app: get("--app"), country: get("--country") ?? "us", dryRun: argv.includes("--dry-run") };
+  return {
+    app: get("--app"),
+    country: get("--country") ?? "us",
+    dryRun: argv.includes("--dry-run"),
+    sample: Number(get("--sample")) || 0,
+  };
 }
 
 function slug(s: string) {
@@ -92,22 +99,30 @@ async function ingestOne(catalog: Catalog, t: Tracked, today: string): Promise<s
 }
 
 async function main() {
-  const { app, country, dryRun } = args();
+  const { app, country, dryRun, sample } = args();
   const trackedFile = path.join(process.cwd(), "data", "tracked.json");
-  const tracked: Tracked[] = app ? [{ id: app, country }] : JSON.parse(fs.readFileSync(trackedFile, "utf8")).apps;
+  const all: Tracked[] = app ? [{ id: app, country }] : JSON.parse(fs.readFileSync(trackedFile, "utf8")).apps;
+  const step = sample && all.length > sample ? all.length / sample : 1;
+  const tracked = step > 1 ? Array.from({ length: sample }, (_, i) => all[Math.floor(i * step)]) : all;
   const catalog: Catalog = loadCatalog() ?? { updatedAt: "", apps: [], assets: [] };
   const today = new Date().toISOString().slice(0, 10);
 
+  // A few apps at a time. Safe because ingestOne only touches the catalog
+  // synchronously, after its awaits.
   let failures = 0;
-  for (const t of tracked) {
-    try {
-      const log = await ingestOne(catalog, t, today);
-      console.log(log.length ? log.join("\n") : `${t.id}: no change`);
-    } catch (e) {
-      failures++;
-      console.error(`${t.id}: failed (${(e as Error).message})`);
+  const queue = [...tracked];
+  const worker = async () => {
+    for (let t = queue.shift(); t; t = queue.shift()) {
+      try {
+        const log = await ingestOne(catalog, t, today);
+        console.log(log.length ? log.join("\n") : `${t.id}: no change`);
+      } catch (e) {
+        failures++;
+        console.error(`${t.id}: failed (${(e as Error).message})`);
+      }
     }
-  }
+  };
+  await Promise.all(Array.from({ length: CONCURRENCY }, worker));
 
   catalog.updatedAt = new Date().toISOString();
   if (!dryRun) saveCatalog(catalog);
