@@ -1,25 +1,6765 @@
 {
   "_comment": "App Store apps captured by `npm run ingest`. id = numeric App Store id, country = storefront.",
   "apps": [
-    { "id": "571800810", "country": "us", "note": "Calm" },
-    { "id": "493145008", "country": "us", "note": "Headspace" },
-    { "id": "570060128", "country": "us", "note": "Duolingo" },
-    { "id": "324684580", "country": "us", "note": "Spotify" },
-    { "id": "401626263", "country": "us", "note": "Airbnb" },
-    { "id": "1232780281", "country": "us", "note": "Notion" },
-    { "id": "426826309", "country": "us", "note": "Strava" },
-    { "id": "932493382", "country": "gb", "note": "Revolut" },
-    { "id": "1052238659", "country": "gb", "note": "Monzo" },
-    { "id": "612261027", "country": "us", "note": "Wise" },
-    { "id": "1038369065", "country": "us", "note": "Flo" },
-    { "id": "547702041", "country": "us", "note": "Tinder" },
-    { "id": "429047995", "country": "us", "note": "Pinterest" },
-    { "id": "6448311069", "country": "us", "note": "ChatGPT" },
-    { "id": "297368629", "country": "us", "note": "Lose It!" },
-    { "id": "284993459", "country": "us", "note": "Shazam" },
-    { "id": "904237743", "country": "us", "note": "Things 3" },
-    { "id": "553834731", "country": "us", "note": "Candy Crush Saga" },
-    { "id": "1053012308", "country": "us", "note": "Clash Royale" },
-    { "id": "1459645446", "country": "us", "note": "BeReal" }
+    {
+      "id": "571800810",
+      "country": "us",
+      "note": "Calm"
+    },
+    {
+      "id": "493145008",
+      "country": "us",
+      "note": "Headspace"
+    },
+    {
+      "id": "570060128",
+      "country": "us",
+      "note": "Duolingo"
+    },
+    {
+      "id": "324684580",
+      "country": "us",
+      "note": "Spotify"
+    },
+    {
+      "id": "401626263",
+      "country": "us",
+      "note": "Airbnb"
+    },
+    {
+      "id": "1232780281",
+      "country": "us",
+      "note": "Notion"
+    },
+    {
+      "id": "426826309",
+      "country": "us",
+      "note": "Strava"
+    },
+    {
+      "id": "932493382",
+      "country": "gb",
+      "note": "Revolut"
+    },
+    {
+      "id": "1052238659",
+      "country": "gb",
+      "note": "Monzo"
+    },
+    {
+      "id": "612261027",
+      "country": "us",
+      "note": "Wise"
+    },
+    {
+      "id": "1038369065",
+      "country": "us",
+      "note": "Flo"
+    },
+    {
+      "id": "547702041",
+      "country": "us",
+      "note": "Tinder"
+    },
+    {
+      "id": "429047995",
+      "country": "us",
+      "note": "Pinterest"
+    },
+    {
+      "id": "6448311069",
+      "country": "us",
+      "note": "ChatGPT"
+    },
+    {
+      "id": "297368629",
+      "country": "us",
+      "note": "Lose It!"
+    },
+    {
+      "id": "284993459",
+      "country": "us",
+      "note": "Shazam"
+    },
+    {
+      "id": "904237743",
+      "country": "us",
+      "note": "Things 3"
+    },
+    {
+      "id": "553834731",
+      "country": "us",
+      "note": "Candy Crush Saga"
+    },
+    {
+      "id": "1053012308",
+      "country": "us",
+      "note": "Clash Royale"
+    },
+    {
+      "id": "1459645446",
+      "country": "us",
+      "note": "BeReal"
+    },
+    {
+      "id": "969093402",
+      "country": "us",
+      "note": "Lingvist: Learn Languages Fast"
+    },
+    {
+      "id": "6817453245",
+      "country": "us",
+      "note": "Shanel Nails"
+    },
+    {
+      "id": "1489084813",
+      "country": "us",
+      "note": "Chalkboard Sports"
+    },
+    {
+      "id": "6820892501",
+      "country": "us",
+      "note": "Hagiazomai: Being Made Holy"
+    },
+    {
+      "id": "1259909228",
+      "country": "us",
+      "note": "Loopsie: AI Image Effects"
+    },
+    {
+      "id": "6739932023",
+      "country": "ca",
+      "note": "Deal Dish: Grocery Deals"
+    },
+    {
+      "id": "6748402670",
+      "country": "us",
+      "note": "Travel Packing List: Bagio"
+    },
+    {
+      "id": "6754575475",
+      "country": "us",
+      "note": "Bible Lock: Put God First"
+    },
+    {
+      "id": "1442848883",
+      "country": "us",
+      "note": "Driving Theory Test Kit | RAC"
+    },
+    {
+      "id": "1597646270",
+      "country": "us",
+      "note": "Jot Down: Sticky Notes Widget"
+    },
+    {
+      "id": "6759532747",
+      "country": "us",
+      "note": "Éist: PDF/Ebook to Audiobook"
+    },
+    {
+      "id": "6746379980",
+      "country": "us",
+      "note": "Sprinter"
+    },
+    {
+      "id": "6817395917",
+      "country": "us",
+      "note": "Heartbeat: Algo Bot Monitor"
+    },
+    {
+      "id": "1041728482",
+      "country": "us",
+      "note": "Emo Dress Up game"
+    },
+    {
+      "id": "6737635309",
+      "country": "us",
+      "note": "Cookbook Manage & save recipes"
+    },
+    {
+      "id": "1105332761",
+      "country": "us",
+      "note": "Fddb AI Calorie Counter & Diet"
+    },
+    {
+      "id": "407558537",
+      "country": "us",
+      "note": "Capital One Mobile"
+    },
+    {
+      "id": "1638139403",
+      "country": "us",
+      "note": "Block Crush！"
+    },
+    {
+      "id": "6762513550",
+      "country": "au",
+      "note": "MediRemind: Medication Tracker"
+    },
+    {
+      "id": "6772790227",
+      "country": "us",
+      "note": "NowThis: Tasks for Nextcloud"
+    },
+    {
+      "id": "6799757737",
+      "country": "us",
+      "note": "Idol World Manager"
+    },
+    {
+      "id": "6806405930",
+      "country": "us",
+      "note": "Backtalk: Reverse Audio Game"
+    },
+    {
+      "id": "6754014472",
+      "country": "us",
+      "note": "Double Tile!"
+    },
+    {
+      "id": "894649641",
+      "country": "us",
+      "note": "Dodo Pizza Delivery"
+    },
+    {
+      "id": "6822089907",
+      "country": "us",
+      "note": "Focus Up: NFC App Blocker"
+    },
+    {
+      "id": "6768593043",
+      "country": "us",
+      "note": "BlinkDrama - Short Dramas"
+    },
+    {
+      "id": "6743385713",
+      "country": "us",
+      "note": "Wool Crush™-Escape Traffic Jam"
+    },
+    {
+      "id": "625740630",
+      "country": "us",
+      "note": "Hairtechapp - Cutting Diagrams"
+    },
+    {
+      "id": "1380362212",
+      "country": "us",
+      "note": "Inkitt Galatea: Audio & eBooks"
+    },
+    {
+      "id": "6445905219",
+      "country": "us",
+      "note": "DramaBox - Stream Drama Shorts"
+    },
+    {
+      "id": "6730118317",
+      "country": "us",
+      "note": "O3: Study With Friends"
+    },
+    {
+      "id": "6746954769",
+      "country": "us",
+      "note": "SwingDraw: Golf Swing Analyzer"
+    },
+    {
+      "id": "6760971442",
+      "country": "gb",
+      "note": "Michael: HGV Nav"
+    },
+    {
+      "id": "1434505322",
+      "country": "us",
+      "note": "Harry Potter: Puzzles & Spells"
+    },
+    {
+      "id": "6822342609",
+      "country": "us",
+      "note": "Multiply Dojo"
+    },
+    {
+      "id": "1281251210",
+      "country": "us",
+      "note": "Transit & Subway Times: Momego"
+    },
+    {
+      "id": "6759816401",
+      "country": "us",
+      "note": "Tottli: Baby & Pumping Tracker"
+    },
+    {
+      "id": "6467868797",
+      "country": "us",
+      "note": "Dabble - Real Money Pick 'Em"
+    },
+    {
+      "id": "879310530",
+      "country": "us",
+      "note": "Bustime: Bus Times & Routes"
+    },
+    {
+      "id": "1447478883",
+      "country": "us",
+      "note": "Sleep"
+    },
+    {
+      "id": "1645064004",
+      "country": "gb",
+      "note": "ONO - Webtoon Manga Webcomics"
+    },
+    {
+      "id": "6463805689",
+      "country": "us",
+      "note": "theScore Bet Sportsbook Casino"
+    },
+    {
+      "id": "6782259913",
+      "country": "us",
+      "note": "ARITAKA"
+    },
+    {
+      "id": "6759608688",
+      "country": "us",
+      "note": "Pokermancer"
+    },
+    {
+      "id": "951627670",
+      "country": "jp",
+      "note": "ドラゴンボールZ ドッカンバトル"
+    },
+    {
+      "id": "497714887",
+      "country": "us",
+      "note": "WebSSH - Sysadmin Toolbox"
+    },
+    {
+      "id": "6736470264",
+      "country": "us",
+      "note": "Lipi Epics: Mahabharat Ramayan"
+    },
+    {
+      "id": "6751270213",
+      "country": "us",
+      "note": "Hidden Object Games: Seek It"
+    },
+    {
+      "id": "6789858847",
+      "country": "us",
+      "note": "Toto: Visual Novel Player"
+    },
+    {
+      "id": "1397424959",
+      "country": "us",
+      "note": "CodeSnack IDE: AI Coding Agent"
+    },
+    {
+      "id": "1360604259",
+      "country": "us",
+      "note": "Somnus"
+    },
+    {
+      "id": "6817490072",
+      "country": "us",
+      "note": "Vineyard Director"
+    },
+    {
+      "id": "1436000800",
+      "country": "us",
+      "note": "Songstats: Music Analytics"
+    },
+    {
+      "id": "6818105588",
+      "country": "us",
+      "note": "Keeuc"
+    },
+    {
+      "id": "1348317163",
+      "country": "us",
+      "note": "MarginNote 3"
+    },
+    {
+      "id": "6813841355",
+      "country": "us",
+      "note": "Toastie: grilled cheese game"
+    },
+    {
+      "id": "6763808445",
+      "country": "us",
+      "note": "Seekquel - Book Tracker"
+    },
+    {
+      "id": "1073967253",
+      "country": "us",
+      "note": "Dunkest - Fantasy Basketball"
+    },
+    {
+      "id": "6781525746",
+      "country": "us",
+      "note": "Zoodoku！"
+    },
+    {
+      "id": "1074343060",
+      "country": "us",
+      "note": "SPYPOINT"
+    },
+    {
+      "id": "6751567683",
+      "country": "us",
+      "note": "ZYMIX: Chat, Video & AI"
+    },
+    {
+      "id": "526641427",
+      "country": "us",
+      "note": "Flow Free"
+    },
+    {
+      "id": "286225933",
+      "country": "us",
+      "note": "Radio Javan"
+    },
+    {
+      "id": "1597264549",
+      "country": "us",
+      "note": "Kiprun Pacer Running"
+    },
+    {
+      "id": "432321030",
+      "country": "us",
+      "note": "ProCalc.app: Margin, BreakEven"
+    },
+    {
+      "id": "1639875485",
+      "country": "us",
+      "note": "Simply Draw: Learn to Draw"
+    },
+    {
+      "id": "742044692",
+      "country": "us",
+      "note": "Flipkart - Online Shopping App"
+    },
+    {
+      "id": "6569249182",
+      "country": "us",
+      "note": "Amore Live Video Chat & Meet"
+    },
+    {
+      "id": "375613508",
+      "country": "us",
+      "note": "Medical Abbreviations: Quick"
+    },
+    {
+      "id": "1044878258",
+      "country": "us",
+      "note": "ZeeMee: Meet College Friends"
+    },
+    {
+      "id": "6775727338",
+      "country": "us",
+      "note": "Metal Slug Rush"
+    },
+    {
+      "id": "6812221718",
+      "country": "us",
+      "note": "PlanTheMagic for WDW"
+    },
+    {
+      "id": "6766764371",
+      "country": "us",
+      "note": "RecipeRun: Meal & Grocery List"
+    },
+    {
+      "id": "6479175758",
+      "country": "us",
+      "note": "Tempest 3 - SSH, RDP & Mosh"
+    },
+    {
+      "id": "1457398900",
+      "country": "us",
+      "note": "Fussy Vegan Pro"
+    },
+    {
+      "id": "977016099",
+      "country": "us",
+      "note": "Little Stories: Bedtime Books"
+    },
+    {
+      "id": "6504279468",
+      "country": "us",
+      "note": "Differences - Find & Spot It"
+    },
+    {
+      "id": "6792484651",
+      "country": "us",
+      "note": "ArcFlush: Roguelike Solitaire"
+    },
+    {
+      "id": "1054271011",
+      "country": "us",
+      "note": "Letterboxd"
+    },
+    {
+      "id": "6755781046",
+      "country": "fr",
+      "note": "Tessan"
+    },
+    {
+      "id": "6760089163",
+      "country": "us",
+      "note": "Mahjong Master-Fun Puzzle Game"
+    },
+    {
+      "id": "985702286",
+      "country": "us",
+      "note": "International Calling - Yolla"
+    },
+    {
+      "id": "313181499",
+      "country": "us",
+      "note": "Cookiza!"
+    },
+    {
+      "id": "1180554775",
+      "country": "us",
+      "note": "ANTON: Preschool - Grade 8"
+    },
+    {
+      "id": "6760799374",
+      "country": "us",
+      "note": "sharespot: social journal"
+    },
+    {
+      "id": "6761265182",
+      "country": "us",
+      "note": "AgentsRoom: Dev Remote Control"
+    },
+    {
+      "id": "349160522",
+      "country": "us",
+      "note": "Zoosk - Social Dating App"
+    },
+    {
+      "id": "1605760107",
+      "country": "de",
+      "note": "Woolsocks: Cashback & Sparen"
+    },
+    {
+      "id": "6811708909",
+      "country": "us",
+      "note": "Fermi: Daily Guessing Game"
+    },
+    {
+      "id": "6761394160",
+      "country": "us",
+      "note": "ToneAdapt - Guitar Tone Match"
+    },
+    {
+      "id": "6821429434",
+      "country": "us",
+      "note": "Gusbogen"
+    },
+    {
+      "id": "1493256837",
+      "country": "us",
+      "note": "Audio Editor - Music editor"
+    },
+    {
+      "id": "595287172",
+      "country": "us",
+      "note": "Hinge Dating App: Match & Date"
+    },
+    {
+      "id": "1114471030",
+      "country": "us",
+      "note": "Tennis TV - Live Streaming"
+    },
+    {
+      "id": "6801906359",
+      "country": "us",
+      "note": "STL Viewer: 3D Model & 3MF"
+    },
+    {
+      "id": "331786748",
+      "country": "us",
+      "note": "CNN: Live & Breaking News"
+    },
+    {
+      "id": "1276099340",
+      "country": "us",
+      "note": "Jurafuchs - Dein Jura-Tutor"
+    },
+    {
+      "id": "6757511306",
+      "country": "us",
+      "note": "My Mole"
+    },
+    {
+      "id": "1293634699",
+      "country": "us",
+      "note": "Mario Kart Tour"
+    },
+    {
+      "id": "1436038639",
+      "country": "us",
+      "note": "Jewels of Rome・Match 3 Gems"
+    },
+    {
+      "id": "498477945",
+      "country": "us",
+      "note": "Moovit: Bus & Transit Tracker"
+    },
+    {
+      "id": "542238652",
+      "country": "us",
+      "note": "Fishbox - Smart Fishing App"
+    },
+    {
+      "id": "6758561719",
+      "country": "au",
+      "note": "DiscountTrolley Grocery Prices"
+    },
+    {
+      "id": "383457673",
+      "country": "us",
+      "note": "Plex: Find Movies and TV Shows"
+    },
+    {
+      "id": "1671991909",
+      "country": "us",
+      "note": "Math Puzzle Games - Crossmath®"
+    },
+    {
+      "id": "6761165854",
+      "country": "tr",
+      "note": "3D Bastır: 3D Baskı Hizmeti"
+    },
+    {
+      "id": "1668441657",
+      "country": "us",
+      "note": "tabii"
+    },
+    {
+      "id": "1511285118",
+      "country": "us",
+      "note": "Remove Objects:AI Photo Editor"
+    },
+    {
+      "id": "6759159660",
+      "country": "us",
+      "note": "Reference Board: Mood Board"
+    },
+    {
+      "id": "6797263135",
+      "country": "us",
+      "note": "Heeler for herdr"
+    },
+    {
+      "id": "1030548464",
+      "country": "us",
+      "note": "hocus."
+    },
+    {
+      "id": "961390574",
+      "country": "us",
+      "note": "CARROT Weather: Alerts & Radar"
+    },
+    {
+      "id": "6783832613",
+      "country": "au",
+      "note": "Tallo: Compare Grocery Prices"
+    },
+    {
+      "id": "6447127454",
+      "country": "us",
+      "note": "Shot Pattern - Golf GPS"
+    },
+    {
+      "id": "6739246483",
+      "country": "us",
+      "note": "Hole Em All: Collect Master"
+    },
+    {
+      "id": "985645803",
+      "country": "us",
+      "note": "Juventus"
+    },
+    {
+      "id": "422667065",
+      "country": "us",
+      "note": "Tiny Tower: Tap Idle Evolution"
+    },
+    {
+      "id": "6763641767",
+      "country": "us",
+      "note": "OpenClient for OpenCode"
+    },
+    {
+      "id": "1552153525",
+      "country": "us",
+      "note": "Idle Lumber Empire - Wood Game"
+    },
+    {
+      "id": "1617391485",
+      "country": "us",
+      "note": "Block Blast！"
+    },
+    {
+      "id": "623700355",
+      "country": "us",
+      "note": "CARROT Alarm - Talking Alarm Clock"
+    },
+    {
+      "id": "6819023372",
+      "country": "us",
+      "note": "Nojo"
+    },
+    {
+      "id": "445338486",
+      "country": "us",
+      "note": "LOVOO - Dating App & Chat App"
+    },
+    {
+      "id": "1329922018",
+      "country": "us",
+      "note": "Invitation Maker: Cards & RSVP"
+    },
+    {
+      "id": "521559643",
+      "country": "us",
+      "note": "הארץ - חדשות | Haaretz"
+    },
+    {
+      "id": "874656917",
+      "country": "us",
+      "note": "I am - Daily Affirmations"
+    },
+    {
+      "id": "6762599357",
+      "country": "us",
+      "note": "Car AI: Modify, Tune & Design"
+    },
+    {
+      "id": "935307149",
+      "country": "us",
+      "note": "Emirates"
+    },
+    {
+      "id": "6468901311",
+      "country": "us",
+      "note": "Enjoy - AI Town"
+    },
+    {
+      "id": "6636554362",
+      "country": "us",
+      "note": "Where is My Train: Live Status"
+    },
+    {
+      "id": "6792333905",
+      "country": "us",
+      "note": "Hnefatafl - The Viking Game"
+    },
+    {
+      "id": "1482271331",
+      "country": "us",
+      "note": "dua.com - Albanian Dating app"
+    },
+    {
+      "id": "1524518584",
+      "country": "us",
+      "note": "Mr. Traffic"
+    },
+    {
+      "id": "963524356",
+      "country": "us",
+      "note": "Light DJ Pro for Smart Lights"
+    },
+    {
+      "id": "6799098911",
+      "country": "us",
+      "note": "Oversummer Survival"
+    },
+    {
+      "id": "6776477513",
+      "country": "us",
+      "note": "PetMira-Cat Translator&AI Care"
+    },
+    {
+      "id": "1542571008",
+      "country": "us",
+      "note": "Gauth: AI Study Companion"
+    },
+    {
+      "id": "667728512",
+      "country": "us",
+      "note": "Game of War - Fire Age"
+    },
+    {
+      "id": "6820185505",
+      "country": "us",
+      "note": "Splitbillo: Group Expenses"
+    },
+    {
+      "id": "6818556612",
+      "country": "us",
+      "note": "Spitball: Baseball Roguelike"
+    },
+    {
+      "id": "1529178266",
+      "country": "us",
+      "note": "Boot That Ball"
+    },
+    {
+      "id": "469960709",
+      "country": "us",
+      "note": "Bejeweled Blitz"
+    },
+    {
+      "id": "1620306376",
+      "country": "ca",
+      "note": "Jackpot City Real Money Casino"
+    },
+    {
+      "id": "960804043",
+      "country": "us",
+      "note": "LineLeap"
+    },
+    {
+      "id": "1595070966",
+      "country": "us",
+      "note": "ThemeMe: Top Widgets & Themes"
+    },
+    {
+      "id": "6753178980",
+      "country": "ca",
+      "note": "Hard Rock Bet Casino"
+    },
+    {
+      "id": "6587576438",
+      "country": "us",
+      "note": "setlog - friends camera"
+    },
+    {
+      "id": "380732645",
+      "country": "us",
+      "note": "Wheely"
+    },
+    {
+      "id": "6473152241",
+      "country": "us",
+      "note": "Goods 3D Sorting: Match Games"
+    },
+    {
+      "id": "531324961",
+      "country": "us",
+      "note": "Cleartrip Flights, Hotels, Bus"
+    },
+    {
+      "id": "6754669130",
+      "country": "us",
+      "note": "LitBuy"
+    },
+    {
+      "id": "6822194774",
+      "country": "us",
+      "note": "TypeDraw"
+    },
+    {
+      "id": "299490481",
+      "country": "us",
+      "note": "Japan Transit Planner - Travel"
+    },
+    {
+      "id": "1454762989",
+      "country": "us",
+      "note": "Instories: AI Photo & Video"
+    },
+    {
+      "id": "1120304868",
+      "country": "us",
+      "note": "Da Vinci Eye: AR Trace & Draw"
+    },
+    {
+      "id": "1492978794",
+      "country": "us",
+      "note": "Sudoku Puzzle - Brain Games"
+    },
+    {
+      "id": "687798859",
+      "country": "us",
+      "note": "Terminology"
+    },
+    {
+      "id": "6744812012",
+      "country": "us",
+      "note": "X-Clash: Survival Challenge"
+    },
+    {
+      "id": "6755601332",
+      "country": "us",
+      "note": "Spelaren"
+    },
+    {
+      "id": "1564391515",
+      "country": "us",
+      "note": "Solitaire - Card Games Classic"
+    },
+    {
+      "id": "1625234008",
+      "country": "us",
+      "note": "DMV Practice Test 2026 myDMV"
+    },
+    {
+      "id": "1055376602",
+      "country": "us",
+      "note": "Last Horizon"
+    },
+    {
+      "id": "6754558455",
+      "country": "us",
+      "note": "Marble Sort! - Color Puzzle"
+    },
+    {
+      "id": "495106186",
+      "country": "us",
+      "note": "Decathlon Coach: Sport/Running"
+    },
+    {
+      "id": "6476751297",
+      "country": "us",
+      "note": "Fabuly: Classic Audiobooks"
+    },
+    {
+      "id": "1431593126",
+      "country": "jp",
+      "note": "タイドグラフBI /全国の釣り場ごとの潮見表"
+    },
+    {
+      "id": "1014949597",
+      "country": "us",
+      "note": "AUTODOC – shop for car parts"
+    },
+    {
+      "id": "6757678516",
+      "country": "us",
+      "note": "DriveGo: Scenic Route Planner"
+    },
+    {
+      "id": "6761208323",
+      "country": "us",
+      "note": "CheerSync"
+    },
+    {
+      "id": "6819074568",
+      "country": "us",
+      "note": "Pip Count Camera"
+    },
+    {
+      "id": "1522204991",
+      "country": "au",
+      "note": "FuelRadar: Petrol Prices & Map"
+    },
+    {
+      "id": "6447954935",
+      "country": "us",
+      "note": "Eolas Medical"
+    },
+    {
+      "id": "6737214802",
+      "country": "us",
+      "note": "Mini Games: Calm & Chill"
+    },
+    {
+      "id": "560442518",
+      "country": "us",
+      "note": "Smiling Mind: Mental Wellbeing"
+    },
+    {
+      "id": "6747580630",
+      "country": "us",
+      "note": "AI Video Generator - LUHM"
+    },
+    {
+      "id": "308368164",
+      "country": "us",
+      "note": "Proloquo2Go AAC"
+    },
+    {
+      "id": "6781227577",
+      "country": "us",
+      "note": "Ziggy: Learn ASL Sign Language"
+    },
+    {
+      "id": "6780274963",
+      "country": "us",
+      "note": "Neuf - Devine 9"
+    },
+    {
+      "id": "6746756746",
+      "country": "us",
+      "note": "Artie: Learn Piano with AI"
+    },
+    {
+      "id": "6736654449",
+      "country": "us",
+      "note": "Micro Learning - SmartyMe"
+    },
+    {
+      "id": "456355158",
+      "country": "us",
+      "note": "Doodle Jump - Insanely Good!"
+    },
+    {
+      "id": "1513265764",
+      "country": "us",
+      "note": "Time Princess: Pearl Girl"
+    },
+    {
+      "id": "6761845923",
+      "country": "us",
+      "note": "Stamp Solitaire: Card Matching"
+    },
+    {
+      "id": "433372825",
+      "country": "us",
+      "note": "CroForecast"
+    },
+    {
+      "id": "1530345628",
+      "country": "us",
+      "note": "Hot Springs Story2"
+    },
+    {
+      "id": "881822672",
+      "country": "us",
+      "note": "NLZIET | Online tv-kijken"
+    },
+    {
+      "id": "424310544",
+      "country": "us",
+      "note": "SpoofCard - Privacy Protected"
+    },
+    {
+      "id": "544018782",
+      "country": "us",
+      "note": "Backgammon Classic Board Live"
+    },
+    {
+      "id": "1083229791",
+      "country": "us",
+      "note": "KleptoCats"
+    },
+    {
+      "id": "1531250914",
+      "country": "us",
+      "note": "Clusterduck"
+    },
+    {
+      "id": "963034692",
+      "country": "us",
+      "note": "Streaks"
+    },
+    {
+      "id": "1499634352",
+      "country": "us",
+      "note": "Rate - APA Calculator"
+    },
+    {
+      "id": "6443649573",
+      "country": "us",
+      "note": "Meal Planner • Grocery List"
+    },
+    {
+      "id": "6806660417",
+      "country": "us",
+      "note": "Angelbuch: Fishing in Germany"
+    },
+    {
+      "id": "1291728228",
+      "country": "us",
+      "note": "Podme - Podcasts & Audiobooks"
+    },
+    {
+      "id": "6741860812",
+      "country": "us",
+      "note": "Cash Legends™: Win Real Money"
+    },
+    {
+      "id": "345569411",
+      "country": "us",
+      "note": "NZZ News"
+    },
+    {
+      "id": "6817901909",
+      "country": "us",
+      "note": "Poker Blinds: Tournament Clock"
+    },
+    {
+      "id": "6736486556",
+      "country": "us",
+      "note": "AirlineTrivia"
+    },
+    {
+      "id": "6762776406",
+      "country": "us",
+      "note": "Tap Tile!"
+    },
+    {
+      "id": "6762881597",
+      "country": "us",
+      "note": "AVR Maestro For Denon Marantz"
+    },
+    {
+      "id": "1624701477",
+      "country": "us",
+      "note": "Praktika – AI Language Tutor"
+    },
+    {
+      "id": "877559971",
+      "country": "us",
+      "note": "Matching Pairs • Concentration"
+    },
+    {
+      "id": "6746759222",
+      "country": "us",
+      "note": "CalFix – AI Calorie Tracker"
+    },
+    {
+      "id": "6762030901",
+      "country": "us",
+      "note": "Talko: Learn English with AI"
+    },
+    {
+      "id": "1529174508",
+      "country": "us",
+      "note": "Kahoot! Numbers by DragonBox"
+    },
+    {
+      "id": "6788269700",
+      "country": "us",
+      "note": "Cobalt: Flight Sim Companion"
+    },
+    {
+      "id": "1541825573",
+      "country": "us",
+      "note": "TrackMyStack Net Worth Tracker"
+    },
+    {
+      "id": "1470373330",
+      "country": "us",
+      "note": "Remini - AI Photo Enhancer"
+    },
+    {
+      "id": "6815222000",
+      "country": "fr",
+      "note": "Wikicards : Wiki TCG"
+    },
+    {
+      "id": "450775137",
+      "country": "it",
+      "note": "Subito.it - Vendi di tutto"
+    },
+    {
+      "id": "6761426494",
+      "country": "us",
+      "note": "Panda Zhuyin"
+    },
+    {
+      "id": "6817730363",
+      "country": "us",
+      "note": "Rechenwerk: Hex & Binary Calc"
+    },
+    {
+      "id": "1504000687",
+      "country": "us",
+      "note": "2 Players 1 Device: Tabletop"
+    },
+    {
+      "id": "6642699503",
+      "country": "us",
+      "note": "Invoice Maker for Contractors"
+    },
+    {
+      "id": "6740606431",
+      "country": "us",
+      "note": "Live Translator - AI Translate"
+    },
+    {
+      "id": "6760296578",
+      "country": "us",
+      "note": "Bidstitch: Vintage Scanner"
+    },
+    {
+      "id": "1476836651",
+      "country": "us",
+      "note": "Solitaire - Classic Card Game⁎"
+    },
+    {
+      "id": "6816841825",
+      "country": "us",
+      "note": "ZeroNote - Private Notes"
+    },
+    {
+      "id": "1603892248",
+      "country": "us",
+      "note": "Collectr - TCG Collector App"
+    },
+    {
+      "id": "1558803930",
+      "country": "us",
+      "note": "Matching Story - Merge & Match"
+    },
+    {
+      "id": "6791110153",
+      "country": "us",
+      "note": "Quack Sort: Loop Puzzle"
+    },
+    {
+      "id": "1209815023",
+      "country": "us",
+      "note": "Speechify – Text to Speech PDF"
+    },
+    {
+      "id": "6756274297",
+      "country": "us",
+      "note": "MakerStats 3D Printing Tracker"
+    },
+    {
+      "id": "6462700928",
+      "country": "us",
+      "note": "BePadel: Padel Live Scores"
+    },
+    {
+      "id": "1555489854",
+      "country": "us",
+      "note": "Dex - for TCG Collectors"
+    },
+    {
+      "id": "6636468891",
+      "country": "us",
+      "note": "InstantTranslator:AI Translate"
+    },
+    {
+      "id": "6760007897",
+      "country": "ca",
+      "note": "Betinia: Casino & Betting"
+    },
+    {
+      "id": "835880015",
+      "country": "tr",
+      "note": "TV+ Movies, Series & Live TV"
+    },
+    {
+      "id": "286906691",
+      "country": "us",
+      "note": "Lifesum: AI Calorie Counter"
+    },
+    {
+      "id": "6502667203",
+      "country": "us",
+      "note": "Crios: Network Scanner & Map"
+    },
+    {
+      "id": "1062583712",
+      "country": "us",
+      "note": "Music Library Tracker"
+    },
+    {
+      "id": "1621538736",
+      "country": "au",
+      "note": "LMCT+"
+    },
+    {
+      "id": "6742160154",
+      "country": "ca",
+      "note": "theScore Casino"
+    },
+    {
+      "id": "546508631",
+      "country": "fr",
+      "note": "Q de chouette"
+    },
+    {
+      "id": "1328806990",
+      "country": "us",
+      "note": "Bear Focus Timer: Work & Study"
+    },
+    {
+      "id": "6740246597",
+      "country": "us",
+      "note": "Acorn TCG Card Scanner App"
+    },
+    {
+      "id": "1239522573",
+      "country": "us",
+      "note": "Speech Blubs: Language Therapy"
+    },
+    {
+      "id": "6760133687",
+      "country": "us",
+      "note": "Ultimate Fire Link™ Slots"
+    },
+    {
+      "id": "6775568333",
+      "country": "us",
+      "note": "Mythic Survivors"
+    },
+    {
+      "id": "1465535138",
+      "country": "us",
+      "note": "Stock Alarm - Alerts, Tracker"
+    },
+    {
+      "id": "1075872386",
+      "country": "us",
+      "note": "Mr. Crab 2"
+    },
+    {
+      "id": "1620311411",
+      "country": "ca",
+      "note": "Ruby Fortune Casino Real Money"
+    },
+    {
+      "id": "6759910797",
+      "country": "us",
+      "note": "OpenLens- OpenCode client"
+    },
+    {
+      "id": "775402833",
+      "country": "us",
+      "note": "WWE SuperCard - Wrestling Game"
+    },
+    {
+      "id": "6503387382",
+      "country": "us",
+      "note": "Haven - Bible Chat"
+    },
+    {
+      "id": "955254528",
+      "country": "us",
+      "note": "Flush Toilet Finder & Map"
+    },
+    {
+      "id": "6752574003",
+      "country": "us",
+      "note": "MTD Companion"
+    },
+    {
+      "id": "6818950468",
+      "country": "us",
+      "note": "Dropin - Check-In App"
+    },
+    {
+      "id": "1586762439",
+      "country": "us",
+      "note": "Auto Translate for Safari"
+    },
+    {
+      "id": "6796368335",
+      "country": "us",
+      "note": "Booktionary: Camera Dictionary"
+    },
+    {
+      "id": "6803436951",
+      "country": "ca",
+      "note": "888 Alberta - Card Games"
+    },
+    {
+      "id": "1573431275",
+      "country": "us",
+      "note": "Crew Currency"
+    },
+    {
+      "id": "1613395700",
+      "country": "us",
+      "note": "Finale Keyboard"
+    },
+    {
+      "id": "553663691",
+      "country": "us",
+      "note": "99: Rides, Food, Pay"
+    },
+    {
+      "id": "6810896336",
+      "country": "us",
+      "note": "Word Terrarium"
+    },
+    {
+      "id": "6737511323",
+      "country": "us",
+      "note": "SAKAMOTO DAYS デンジャラスパズル(サカパズ)"
+    },
+    {
+      "id": "553573601",
+      "country": "us",
+      "note": "Xtreme Slots Vegas Casino Game"
+    },
+    {
+      "id": "1190148494",
+      "country": "us",
+      "note": "Jillian Michaels | Fitness App"
+    },
+    {
+      "id": "6791556079",
+      "country": "us",
+      "note": "Color Hunt: Photo Scrapbook"
+    },
+    {
+      "id": "6797884645",
+      "country": "us",
+      "note": "JAM Legio"
+    },
+    {
+      "id": "1161865954",
+      "country": "us",
+      "note": "Party in My Dorm: Campus Life"
+    },
+    {
+      "id": "6761614513",
+      "country": "us",
+      "note": "SafeRoom Travel Privacy"
+    },
+    {
+      "id": "905921908",
+      "country": "us",
+      "note": "Daddy Long Legs"
+    },
+    {
+      "id": "6755585789",
+      "country": "us",
+      "note": "Overgeared Hero: Merge RPG"
+    },
+    {
+      "id": "6648770469",
+      "country": "us",
+      "note": "Viva VPN - Fast & Secure Proxy"
+    },
+    {
+      "id": "401928833",
+      "country": "us",
+      "note": "NRK Radio"
+    },
+    {
+      "id": "900877843",
+      "country": "jp",
+      "note": "十球甲子園 Nine for One EX -高校野球ゲーム"
+    },
+    {
+      "id": "1580581377",
+      "country": "us",
+      "note": "Chaupal - Movies & Web Series"
+    },
+    {
+      "id": "6780423105",
+      "country": "us",
+      "note": "Afizzy - AI Character Stories"
+    },
+    {
+      "id": "1559479889",
+      "country": "us",
+      "note": "Chat Smith: AI Chatbot & Agent"
+    },
+    {
+      "id": "6756786576",
+      "country": "us",
+      "note": "ShipTrip: Cruise Journal"
+    },
+    {
+      "id": "6502433935",
+      "country": "jp",
+      "note": "LINE おまかせレンジャー 放置育成RPG"
+    },
+    {
+      "id": "1484208629",
+      "country": "us",
+      "note": "Family Style: Co-op Kitchen"
+    },
+    {
+      "id": "6446172225",
+      "country": "us",
+      "note": "Arch - AI Home Design"
+    },
+    {
+      "id": "6824223086",
+      "country": "us",
+      "note": "Hold Pedal"
+    },
+    {
+      "id": "1273218458",
+      "country": "us",
+      "note": "START: онлайн-кинотеатр"
+    },
+    {
+      "id": "6815648017",
+      "country": "us",
+      "note": "TenX Archery"
+    },
+    {
+      "id": "6472889123",
+      "country": "us",
+      "note": "Blackjack Strategy Training"
+    },
+    {
+      "id": "6737067328",
+      "country": "us",
+      "note": "Hard Rock Bet Casino"
+    },
+    {
+      "id": "913943275",
+      "country": "us",
+      "note": "TIDAL Music: HiFi Sound"
+    },
+    {
+      "id": "6740766025",
+      "country": "us",
+      "note": "Gecko Out"
+    },
+    {
+      "id": "6749788676",
+      "country": "us",
+      "note": "4K Black Live Wallpaper: 2Live"
+    },
+    {
+      "id": "6736361418",
+      "country": "us",
+      "note": "Star Gazer - Astronomy Sky Map"
+    },
+    {
+      "id": "6800434414",
+      "country": "us",
+      "note": "JayPlay"
+    },
+    {
+      "id": "878888782",
+      "country": "us",
+      "note": "Acupuncture Assistant"
+    },
+    {
+      "id": "6452190948",
+      "country": "us",
+      "note": "PriceCharting: TCG, Games+"
+    },
+    {
+      "id": "489185828",
+      "country": "us",
+      "note": "happn: dating app"
+    },
+    {
+      "id": "6815097396",
+      "country": "us",
+      "note": "CroMusic: Offline Music Player"
+    },
+    {
+      "id": "293263027",
+      "country": "us",
+      "note": "Speaker Polarity"
+    },
+    {
+      "id": "6815553173",
+      "country": "us",
+      "note": "BZZZ! Don't Say It: Party Game"
+    },
+    {
+      "id": "6754363534",
+      "country": "us",
+      "note": "Sand Loop: Color Sort Puzzle"
+    },
+    {
+      "id": "338137227",
+      "country": "us",
+      "note": "Walmart: Shopping & Savings"
+    },
+    {
+      "id": "6762613708",
+      "country": "us",
+      "note": "HealMusic"
+    },
+    {
+      "id": "1377729521",
+      "country": "us",
+      "note": "Pluck It: hairs and emotions"
+    },
+    {
+      "id": "6451491556",
+      "country": "us",
+      "note": "Wave AI Note Taker & Recorder"
+    },
+    {
+      "id": "6813444478",
+      "country": "us",
+      "note": "Offline Topo Map"
+    },
+    {
+      "id": "315019111",
+      "country": "us",
+      "note": "Unblock Me"
+    },
+    {
+      "id": "6758073678",
+      "country": "us",
+      "note": "BellySafe – Worry-Free Eating"
+    },
+    {
+      "id": "412637620",
+      "country": "us",
+      "note": "World Book: CIA Factbook"
+    },
+    {
+      "id": "6451460845",
+      "country": "us",
+      "note": "Blossom Sort® - Flower Games"
+    },
+    {
+      "id": "6758559780",
+      "country": "us",
+      "note": "Aurora Lens: The Aurora Camera"
+    },
+    {
+      "id": "6597632825",
+      "country": "us",
+      "note": "Piano Fire 2"
+    },
+    {
+      "id": "985244644",
+      "country": "us",
+      "note": "ABOUT YOU Online Fashion Shop"
+    },
+    {
+      "id": "6763293288",
+      "country": "us",
+      "note": "SlowRead: Book Tracker & TBR"
+    },
+    {
+      "id": "1216135390",
+      "country": "us",
+      "note": "Second Phone Number - 2Number"
+    },
+    {
+      "id": "6785552452",
+      "country": "us",
+      "note": "President Simulator: Election"
+    },
+    {
+      "id": "1487907763",
+      "country": "us",
+      "note": "Bubble Pop Origin! Puzzle Game"
+    },
+    {
+      "id": "6466786430",
+      "country": "us",
+      "note": "Inkitt CandyJar: TV & Shorts"
+    },
+    {
+      "id": "6747416930",
+      "country": "us",
+      "note": "No JavaScript: Safari Blocker"
+    },
+    {
+      "id": "6736526782",
+      "country": "us",
+      "note": "Hollywood Casino - Real Money"
+    },
+    {
+      "id": "6759600510",
+      "country": "gb",
+      "note": "INTERSPORT France"
+    },
+    {
+      "id": "1482780647",
+      "country": "us",
+      "note": "Imprint: Visual Micro Learning"
+    },
+    {
+      "id": "1438709018",
+      "country": "us",
+      "note": "Antistress - Satisfying Games!"
+    },
+    {
+      "id": "1061824308",
+      "country": "us",
+      "note": "Good Chime"
+    },
+    {
+      "id": "409289742",
+      "country": "au",
+      "note": "10"
+    },
+    {
+      "id": "6446302380",
+      "country": "us",
+      "note": "Combo Koala"
+    },
+    {
+      "id": "6505120679",
+      "country": "us",
+      "note": "PlayFame Casino Games"
+    },
+    {
+      "id": "610303073",
+      "country": "us",
+      "note": "Splash Jr: PreK & Kindergarten"
+    },
+    {
+      "id": "955626407",
+      "country": "us",
+      "note": "VPN by Private Internet Access"
+    },
+    {
+      "id": "6760214927",
+      "country": "us",
+      "note": "Niyat: Quran & Prayer Times"
+    },
+    {
+      "id": "6785028068",
+      "country": "us",
+      "note": "Masri Lingo: Learn Egyptian"
+    },
+    {
+      "id": "6789856552",
+      "country": "us",
+      "note": "GoatLab: Sports Career Sim"
+    },
+    {
+      "id": "1442895889",
+      "country": "us",
+      "note": "Bingo Journey！Live Bingo Games"
+    },
+    {
+      "id": "1187265767",
+      "country": "us",
+      "note": "Monument Valley 2"
+    },
+    {
+      "id": "891278325",
+      "country": "us",
+      "note": "Blades of Brim"
+    },
+    {
+      "id": "495583717",
+      "country": "us",
+      "note": "Jigsaw Puzzle: Daily Puzzles"
+    },
+    {
+      "id": "1530876832",
+      "country": "us",
+      "note": "Match Triple 3D: Matching Tile"
+    },
+    {
+      "id": "1273957743",
+      "country": "kr",
+      "note": "FC 온라인 M"
+    },
+    {
+      "id": "6466307868",
+      "country": "us",
+      "note": "onX Fish: GPS Fishing Maps"
+    },
+    {
+      "id": "1460645640",
+      "country": "us",
+      "note": "TAP! DIG! MY MUSEUM!"
+    },
+    {
+      "id": "1577513861",
+      "country": "us",
+      "note": "Bloom Boom Casino Online Slots"
+    },
+    {
+      "id": "6738771575",
+      "country": "us",
+      "note": "3D Bolt Master®: Screw Master®"
+    },
+    {
+      "id": "1067860796",
+      "country": "us",
+      "note": "Asana Rebel: Get in Shape"
+    },
+    {
+      "id": "978674211",
+      "country": "us",
+      "note": "Oxford Dictionary & Thesaurus"
+    },
+    {
+      "id": "6736810242",
+      "country": "us",
+      "note": "Driving Theory Test Kit UKDL®"
+    },
+    {
+      "id": "6812314038",
+      "country": "us",
+      "note": "Drizzo: Weather & Rain Radar"
+    },
+    {
+      "id": "6747978004",
+      "country": "gb",
+      "note": "FabSwingers (official)"
+    },
+    {
+      "id": "6547858927",
+      "country": "us",
+      "note": "Crossword Master - Word Puzzle"
+    },
+    {
+      "id": "6744678731",
+      "country": "us",
+      "note": "Experience Gold Coast"
+    },
+    {
+      "id": "934459219",
+      "country": "us",
+      "note": "JioHotstar"
+    },
+    {
+      "id": "6744726523",
+      "country": "in",
+      "note": "Skyblade: Idle Immortal-APAC"
+    },
+    {
+      "id": "6738967378",
+      "country": "us",
+      "note": "Edits: Video Editor"
+    },
+    {
+      "id": "1107917398",
+      "country": "us",
+      "note": "Audioteka"
+    },
+    {
+      "id": "6447954430",
+      "country": "us",
+      "note": "Video Chat & Dating - Minglify"
+    },
+    {
+      "id": "498973162",
+      "country": "us",
+      "note": "New Star Soccer"
+    },
+    {
+      "id": "6760140034",
+      "country": "us",
+      "note": "Planet Moolah™ Slots Casino"
+    },
+    {
+      "id": "1040038773",
+      "country": "us",
+      "note": "MRSOOL APP | تطبيق مرسول"
+    },
+    {
+      "id": "1146781202",
+      "country": "us",
+      "note": "Odrabiamy - pomoc w nauce"
+    },
+    {
+      "id": "1484442152",
+      "country": "us",
+      "note": "Merge Mansion: Puzzles & Story"
+    },
+    {
+      "id": "6618144251",
+      "country": "us",
+      "note": "Post Apo Tycoon - Idle Builder"
+    },
+    {
+      "id": "6818653009",
+      "country": "us",
+      "note": "Hangman Terminal – Word Game"
+    },
+    {
+      "id": "1176027022",
+      "country": "us",
+      "note": "Toon Blast"
+    },
+    {
+      "id": "6775648274",
+      "country": "us",
+      "note": "CutAI - AI Video Editor"
+    },
+    {
+      "id": "6740013449",
+      "country": "us",
+      "note": "eTranslator-AI Translate"
+    },
+    {
+      "id": "6569254072",
+      "country": "us",
+      "note": "QuickNotes: Watch Flashcards"
+    },
+    {
+      "id": "6742146628",
+      "country": "us",
+      "note": "Tiles In Hole: Black Hole Game"
+    },
+    {
+      "id": "774381416",
+      "country": "us",
+      "note": "SkyAlert: Alerta Sísmica MX"
+    },
+    {
+      "id": "6474729809",
+      "country": "us",
+      "note": "Crozzle - Crossword Puzzles"
+    },
+    {
+      "id": "342585873",
+      "country": "us",
+      "note": "BeenVerified: People Search"
+    },
+    {
+      "id": "6778781788",
+      "country": "us",
+      "note": "NaviFin"
+    },
+    {
+      "id": "6504186647",
+      "country": "us",
+      "note": "Coin Scanner: Collecting App"
+    },
+    {
+      "id": "1491340863",
+      "country": "us",
+      "note": "Napper: Baby Sleep Tracker"
+    },
+    {
+      "id": "6790835734",
+      "country": "us",
+      "note": "Camping Weather:Forecast, Wind"
+    },
+    {
+      "id": "6771766164",
+      "country": "us",
+      "note": "Sporfy: Takım, Maç ve Saha Bul"
+    },
+    {
+      "id": "825656147",
+      "country": "us",
+      "note": "Jetting TM Kart for KZ / ICC"
+    },
+    {
+      "id": "487025819",
+      "country": "us",
+      "note": "⋆Spider Solitaire: Card Games"
+    },
+    {
+      "id": "6759947000",
+      "country": "us",
+      "note": "MoguRepi: Dining Journal"
+    },
+    {
+      "id": "6811325612",
+      "country": "us",
+      "note": "Photo Compressor to KB/MB"
+    },
+    {
+      "id": "374050672",
+      "country": "us",
+      "note": "Athkar - أذكار"
+    },
+    {
+      "id": "1548577496",
+      "country": "us",
+      "note": "Motra AI Workout Fitness Coach"
+    },
+    {
+      "id": "6780199923",
+      "country": "us",
+      "note": "Noctis - Light Pollution Map"
+    },
+    {
+      "id": "667427595",
+      "country": "us",
+      "note": "Biblia Tysiąclecia"
+    },
+    {
+      "id": "1631867592",
+      "country": "us",
+      "note": "Jumbo Airport Story"
+    },
+    {
+      "id": "388389451",
+      "country": "us",
+      "note": "Muslim Pro: Quran & Athan"
+    },
+    {
+      "id": "6799206176",
+      "country": "us",
+      "note": "Scrolls: Scroll the Bible"
+    },
+    {
+      "id": "6478108983",
+      "country": "us",
+      "note": "Mindset GO!"
+    },
+    {
+      "id": "1080191188",
+      "country": "us",
+      "note": "MediSOS - Medical Alert Siren"
+    },
+    {
+      "id": "924695435",
+      "country": "us",
+      "note": "Pixelmator Classic iOS"
+    },
+    {
+      "id": "1111420122",
+      "country": "us",
+      "note": "Hear My Baby Heartbeat App"
+    },
+    {
+      "id": "6817149426",
+      "country": "us",
+      "note": "Level Crawl"
+    },
+    {
+      "id": "505858403",
+      "country": "us",
+      "note": "Athan: Prayer Times, Dua Azkar"
+    },
+    {
+      "id": "6453764375",
+      "country": "us",
+      "note": "NQSubBlock - Block Sub Banner"
+    },
+    {
+      "id": "537070378",
+      "country": "us",
+      "note": "Quran Pro · القران الكريم"
+    },
+    {
+      "id": "6787390323",
+      "country": "us",
+      "note": "Fire Detector Europe"
+    },
+    {
+      "id": "1016431735",
+      "country": "us",
+      "note": "DoubleHit Slots Casino Game"
+    },
+    {
+      "id": "662558935",
+      "country": "us",
+      "note": "LibriVox Audiobooks – Ad-Free"
+    },
+    {
+      "id": "6760173601",
+      "country": "us",
+      "note": "Muse from Meta"
+    },
+    {
+      "id": "1347362487",
+      "country": "us",
+      "note": "IQ Test: Intelligence Quiz"
+    },
+    {
+      "id": "6702013570",
+      "country": "us",
+      "note": "Koco Widgets: App Launcher"
+    },
+    {
+      "id": "1619948547",
+      "country": "us",
+      "note": "Backgammon Plus - Board Games"
+    },
+    {
+      "id": "1193508329",
+      "country": "us",
+      "note": "Sudoku.com - Number Games"
+    },
+    {
+      "id": "934862443",
+      "country": "us",
+      "note": "Five Elements Chess"
+    },
+    {
+      "id": "6736951673",
+      "country": "us",
+      "note": "Carnaj"
+    },
+    {
+      "id": "6757701235",
+      "country": "us",
+      "note": "Lens AI. Scan Anything"
+    },
+    {
+      "id": "491979466",
+      "country": "us",
+      "note": "Ani'Mots Crossword"
+    },
+    {
+      "id": "1304885184",
+      "country": "us",
+      "note": "Vegas Live Slots Casino"
+    },
+    {
+      "id": "1089652370",
+      "country": "us",
+      "note": "SnappyShopper Grocery Delivery"
+    },
+    {
+      "id": "420455839",
+      "country": "us",
+      "note": "Spectrum TV"
+    },
+    {
+      "id": "1633219654",
+      "country": "us",
+      "note": "AI Skin Analyzer: Mole Checker"
+    },
+    {
+      "id": "6777715397",
+      "country": "us",
+      "note": "Driftbound: Idle Space RPG"
+    },
+    {
+      "id": "6795152195",
+      "country": "us",
+      "note": "Kan Do: Project Management"
+    },
+    {
+      "id": "1098618656",
+      "country": "us",
+      "note": "Athan Pro: Prayer Times Azan"
+    },
+    {
+      "id": "6779159104",
+      "country": "us",
+      "note": "WBTRK"
+    },
+    {
+      "id": "1635937463",
+      "country": "us",
+      "note": "UNO Wonder"
+    },
+    {
+      "id": "6819292631",
+      "country": "us",
+      "note": "Unhook - Rotate the Rings"
+    },
+    {
+      "id": "1608813145",
+      "country": "us",
+      "note": "Food Stylist - Design Game"
+    },
+    {
+      "id": "596159212",
+      "country": "us",
+      "note": "LibriVox Audiobooks"
+    },
+    {
+      "id": "1321357169",
+      "country": "us",
+      "note": "WuXia World"
+    },
+    {
+      "id": "6751179344",
+      "country": "us",
+      "note": "Simran: Daily Sikh Practice"
+    },
+    {
+      "id": "6751882611",
+      "country": "us",
+      "note": "Faker: Who is Lying? Game"
+    },
+    {
+      "id": "6811330637",
+      "country": "us",
+      "note": "Cubrik AI - Crypto Agent"
+    },
+    {
+      "id": "468642152",
+      "country": "us",
+      "note": "Sedition Art"
+    },
+    {
+      "id": "6807606950",
+      "country": "us",
+      "note": "Red Box: Chancellor Simulator"
+    },
+    {
+      "id": "1179825084",
+      "country": "us",
+      "note": "Christmas Cards • Greeting"
+    },
+    {
+      "id": "1208909755",
+      "country": "us",
+      "note": "Happy Easter • Greeting cards"
+    },
+    {
+      "id": "1348316600",
+      "country": "us",
+      "note": "UnitedHealthcare"
+    },
+    {
+      "id": "6444269577",
+      "country": "jp",
+      "note": "ハイキュー!! TOUCH THE DREAM"
+    },
+    {
+      "id": "1205138899",
+      "country": "us",
+      "note": "I Love You • Greeting cards"
+    },
+    {
+      "id": "1510944943",
+      "country": "us",
+      "note": "Cleanup: Phone Storage Cleaner"
+    },
+    {
+      "id": "448144025",
+      "country": "us",
+      "note": "Süddeutsche Zeitung"
+    },
+    {
+      "id": "1365223384",
+      "country": "us",
+      "note": "America's Test Kitchen"
+    },
+    {
+      "id": "6761747300",
+      "country": "us",
+      "note": "CrossPort: EPUB Reader"
+    },
+    {
+      "id": "6738331460",
+      "country": "us",
+      "note": "Maple Budget"
+    },
+    {
+      "id": "1092611311",
+      "country": "us",
+      "note": "Video Poker Classic ®"
+    },
+    {
+      "id": "1208312901",
+      "country": "us",
+      "note": "Packr Travel Packing List"
+    },
+    {
+      "id": "6755746138",
+      "country": "us",
+      "note": "15 Minutes: Time Tracker"
+    },
+    {
+      "id": "6761981766",
+      "country": "us",
+      "note": "Halo - Budget & Bills Tracker"
+    },
+    {
+      "id": "1579902068",
+      "country": "us",
+      "note": "xSearch for Safari"
+    },
+    {
+      "id": "824116884",
+      "country": "jp",
+      "note": "ONE PIECE トレジャークルーズ"
+    },
+    {
+      "id": "290920045",
+      "country": "au",
+      "note": "RainRadarAU"
+    },
+    {
+      "id": "1502026145",
+      "country": "us",
+      "note": "Soosee - Allergy & Vegan Scan"
+    },
+    {
+      "id": "6738324714",
+      "country": "us",
+      "note": "Wood Identifier: AI Scanner"
+    },
+    {
+      "id": "1177964608",
+      "country": "us",
+      "note": "TOR Browser: OrNET Onion + VPN"
+    },
+    {
+      "id": "1564645413",
+      "country": "us",
+      "note": "Vegas Slots: 2026 Casino Slots"
+    },
+    {
+      "id": "6756324053",
+      "country": "us",
+      "note": "Nomad Tracker: Visa & Tax"
+    },
+    {
+      "id": "6746705608",
+      "country": "us",
+      "note": "AutoSnore: Snoring Recorder"
+    },
+    {
+      "id": "6813145551",
+      "country": "us",
+      "note": "Lumap : Travel Photo Map"
+    },
+    {
+      "id": "6818660180",
+      "country": "us",
+      "note": "BubbleFuku: Merge Adventure"
+    },
+    {
+      "id": "1509084936",
+      "country": "us",
+      "note": "SLEEP by Max Richter"
+    },
+    {
+      "id": "1155657778",
+      "country": "us",
+      "note": "Guitar Band: Rock Battle"
+    },
+    {
+      "id": "678241305",
+      "country": "us",
+      "note": "Kickbase - Fantasy Soccer"
+    },
+    {
+      "id": "6470451283",
+      "country": "us",
+      "note": "Tarot - Fun & Friends"
+    },
+    {
+      "id": "720068876",
+      "country": "us",
+      "note": "Touchgrind Skate 2"
+    },
+    {
+      "id": "583990782",
+      "country": "br",
+      "note": "Decolar: Voos e Hotéis"
+    },
+    {
+      "id": "1452196861",
+      "country": "us",
+      "note": "Smart Tales - Learning Games"
+    },
+    {
+      "id": "6778287432",
+      "country": "us",
+      "note": "Void Flux"
+    },
+    {
+      "id": "1570489264",
+      "country": "us",
+      "note": "StoryGraph: Reading Tracker"
+    },
+    {
+      "id": "493868874",
+      "country": "us",
+      "note": "TinyTap: Kids' Learning Games"
+    },
+    {
+      "id": "1492424176",
+      "country": "us",
+      "note": "Focus Noodles-Study timer"
+    },
+    {
+      "id": "6761207600",
+      "country": "us",
+      "note": "Framed - Take Aesthetic Photos"
+    },
+    {
+      "id": "1572670746",
+      "country": "us",
+      "note": "Little Lunches: Kids Meals"
+    },
+    {
+      "id": "1635978552",
+      "country": "us",
+      "note": "1 2 3 4 Player Games"
+    },
+    {
+      "id": "1481703107",
+      "country": "us",
+      "note": "Finto - Bluff Quiz for Friends"
+    },
+    {
+      "id": "6787808905",
+      "country": "us",
+      "note": "Foray"
+    },
+    {
+      "id": "6758594564",
+      "country": "us",
+      "note": "Geotrivia: Geography Games"
+    },
+    {
+      "id": "6809050609",
+      "country": "us",
+      "note": "Okay, Mr. President - Game"
+    },
+    {
+      "id": "6757393880",
+      "country": "us",
+      "note": "Smart Printer App℠ for HP ·"
+    },
+    {
+      "id": "375988670",
+      "country": "us",
+      "note": "Taxi Sthlm"
+    },
+    {
+      "id": "876336838",
+      "country": "us",
+      "note": "喜马拉雅FM（听书社区）电台有声小说相声评书"
+    },
+    {
+      "id": "6449706677",
+      "country": "us",
+      "note": "On: Shop Shoes & Apparel"
+    },
+    {
+      "id": "6759506126",
+      "country": "us",
+      "note": "Export Calendar - CSV & ICS"
+    },
+    {
+      "id": "469033575",
+      "country": "gb",
+      "note": "Wowcher: Shop Vouchers & Deals"
+    },
+    {
+      "id": "1491200353",
+      "country": "us",
+      "note": "Famio: Find My Family, Friends"
+    },
+    {
+      "id": "6747201039",
+      "country": "us",
+      "note": "NONSTOP CARDS"
+    },
+    {
+      "id": "6756059656",
+      "country": "us",
+      "note": "EcoGPT"
+    },
+    {
+      "id": "492037412",
+      "country": "jp",
+      "note": "地震観測情報(+BGM)  全国のリアルタイム地震状況"
+    },
+    {
+      "id": "736683061",
+      "country": "us",
+      "note": "A Dark Room"
+    },
+    {
+      "id": "1542181484",
+      "country": "us",
+      "note": "Dancebit: Home Dance Workouts"
+    },
+    {
+      "id": "6757319027",
+      "country": "us",
+      "note": "Sommo: AI Wine Scanner"
+    },
+    {
+      "id": "6790199590",
+      "country": "us",
+      "note": "ETA 6"
+    },
+    {
+      "id": "1318604128",
+      "country": "us",
+      "note": "OWNA Childcare App"
+    },
+    {
+      "id": "6799101084",
+      "country": "gb",
+      "note": "Small Boat Watch"
+    },
+    {
+      "id": "631935759",
+      "country": "us",
+      "note": "Sounds of Music"
+    },
+    {
+      "id": "1103438575",
+      "country": "us",
+      "note": "Microsoft Solitaire Collection"
+    },
+    {
+      "id": "1557014712",
+      "country": "us",
+      "note": "MyWay, Route Planner, Delivery"
+    },
+    {
+      "id": "6805145736",
+      "country": "us",
+      "note": "Lekhi - Avro Phonetic Keyboard"
+    },
+    {
+      "id": "6786980696",
+      "country": "us",
+      "note": "SmartTrack Golf"
+    },
+    {
+      "id": "515968212",
+      "country": "us",
+      "note": "PSG Official"
+    },
+    {
+      "id": "6742757464",
+      "country": "us",
+      "note": "Adobe Premiere AI Video Editor"
+    },
+    {
+      "id": "1099797635",
+      "country": "us",
+      "note": "Radarbot: Speed Camera GPS App"
+    },
+    {
+      "id": "6760517067",
+      "country": "us",
+      "note": "Advanced Pain Procedure Guide"
+    },
+    {
+      "id": "653287635",
+      "country": "us",
+      "note": "Positive ◌"
+    },
+    {
+      "id": "6754852443",
+      "country": "us",
+      "note": "US Election Simulator"
+    },
+    {
+      "id": "6479373050",
+      "country": "us",
+      "note": "ElevenReader: Read Books Aloud"
+    },
+    {
+      "id": "1451196635",
+      "country": "us",
+      "note": "Polestar"
+    },
+    {
+      "id": "6752951225",
+      "country": "us",
+      "note": "Guessong: Guess the Song"
+    },
+    {
+      "id": "672246353",
+      "country": "us",
+      "note": "Topo Maps+: Topographic Maps"
+    },
+    {
+      "id": "1394150432",
+      "country": "us",
+      "note": "everyday - Habit Tracker"
+    },
+    {
+      "id": "6757383411",
+      "country": "us",
+      "note": "dotio: Pips Domino Puzzles"
+    },
+    {
+      "id": "6445801487",
+      "country": "us",
+      "note": "STL Viewer: 3D Print & Mesh"
+    },
+    {
+      "id": "6760786144",
+      "country": "us",
+      "note": "Photo Location Export"
+    },
+    {
+      "id": "1614144883",
+      "country": "us",
+      "note": "Trucker Guide: Truck GPS Maps"
+    },
+    {
+      "id": "1483572798",
+      "country": "us",
+      "note": "Buddyfit: Exercise at Home"
+    },
+    {
+      "id": "6744098755",
+      "country": "us",
+      "note": "SmartScout Baseball"
+    },
+    {
+      "id": "1185533990",
+      "country": "us",
+      "note": "Belote et Coinche : le Défi"
+    },
+    {
+      "id": "6779731608",
+      "country": "us",
+      "note": "CarHA"
+    },
+    {
+      "id": "1528066727",
+      "country": "us",
+      "note": "SongPop: Guess The Song"
+    },
+    {
+      "id": "6803880606",
+      "country": "us",
+      "note": "XPipe Pro: Pipefitter Calc"
+    },
+    {
+      "id": "6474685626",
+      "country": "us",
+      "note": "Candy Crush Solitaire"
+    },
+    {
+      "id": "337769011",
+      "country": "us",
+      "note": "WorkTimes - Work Hours Tracker"
+    },
+    {
+      "id": "6749449859",
+      "country": "us",
+      "note": "PreLoved AI: Vinted Listings"
+    },
+    {
+      "id": "1089668246",
+      "country": "us",
+      "note": "Scenic Motorcycle Navigation"
+    },
+    {
+      "id": "1606876219",
+      "country": "us",
+      "note": "Sutom - Word Game & Puzzles"
+    },
+    {
+      "id": "6803984030",
+      "country": "us",
+      "note": "Vintly: Sell Clothes Faster"
+    },
+    {
+      "id": "6806896106",
+      "country": "us",
+      "note": "Kern Word Puzzles"
+    },
+    {
+      "id": "327685977",
+      "country": "us",
+      "note": "Contacts Journal CRM"
+    },
+    {
+      "id": "1321324744",
+      "country": "us",
+      "note": "Up to 99: Focus & Reaction"
+    },
+    {
+      "id": "6796768752",
+      "country": "us",
+      "note": "Music Star Idle Life Simulator"
+    },
+    {
+      "id": "6754172711",
+      "country": "us",
+      "note": "Flugs – Time Tracker"
+    },
+    {
+      "id": "1578325069",
+      "country": "us",
+      "note": "Setty: Photo Editor & Filters"
+    },
+    {
+      "id": "6812700351",
+      "country": "us",
+      "note": "Quiet Lab: DJ Beat Maker"
+    },
+    {
+      "id": "344542975",
+      "country": "us",
+      "note": "Southwest Airlines: Travel App"
+    },
+    {
+      "id": "6479585500",
+      "country": "us",
+      "note": "GoPhoto:AI Photo & Video Maker"
+    },
+    {
+      "id": "6746510979",
+      "country": "us",
+      "note": "Kingdom Rush Battles: TD Game"
+    },
+    {
+      "id": "997102246",
+      "country": "us",
+      "note": "Spark Mail: AI Email Assistant"
+    },
+    {
+      "id": "845657206",
+      "country": "us",
+      "note": "Baby Tracker Pro - Newborn Log"
+    },
+    {
+      "id": "1158877342",
+      "country": "us",
+      "note": "Grammarly: AI Keyboard & Voice"
+    },
+    {
+      "id": "1257686328",
+      "country": "us",
+      "note": "Citizenship Test AU 2027 (New)"
+    },
+    {
+      "id": "6818673560",
+      "country": "us",
+      "note": "Snapshots: Instant Film Camera"
+    },
+    {
+      "id": "6757844507",
+      "country": "us",
+      "note": "Jelly Tracker: Alert & Collect"
+    },
+    {
+      "id": "1455097375",
+      "country": "us",
+      "note": "球歴.com"
+    },
+    {
+      "id": "6504148117",
+      "country": "us",
+      "note": "NewsNinja: feeds dashboard"
+    },
+    {
+      "id": "603097018",
+      "country": "us",
+      "note": "Caesars Slots - Casino Games"
+    },
+    {
+      "id": "1047246341",
+      "country": "us",
+      "note": "Candy Crush Jelly Saga"
+    },
+    {
+      "id": "6793054775",
+      "country": "us",
+      "note": "Starlight Music Life Sim"
+    },
+    {
+      "id": "539179365",
+      "country": "us",
+      "note": "Ola: Book Cab, Auto, Bike Taxi"
+    },
+    {
+      "id": "779656557",
+      "country": "us",
+      "note": "Baby Tracker - Newborn Log"
+    },
+    {
+      "id": "6792536028",
+      "country": "us",
+      "note": "padelsmart"
+    },
+    {
+      "id": "6768040383",
+      "country": "us",
+      "note": "GR Snap - Ricoh GR Image Sync"
+    },
+    {
+      "id": "6756571193",
+      "country": "us",
+      "note": "Predictify: Football AI"
+    },
+    {
+      "id": "672658828",
+      "country": "us",
+      "note": "SplashLearn: Learning Games"
+    },
+    {
+      "id": "581264644",
+      "country": "us",
+      "note": "Qatar Airways"
+    },
+    {
+      "id": "6745523708",
+      "country": "us",
+      "note": "CamoAg"
+    },
+    {
+      "id": "6753209116",
+      "country": "us",
+      "note": "Step Quests"
+    },
+    {
+      "id": "1304177471",
+      "country": "us",
+      "note": "Superimpose X"
+    },
+    {
+      "id": "6761014237",
+      "country": "us",
+      "note": "3D Point Cloud Viewer"
+    },
+    {
+      "id": "1600871388",
+      "country": "us",
+      "note": "Eatventure"
+    },
+    {
+      "id": "6801799964",
+      "country": "us",
+      "note": "iY2K"
+    },
+    {
+      "id": "1673518618",
+      "country": "us",
+      "note": "Detail: AI Video Editor"
+    },
+    {
+      "id": "1510226148",
+      "country": "us",
+      "note": "Ancient Board Game Collection"
+    },
+    {
+      "id": "1460564684",
+      "country": "us",
+      "note": "animal restaurant"
+    },
+    {
+      "id": "946429340",
+      "country": "us",
+      "note": "Qobuz: Music & Editorial"
+    },
+    {
+      "id": "439438619",
+      "country": "us",
+      "note": "Snapseed: Photo Editor, Camera"
+    },
+    {
+      "id": "1458309993",
+      "country": "us",
+      "note": "It's Literally Just Mowing"
+    },
+    {
+      "id": "1625657880",
+      "country": "us",
+      "note": "MagentaTV: TV & Streaming"
+    },
+    {
+      "id": "398157427",
+      "country": "us",
+      "note": "M Scores | Mackolik Live Score"
+    },
+    {
+      "id": "1239683063",
+      "country": "de",
+      "note": "Lichtplaner"
+    },
+    {
+      "id": "680609457",
+      "country": "us",
+      "note": "CodeMate: Code Editor & Viewer"
+    },
+    {
+      "id": "6749338079",
+      "country": "us",
+      "note": "Stocard - loyalty card wallet"
+    },
+    {
+      "id": "6806781973",
+      "country": "gb",
+      "note": "UK Aerial Helper"
+    },
+    {
+      "id": "981831701",
+      "country": "de",
+      "note": "Leitungsplaner"
+    },
+    {
+      "id": "1600525061",
+      "country": "us",
+      "note": "Locket Widget"
+    },
+    {
+      "id": "6798603090",
+      "country": "us",
+      "note": "Destiny FC: Soccer Career"
+    },
+    {
+      "id": "1636719674",
+      "country": "us",
+      "note": "Lock Launcher - Launch Apps"
+    },
+    {
+      "id": "6757467196",
+      "country": "us",
+      "note": "Pulsar Money"
+    },
+    {
+      "id": "1215004055",
+      "country": "us",
+      "note": "Dictation Pro - Voice to Text"
+    },
+    {
+      "id": "1154765738",
+      "country": "gb",
+      "note": "DocPlay"
+    },
+    {
+      "id": "1133544923",
+      "country": "us",
+      "note": "Hidden Folks"
+    },
+    {
+      "id": "1027688889",
+      "country": "us",
+      "note": "Piano Tiles 2™: Fun Piano Game"
+    },
+    {
+      "id": "6474153838",
+      "country": "us",
+      "note": "Prévi+: météo locale & alertes"
+    },
+    {
+      "id": "6797907221",
+      "country": "us",
+      "note": "Fill Sand: Block Puzzle"
+    },
+    {
+      "id": "6811317248",
+      "country": "us",
+      "note": "Image Resizer: Photo Size"
+    },
+    {
+      "id": "416048305",
+      "country": "us",
+      "note": "Meitu: Photo & Video Editor"
+    },
+    {
+      "id": "1486597368",
+      "country": "gb",
+      "note": "Albert Junior"
+    },
+    {
+      "id": "6820663889",
+      "country": "us",
+      "note": "Simon Says Contractor Quotes"
+    },
+    {
+      "id": "1527841661",
+      "country": "us",
+      "note": "Sandbox Planet"
+    },
+    {
+      "id": "703187946",
+      "country": "us",
+      "note": "Trip Receipts"
+    },
+    {
+      "id": "1425619487",
+      "country": "us",
+      "note": "Droplist: Sneaker Drops"
+    },
+    {
+      "id": "6444689949",
+      "country": "us",
+      "note": "My Sushi Story"
+    },
+    {
+      "id": "6755183085",
+      "country": "us",
+      "note": "Yarn Loop: Knit Puzzle"
+    },
+    {
+      "id": "6822095788",
+      "country": "us",
+      "note": "SismoLive Panamá"
+    },
+    {
+      "id": "352683833",
+      "country": "us",
+      "note": "Groupon - Local Deals Near Me"
+    },
+    {
+      "id": "6776231069",
+      "country": "us",
+      "note": "Screen Off Recorder"
+    },
+    {
+      "id": "6467768299",
+      "country": "us",
+      "note": "Diskio: Disk & SSD Speed Test"
+    },
+    {
+      "id": "6761265689",
+      "country": "us",
+      "note": "Large Video Tool"
+    },
+    {
+      "id": "6771109323",
+      "country": "us",
+      "note": "WA Sticker"
+    },
+    {
+      "id": "1081847121",
+      "country": "us",
+      "note": "INKS."
+    },
+    {
+      "id": "1343581380",
+      "country": "us",
+      "note": "VN: Photo & Video Editor"
+    },
+    {
+      "id": "6788681170",
+      "country": "gb",
+      "note": "Marées France: Horaires, Infos"
+    },
+    {
+      "id": "1599756543",
+      "country": "us",
+      "note": "Clever: Brain Training Games"
+    },
+    {
+      "id": "1641948327",
+      "country": "us",
+      "note": "Cemantik"
+    },
+    {
+      "id": "1458273977",
+      "country": "us",
+      "note": "Standard Interval Timer"
+    },
+    {
+      "id": "6768694000",
+      "country": "us",
+      "note": "Mirage Capture"
+    },
+    {
+      "id": "6819262543",
+      "country": "us",
+      "note": "CEPHE 81"
+    },
+    {
+      "id": "6796377018",
+      "country": "gb",
+      "note": "Tots Weather"
+    },
+    {
+      "id": "304851207",
+      "country": "us",
+      "note": "Air NZ"
+    },
+    {
+      "id": "515673004",
+      "country": "us",
+      "note": "Hygrometer - Humidity"
+    },
+    {
+      "id": "6804167339",
+      "country": "us",
+      "note": "App Indexer: ASO Rank Tracking"
+    },
+    {
+      "id": "399563465",
+      "country": "us",
+      "note": "Houzz - Home Design & Remodel"
+    },
+    {
+      "id": "6504782640",
+      "country": "us",
+      "note": "Hungry Hearts Restaurant"
+    },
+    {
+      "id": "6788636545",
+      "country": "us",
+      "note": "Meteor Shower: Alerts"
+    },
+    {
+      "id": "1390326774",
+      "country": "us",
+      "note": "EASY - AI Photo Organizer"
+    },
+    {
+      "id": "1175389256",
+      "country": "us",
+      "note": "Trivia Quiz Knowledge"
+    },
+    {
+      "id": "6797403250",
+      "country": "us",
+      "note": "Carola - Car Spotting"
+    },
+    {
+      "id": "597880187",
+      "country": "us",
+      "note": "WILDBERRIES"
+    },
+    {
+      "id": "1448010566",
+      "country": "us",
+      "note": "Toddler Games Baby Balloon Pop"
+    },
+    {
+      "id": "500650520",
+      "country": "us",
+      "note": "Rother: Hiking Tours & Maps"
+    },
+    {
+      "id": "6816831477",
+      "country": "us",
+      "note": "Aurora: Forecast & Alerts"
+    },
+    {
+      "id": "6809371445",
+      "country": "us",
+      "note": "PoseKit: Quick 3D Mockup"
+    },
+    {
+      "id": "6449094229",
+      "country": "us",
+      "note": "Match Factory!"
+    },
+    {
+      "id": "6819338898",
+      "country": "jp",
+      "note": "WOLFS（ウルフズ）ゲイの出会い・友達・恋人探し"
+    },
+    {
+      "id": "6751423668",
+      "country": "gb",
+      "note": "Dog Parks Denmark"
+    },
+    {
+      "id": "6472909249",
+      "country": "jp",
+      "note": "オリパならDOPA（ドーパ）｜トレカ｜オンラインオリパ"
+    },
+    {
+      "id": "6762127312",
+      "country": "us",
+      "note": "Beszel : Dashboard"
+    },
+    {
+      "id": "6760418898",
+      "country": "us",
+      "note": "Money2Time: Expense Tracker"
+    },
+    {
+      "id": "1016445476",
+      "country": "us",
+      "note": "iLightningCam AI"
+    },
+    {
+      "id": "6744463310",
+      "country": "us",
+      "note": "Maphrodite"
+    },
+    {
+      "id": "6766547575",
+      "country": "us",
+      "note": "Hisaab Salah Alarm"
+    },
+    {
+      "id": "1565113819",
+      "country": "us",
+      "note": "LogicLike: Kids Learning Games"
+    },
+    {
+      "id": "640437525",
+      "country": "us",
+      "note": "Qantas Airways"
+    },
+    {
+      "id": "6473748536",
+      "country": "us",
+      "note": "Astra - Life Advice"
+    },
+    {
+      "id": "1336527043",
+      "country": "us",
+      "note": "Knife Hit"
+    },
+    {
+      "id": "6760114671",
+      "country": "us",
+      "note": "Internet Speed Limiter"
+    },
+    {
+      "id": "6768215187",
+      "country": "us",
+      "note": "Pig Loop!"
+    },
+    {
+      "id": "6802406882",
+      "country": "us",
+      "note": "Paylendar: Payment Planner"
+    },
+    {
+      "id": "6801917008",
+      "country": "us",
+      "note": "R-LINK+ : RENAULT R-LINK 2 & 1"
+    },
+    {
+      "id": "1543177337",
+      "country": "us",
+      "note": "GRAVITY-Chat,Talk&Listen"
+    },
+    {
+      "id": "6768579867",
+      "country": "us",
+      "note": "life-fixer"
+    },
+    {
+      "id": "1497168487",
+      "country": "us",
+      "note": "Jewels of Egypt・Match 3 Puzzle"
+    },
+    {
+      "id": "1669041518",
+      "country": "us",
+      "note": "Find Phone: Device Tracker"
+    },
+    {
+      "id": "6772975295",
+      "country": "us",
+      "note": "Jewel Color Sort: Diamond Game"
+    },
+    {
+      "id": "6761642667",
+      "country": "us",
+      "note": "Listkit:Minima Local Todo"
+    },
+    {
+      "id": "6793575571",
+      "country": "us",
+      "note": "Oh, Snack!"
+    },
+    {
+      "id": "6761513082",
+      "country": "us",
+      "note": "MagmaSync: Volcano Tracker"
+    },
+    {
+      "id": "6474037926",
+      "country": "us",
+      "note": "PI.FYI - Log Your Favorites"
+    },
+    {
+      "id": "6739498078",
+      "country": "us",
+      "note": "AR Ruler Measuring Tape：Metrix"
+    },
+    {
+      "id": "1191375112",
+      "country": "us",
+      "note": "Super Lingo - Fun Letter Game"
+    },
+    {
+      "id": "6779282755",
+      "country": "us",
+      "note": "SafeBite AI: Allergy Scanner"
+    },
+    {
+      "id": "6755721056",
+      "country": "us",
+      "note": "STEP File Viewer"
+    },
+    {
+      "id": "1496354836",
+      "country": "us",
+      "note": "Woodoku - Wood Block Puzzles"
+    },
+    {
+      "id": "6813849902",
+      "country": "us",
+      "note": "Baitless: Clickbait Decoder"
+    },
+    {
+      "id": "6758680022",
+      "country": "us",
+      "note": "Wave Reader"
+    },
+    {
+      "id": "6755363508",
+      "country": "us",
+      "note": "Gummy AI: Game Maker"
+    },
+    {
+      "id": "1333510892",
+      "country": "us",
+      "note": "EASY peasy: English for Kids"
+    },
+    {
+      "id": "1531976425",
+      "country": "us",
+      "note": "lire: RSS Reader"
+    },
+    {
+      "id": "6480576897",
+      "country": "us",
+      "note": "Magibook: Learn to Read Books"
+    },
+    {
+      "id": "6759520295",
+      "country": "us",
+      "note": "Election Explorer: 2026 Map"
+    },
+    {
+      "id": "6806740090",
+      "country": "us",
+      "note": "Ryval: Motorcycle & Car Rides"
+    },
+    {
+      "id": "1612937021",
+      "country": "us",
+      "note": "MoriArashi"
+    },
+    {
+      "id": "6763888743",
+      "country": "us",
+      "note": "MuteCast"
+    },
+    {
+      "id": "949498190",
+      "country": "us",
+      "note": "iSlash Masters"
+    },
+    {
+      "id": "6742139901",
+      "country": "us",
+      "note": "Dayora"
+    },
+    {
+      "id": "6762414154",
+      "country": "us",
+      "note": "Military Benefits App"
+    },
+    {
+      "id": "6813024228",
+      "country": "us",
+      "note": "Codex Tracker: News & Resets"
+    },
+    {
+      "id": "6742644783",
+      "country": "us",
+      "note": "Speed-Tracker"
+    },
+    {
+      "id": "625759466",
+      "country": "us",
+      "note": "Bikemap: Bicycle Tracker & GPS"
+    },
+    {
+      "id": "6758901030",
+      "country": "us",
+      "note": "Whaloo:Snore Tracker& Recorder"
+    },
+    {
+      "id": "1534126062",
+      "country": "us",
+      "note": "Themify - Widget & Icon Themes"
+    },
+    {
+      "id": "6739276631",
+      "country": "us",
+      "note": "AI Catch: AI Video Generator"
+    },
+    {
+      "id": "6736975751",
+      "country": "us",
+      "note": "Jackaroo Star-Fastest Jackaroo"
+    },
+    {
+      "id": "6819034181",
+      "country": "us",
+      "note": "Ink Parry: Sword Fighting Game"
+    },
+    {
+      "id": "366846035",
+      "country": "us",
+      "note": "ECG Atlas"
+    },
+    {
+      "id": "1619182055",
+      "country": "us",
+      "note": "World Reborn"
+    },
+    {
+      "id": "6448105847",
+      "country": "us",
+      "note": "Atricent: Your AI Stylist"
+    },
+    {
+      "id": "1220565521",
+      "country": "us",
+      "note": "Parfumo"
+    },
+    {
+      "id": "6444850772",
+      "country": "us",
+      "note": "Dancefitme: Fun weight loss"
+    },
+    {
+      "id": "6815657228",
+      "country": "us",
+      "note": "Water Sort Puzzle: Sand Art"
+    },
+    {
+      "id": "1544887147",
+      "country": "us",
+      "note": "101 Okey Yalla: Live & Chat"
+    },
+    {
+      "id": "6471547318",
+      "country": "us",
+      "note": "Muscle Monster Workout Planner"
+    },
+    {
+      "id": "6781523670",
+      "country": "us",
+      "note": "AVGusto: AI Calorie Counter"
+    },
+    {
+      "id": "1326693810",
+      "country": "us",
+      "note": "Outcast for Watch"
+    },
+    {
+      "id": "1576064715",
+      "country": "us",
+      "note": "Kidly: Bedtime Books for Kids"
+    },
+    {
+      "id": "6817108796",
+      "country": "us",
+      "note": "Fish The Web - Cozy Fishing"
+    },
+    {
+      "id": "577802013",
+      "country": "gb",
+      "note": "Sky Vegas: Casino Games"
+    },
+    {
+      "id": "6763365337",
+      "country": "us",
+      "note": "Find My Device₊"
+    },
+    {
+      "id": "450201372",
+      "country": "us",
+      "note": "Lab Values+ Medical Reference"
+    },
+    {
+      "id": "504368649",
+      "country": "us",
+      "note": "⋆FreeCell"
+    },
+    {
+      "id": "1550945606",
+      "country": "us",
+      "note": "Soccer Superstar"
+    },
+    {
+      "id": "1548207780",
+      "country": "us",
+      "note": "Fizz: Your Authentic Community"
+    },
+    {
+      "id": "6814648654",
+      "country": "us",
+      "note": "Norsk: Learn Norwegian"
+    },
+    {
+      "id": "605569663",
+      "country": "us",
+      "note": "Amerigo File Manager"
+    },
+    {
+      "id": "6502964445",
+      "country": "us",
+      "note": "voilà: Travel eSIM & Data"
+    },
+    {
+      "id": "6781432747",
+      "country": "us",
+      "note": "Waypoint Budget Planner App"
+    },
+    {
+      "id": "6743636833",
+      "country": "us",
+      "note": "Driftshot - AI Car Photography"
+    },
+    {
+      "id": "6778542695",
+      "country": "us",
+      "note": "Milepost: Driving Journal"
+    },
+    {
+      "id": "6820001550",
+      "country": "us",
+      "note": "Fade Browser"
+    },
+    {
+      "id": "377869410",
+      "country": "us",
+      "note": "NDTV News"
+    },
+    {
+      "id": "6737678499",
+      "country": "us",
+      "note": "Poker Trainer GTO - POKER Q'z"
+    },
+    {
+      "id": "292738169",
+      "country": "us",
+      "note": "Deezer: Music Player, Podcast"
+    },
+    {
+      "id": "6740388983",
+      "country": "us",
+      "note": "Hello Kitty Merch Match"
+    },
+    {
+      "id": "1062022008",
+      "country": "us",
+      "note": "LumaFusion"
+    },
+    {
+      "id": "952325486",
+      "country": "gb",
+      "note": "Admiral Online Casino & Slots"
+    },
+    {
+      "id": "579572362",
+      "country": "gb",
+      "note": "Paddy Power Games"
+    },
+    {
+      "id": "1248267356",
+      "country": "us",
+      "note": "KKday - Your Travel Companion"
+    },
+    {
+      "id": "550442071",
+      "country": "gb",
+      "note": "Betway - Online Casino & Slots"
+    },
+    {
+      "id": "343091870",
+      "country": "us",
+      "note": "Physical Exam Essentials"
+    },
+    {
+      "id": "591644846",
+      "country": "us",
+      "note": "Stock Master: Investing Stocks"
+    },
+    {
+      "id": "739699649",
+      "country": "us",
+      "note": "Slotpark Casino Slots Online"
+    },
+    {
+      "id": "6443995100",
+      "country": "us",
+      "note": "FOX LOCAL: Live News & Weather"
+    },
+    {
+      "id": "1453267645",
+      "country": "us",
+      "note": "B42 - Soccer Training"
+    },
+    {
+      "id": "6737783441",
+      "country": "us",
+      "note": "(Not Boring) Camera"
+    },
+    {
+      "id": "6755665424",
+      "country": "us",
+      "note": "Already: Sleep, Focus, Reset"
+    },
+    {
+      "id": "405852650",
+      "country": "us",
+      "note": "Lebanese Recipes"
+    },
+    {
+      "id": "933111586",
+      "country": "jp",
+      "note": "ドラゴンクエストV 天空の花嫁"
+    },
+    {
+      "id": "1460011387",
+      "country": "us",
+      "note": "MOZE"
+    },
+    {
+      "id": "6769869241",
+      "country": "us",
+      "note": "Ultrapool: Pool Roguelite"
+    },
+    {
+      "id": "409307935",
+      "country": "us",
+      "note": "Golf GameBook: Scorecard & GPS"
+    },
+    {
+      "id": "836767708",
+      "country": "us",
+      "note": "Wayfair – Shop All Things Home"
+    },
+    {
+      "id": "505191581",
+      "country": "gb",
+      "note": "Betfair Casino & Slots"
+    },
+    {
+      "id": "1563624436",
+      "country": "us",
+      "note": "Gymwork: Workout Tracker Log"
+    },
+    {
+      "id": "580669177",
+      "country": "us",
+      "note": "Bring! Grocery Shopping List"
+    },
+    {
+      "id": "1005765746",
+      "country": "us",
+      "note": "Psych! Outwit Your Friends"
+    },
+    {
+      "id": "6785419179",
+      "country": "us",
+      "note": "Quack Bag: Duck Mafia"
+    },
+    {
+      "id": "1204894451",
+      "country": "us",
+      "note": "Send Love • Greeting cards"
+    },
+    {
+      "id": "6815201377",
+      "country": "jp",
+      "note": "9ボール対戦記録＆分析 ビリヤード"
+    },
+    {
+      "id": "972387337",
+      "country": "us",
+      "note": "Scrivener"
+    },
+    {
+      "id": "1513504421",
+      "country": "us",
+      "note": "Yalla Baloot & Hand"
+    },
+    {
+      "id": "986383869",
+      "country": "us",
+      "note": "Gaminator Casino Slots & Games"
+    },
+    {
+      "id": "1606316865",
+      "country": "jp",
+      "note": "LINE：モンスターファーム"
+    },
+    {
+      "id": "396085661",
+      "country": "us",
+      "note": "Game Dev Story"
+    },
+    {
+      "id": "6504520443",
+      "country": "us",
+      "note": "Fullphysio"
+    },
+    {
+      "id": "785638228",
+      "country": "us",
+      "note": "Layout Photo Collage - Mixgram"
+    },
+    {
+      "id": "725472344",
+      "country": "us",
+      "note": "RIU Hotels & Resorts"
+    },
+    {
+      "id": "6791601497",
+      "country": "us",
+      "note": "CapForge: Football GM 2026"
+    },
+    {
+      "id": "6777895537",
+      "country": "jp",
+      "note": "SelfCount9 スコア管理&分析"
+    },
+    {
+      "id": "6756080502",
+      "country": "us",
+      "note": "ScoreGPT AI Soccer Predictions"
+    },
+    {
+      "id": "505800761",
+      "country": "us",
+      "note": "Burner: Second Phone Number"
+    },
+    {
+      "id": "1275945156",
+      "country": "us",
+      "note": "Chooser!"
+    },
+    {
+      "id": "600007708",
+      "country": "de",
+      "note": "LDOCE (InApp)"
+    },
+    {
+      "id": "1261193709",
+      "country": "us",
+      "note": "LingoDeer - Learn Languages"
+    },
+    {
+      "id": "6503262430",
+      "country": "us",
+      "note": "Social Gamebox: Impostor Game"
+    },
+    {
+      "id": "6757721236",
+      "country": "us",
+      "note": "YourPods: Podcast Player"
+    },
+    {
+      "id": "6779460450",
+      "country": "us",
+      "note": "Inkrest: Private Dictation"
+    },
+    {
+      "id": "1486650699",
+      "country": "us",
+      "note": "GSM+ Second Phone Number"
+    },
+    {
+      "id": "1514175088",
+      "country": "us",
+      "note": "Twiq - Social Chat"
+    },
+    {
+      "id": "1515406923",
+      "country": "us",
+      "note": "E-Pal: Never Battle Alone"
+    },
+    {
+      "id": "1542782702",
+      "country": "gb",
+      "note": "William Hill Vegas Casino"
+    },
+    {
+      "id": "6741687823",
+      "country": "gb",
+      "note": "Bonus & Spins: Casino Offers"
+    },
+    {
+      "id": "6443755785",
+      "country": "us",
+      "note": "Seaside Escape®: Merge & Story"
+    },
+    {
+      "id": "6761730635",
+      "country": "us",
+      "note": "DNA Altering"
+    },
+    {
+      "id": "6747737418",
+      "country": "us",
+      "note": "DRAGON QUEST Smash/Grow"
+    },
+    {
+      "id": "6749563379",
+      "country": "us",
+      "note": "CoeFont Interpreter Translator"
+    },
+    {
+      "id": "1406371071",
+      "country": "us",
+      "note": "Tide Guide: Charts & Tables"
+    },
+    {
+      "id": "294730339",
+      "country": "us",
+      "note": "TripView"
+    },
+    {
+      "id": "785537179",
+      "country": "us",
+      "note": "Heart of Vegas - Casino Slots"
+    },
+    {
+      "id": "6740220736",
+      "country": "us",
+      "note": "AI Photo Generator-PixDream"
+    },
+    {
+      "id": "6761281378",
+      "country": "us",
+      "note": "Styrka - Gym Tracker"
+    },
+    {
+      "id": "449945214",
+      "country": "us",
+      "note": "United Airlines"
+    },
+    {
+      "id": "6478958700",
+      "country": "us",
+      "note": "Suzy's Food Restaurant Game"
+    },
+    {
+      "id": "6470132467",
+      "country": "us",
+      "note": "Clicker – Presentation Remote"
+    },
+    {
+      "id": "6761196625",
+      "country": "us",
+      "note": "SaySo: Curated News Digests"
+    },
+    {
+      "id": "505446332",
+      "country": "us",
+      "note": "Topface: Meet with new people"
+    },
+    {
+      "id": "6736364779",
+      "country": "us",
+      "note": "Loop - Podcast Player"
+    },
+    {
+      "id": "6448578770",
+      "country": "us",
+      "note": "VRChat"
+    },
+    {
+      "id": "6505100587",
+      "country": "us",
+      "note": "TransGull - AI Live Translator"
+    },
+    {
+      "id": "1465992052",
+      "country": "ca",
+      "note": "theScore Bet: Sports Betting"
+    },
+    {
+      "id": "6503952002",
+      "country": "us",
+      "note": "FishMan - Fishing Spots"
+    },
+    {
+      "id": "1533526617",
+      "country": "us",
+      "note": "Campernight RV & Camper Spots"
+    },
+    {
+      "id": "1454183741",
+      "country": "us",
+      "note": "Room Escape Game-EXiTS-"
+    },
+    {
+      "id": "6763148209",
+      "country": "us",
+      "note": "Darija Lingo: Learn Darija"
+    },
+    {
+      "id": "585661281",
+      "country": "us",
+      "note": "Empire Four Kingdoms"
+    },
+    {
+      "id": "1626956309",
+      "country": "us",
+      "note": "Madory - House Planner 2D & 3D"
+    },
+    {
+      "id": "284035177",
+      "country": "us",
+      "note": "Pandora: Personalized Music"
+    },
+    {
+      "id": "923772792",
+      "country": "us",
+      "note": "Sentinels of the Multiverse"
+    },
+    {
+      "id": "6452119853",
+      "country": "us",
+      "note": "Wordscapes Solitaire Word Game"
+    },
+    {
+      "id": "6758233962",
+      "country": "us",
+      "note": "Local Photo Upscaler: Enhancer"
+    },
+    {
+      "id": "6819196673",
+      "country": "us",
+      "note": "ZEDOS"
+    },
+    {
+      "id": "985378916",
+      "country": "us",
+      "note": "Mileage Tracker by Everlance"
+    },
+    {
+      "id": "6584513689",
+      "country": "us",
+      "note": "OP.TCG"
+    },
+    {
+      "id": "6444920320",
+      "country": "us",
+      "note": "Mindllama Anxiety Relief"
+    },
+    {
+      "id": "454690785",
+      "country": "us",
+      "note": "GameTwist Online Casino Slots"
+    },
+    {
+      "id": "6753182581",
+      "country": "ca",
+      "note": "Hard Rock Bet Sportsbook"
+    },
+    {
+      "id": "6811304754",
+      "country": "us",
+      "note": "Photo Joiner: Before & After"
+    },
+    {
+      "id": "1481947260",
+      "country": "us",
+      "note": "Kraken: Buy Crypto & Stocks"
+    },
+    {
+      "id": "1092948773",
+      "country": "us",
+      "note": "LX Gesetze."
+    },
+    {
+      "id": "6464230667",
+      "country": "us",
+      "note": "Add Watermark to Photo & Video"
+    },
+    {
+      "id": "654810212",
+      "country": "us",
+      "note": "Freeletics: Workouts & Fitness"
+    },
+    {
+      "id": "1577941752",
+      "country": "us",
+      "note": "Island Hoppers: Adventure Farm"
+    },
+    {
+      "id": "6768196167",
+      "country": "us",
+      "note": "Imaging Console"
+    },
+    {
+      "id": "534130702",
+      "country": "gb",
+      "note": "888 Poker: Texas Holdem online"
+    },
+    {
+      "id": "883504378",
+      "country": "us",
+      "note": "BenchApp - Sports Team Manager"
+    },
+    {
+      "id": "6811006356",
+      "country": "us",
+      "note": "Foodie Pop!"
+    },
+    {
+      "id": "6805006706",
+      "country": "us",
+      "note": "Age of Spirits"
+    },
+    {
+      "id": "1326757844",
+      "country": "us",
+      "note": "Fazilet Calendar: Salāh Times"
+    },
+    {
+      "id": "6760413552",
+      "country": "us",
+      "note": "Video To Timelapse Converter"
+    },
+    {
+      "id": "6757747458",
+      "country": "us",
+      "note": "ADHD Buddy: Planner & Timer"
+    },
+    {
+      "id": "6766739255",
+      "country": "us",
+      "note": "Rebel Glam: Dress Up Games"
+    },
+    {
+      "id": "6819722867",
+      "country": "us",
+      "note": "One More Row"
+    },
+    {
+      "id": "6808554629",
+      "country": "us",
+      "note": "Catcharium: Fish ID & Log"
+    },
+    {
+      "id": "826510222",
+      "country": "de",
+      "note": "Joyn | deine Streaming App"
+    },
+    {
+      "id": "6810886970",
+      "country": "us",
+      "note": "Just a Rock"
+    },
+    {
+      "id": "1271361459",
+      "country": "us",
+      "note": "Flow: Note Taking & Sketchbook"
+    },
+    {
+      "id": "1520403172",
+      "country": "us",
+      "note": "Photographer's companion Pro"
+    },
+    {
+      "id": "6749799038",
+      "country": "us",
+      "note": "IllusionTEST"
+    },
+    {
+      "id": "1482149358",
+      "country": "us",
+      "note": "Fitaya"
+    },
+    {
+      "id": "6746062205",
+      "country": "us",
+      "note": "Om Mani – Global Buddhism"
+    },
+    {
+      "id": "1645842987",
+      "country": "us",
+      "note": "Rent Please! Landlord Sim"
+    },
+    {
+      "id": "6793387345",
+      "country": "us",
+      "note": "Formula For Life"
+    },
+    {
+      "id": "6449243946",
+      "country": "us",
+      "note": "Snake Clash!"
+    },
+    {
+      "id": "714796093",
+      "country": "us",
+      "note": "Cooking Fever: Restaurant Game"
+    },
+    {
+      "id": "1308181322",
+      "country": "us",
+      "note": "Puzzle Page - Daily Games!"
+    },
+    {
+      "id": "6784817547",
+      "country": "us",
+      "note": "Gridiron GM"
+    },
+    {
+      "id": "1631984107",
+      "country": "jp",
+      "note": "ブルーロック Project: World Champion"
+    },
+    {
+      "id": "6760237050",
+      "country": "us",
+      "note": "MilGPS PRO"
+    },
+    {
+      "id": "968903325",
+      "country": "us",
+      "note": "Seqnce"
+    },
+    {
+      "id": "6499032288",
+      "country": "us",
+      "note": "Kiki: Local Chat & People Near"
+    },
+    {
+      "id": "486781045",
+      "country": "us",
+      "note": "Magisto Video Editor & Maker"
+    },
+    {
+      "id": "1472875808",
+      "country": "us",
+      "note": "CardPointers for Credit Cards"
+    },
+    {
+      "id": "6752425108",
+      "country": "us",
+      "note": "Med GPT: AI Doctor Assistant"
+    },
+    {
+      "id": "294047850",
+      "country": "us",
+      "note": "Le Monde, Live News"
+    },
+    {
+      "id": "1446728841",
+      "country": "us",
+      "note": "Word Crush® - Fun Puzzle Game"
+    },
+    {
+      "id": "6756404248",
+      "country": "us",
+      "note": "Sam Tennis: Classement & Stats"
+    },
+    {
+      "id": "6755734296",
+      "country": "us",
+      "note": "Make it Meme - Party Game"
+    },
+    {
+      "id": "6759879426",
+      "country": "us",
+      "note": "Triplly: Trip & Travel Planner"
+    },
+    {
+      "id": "959001619",
+      "country": "us",
+      "note": "Tandem: Practice Languages"
+    },
+    {
+      "id": "978307846",
+      "country": "us",
+      "note": "OS Maps: Walk, Hike, Run, Bike"
+    },
+    {
+      "id": "1487668791",
+      "country": "us",
+      "note": "Vixer: AI Video Editor & Maker"
+    },
+    {
+      "id": "1057991212",
+      "country": "de",
+      "note": "RTL+"
+    },
+    {
+      "id": "6797597563",
+      "country": "us",
+      "note": "Add Watermark: Photo Copyright"
+    },
+    {
+      "id": "577232024",
+      "country": "us",
+      "note": "Lumosity: Brain Training Games"
+    },
+    {
+      "id": "987873536",
+      "country": "us",
+      "note": "Mondly: Learn 41 Languages"
+    },
+    {
+      "id": "670275118",
+      "country": "us",
+      "note": "Odd Socks"
+    },
+    {
+      "id": "6755855661",
+      "country": "gb",
+      "note": "Immobot. Sofort Wohnung finden"
+    },
+    {
+      "id": "6800759641",
+      "country": "us",
+      "note": "Code Blue Monitor"
+    },
+    {
+      "id": "518684914",
+      "country": "us",
+      "note": "Depop - Buy & Sell Clothes"
+    },
+    {
+      "id": "1510554246",
+      "country": "us",
+      "note": "GoodRec"
+    },
+    {
+      "id": "6476443077",
+      "country": "us",
+      "note": "ForeXpert - Forex Backtest"
+    },
+    {
+      "id": "6808956914",
+      "country": "us",
+      "note": "Code Blue Monitor Pro"
+    },
+    {
+      "id": "6761061587",
+      "country": "us",
+      "note": "Route 66 Centennial Guide"
+    },
+    {
+      "id": "6443808491",
+      "country": "fr",
+      "note": "Spiice Rencontres"
+    },
+    {
+      "id": "905698613",
+      "country": "us",
+      "note": "Smart Receipts: Expenses & Tax"
+    },
+    {
+      "id": "6745274862",
+      "country": "us",
+      "note": "DealSeek: Coupons & Discounts"
+    },
+    {
+      "id": "1058370552",
+      "country": "us",
+      "note": "Farm Heroes Super Saga"
+    },
+    {
+      "id": "6444128823",
+      "country": "us",
+      "note": "Ear Piercing & Tattoo Games"
+    },
+    {
+      "id": "6758107967",
+      "country": "us",
+      "note": "Morta’s Blade"
+    },
+    {
+      "id": "6804889664",
+      "country": "us",
+      "note": "100 Days to Fit"
+    },
+    {
+      "id": "371294472",
+      "country": "us",
+      "note": "Shopify: Sell. Run a business."
+    },
+    {
+      "id": "1093814557",
+      "country": "us",
+      "note": "Caring Village: Caregiver App"
+    },
+    {
+      "id": "541933937",
+      "country": "us",
+      "note": "ZipRecruiter Job Search"
+    },
+    {
+      "id": "1054618680",
+      "country": "us",
+      "note": "propertips"
+    },
+    {
+      "id": "6747768621",
+      "country": "us",
+      "note": "Milo: Your Money Guide"
+    },
+    {
+      "id": "6759922947",
+      "country": "us",
+      "note": "Grow Now - Go Viral With AI"
+    },
+    {
+      "id": "362348516",
+      "country": "us",
+      "note": "Amex"
+    },
+    {
+      "id": "6760570606",
+      "country": "us",
+      "note": "Fluen AI: Bladder Health Diary"
+    },
+    {
+      "id": "1563883190",
+      "country": "us",
+      "note": "Wingman: Paragliding Tracker"
+    },
+    {
+      "id": "284882215",
+      "country": "us",
+      "note": "Facebook"
+    },
+    {
+      "id": "6752223666",
+      "country": "us",
+      "note": "Flux : Smart RSS reader"
+    },
+    {
+      "id": "6782117618",
+      "country": "us",
+      "note": "CSFC: Pickup Football"
+    },
+    {
+      "id": "990972073",
+      "country": "us",
+      "note": "Pirate Treasures - Gems Puzzle"
+    },
+    {
+      "id": "297606951",
+      "country": "us",
+      "note": "Amazon Shopping"
+    },
+    {
+      "id": "6755842132",
+      "country": "us",
+      "note": "Borner"
+    },
+    {
+      "id": "1340650234",
+      "country": "gb",
+      "note": "Paramount+"
+    },
+    {
+      "id": "6742728012",
+      "country": "us",
+      "note": "Game Maps IRL"
+    },
+    {
+      "id": "1139573600",
+      "country": "us",
+      "note": "Pressed Coins 4 WDW"
+    },
+    {
+      "id": "6751950337",
+      "country": "us",
+      "note": "Farm Life: Harvest Tycoon"
+    },
+    {
+      "id": "6505095234",
+      "country": "us",
+      "note": "Car Jam: Bus Escape Traffic"
+    },
+    {
+      "id": "6760764479",
+      "country": "us",
+      "note": "Alpin Quest PRO – Outdoor GPS"
+    },
+    {
+      "id": "1658514439",
+      "country": "us",
+      "note": "Forma: PDF Document Editor"
+    },
+    {
+      "id": "6762010774",
+      "country": "us",
+      "note": "CrownCards - Trading Cards"
+    },
+    {
+      "id": "6759520123",
+      "country": "us",
+      "note": "Cocktails by Steve"
+    },
+    {
+      "id": "1083451870",
+      "country": "us",
+      "note": "Leap Day"
+    },
+    {
+      "id": "1062935992",
+      "country": "us",
+      "note": "Netwerk24 – Alles op een plek"
+    },
+    {
+      "id": "6480203559",
+      "country": "us",
+      "note": "Offroad Runner."
+    },
+    {
+      "id": "6822114548",
+      "country": "us",
+      "note": "Soundiary"
+    },
+    {
+      "id": "1140486359",
+      "country": "us",
+      "note": "OCD.app - Self help + Therapy"
+    },
+    {
+      "id": "1630710367",
+      "country": "us",
+      "note": "BUMPiNT-Short Dramas"
+    },
+    {
+      "id": "6776675118",
+      "country": "us",
+      "note": "FieldNav: MGRS & UTM GPS"
+    },
+    {
+      "id": "6797548325",
+      "country": "us",
+      "note": "PanoFlow"
+    },
+    {
+      "id": "6741755675",
+      "country": "us",
+      "note": "Mini Golf Club PvP Multiplayer"
+    },
+    {
+      "id": "6689516366",
+      "country": "us",
+      "note": "Bus Escape: Traffic Jam"
+    },
+    {
+      "id": "1330313789",
+      "country": "us",
+      "note": "Pressed Coins 4 DLR"
+    },
+    {
+      "id": "1389760587",
+      "country": "us",
+      "note": "Darts Club: PvP Multiplayer"
+    },
+    {
+      "id": "6736373498",
+      "country": "us",
+      "note": "TipsPro AI: Match Prediction"
+    },
+    {
+      "id": "6468928038",
+      "country": "us",
+      "note": "Forms for Google Drive"
+    },
+    {
+      "id": "1628292843",
+      "country": "us",
+      "note": "buz - voice connects"
+    },
+    {
+      "id": "1621328561",
+      "country": "us",
+      "note": "MONOPOLY GO!"
+    },
+    {
+      "id": "926211004",
+      "country": "us",
+      "note": "NoWaste: Food Inventory List"
+    },
+    {
+      "id": "1096884447",
+      "country": "us",
+      "note": "Jeopardy! Trivia TV Game Show"
+    },
+    {
+      "id": "6751027816",
+      "country": "us",
+      "note": "Cardzia : Cartes TCG & Scellés"
+    },
+    {
+      "id": "6779705274",
+      "country": "us",
+      "note": "PlaySpark: Party Games Night"
+    },
+    {
+      "id": "1467351707",
+      "country": "us",
+      "note": "KrugerExplorer"
+    },
+    {
+      "id": "1059461492",
+      "country": "us",
+      "note": "Bill Tracker Pro: Budget Saver"
+    },
+    {
+      "id": "6820956317",
+      "country": "us",
+      "note": "Tasklo: Reminders"
+    },
+    {
+      "id": "1611276131",
+      "country": "us",
+      "note": "Kiss : Live Video Chat Online"
+    },
+    {
+      "id": "1508186374",
+      "country": "us",
+      "note": "Peacock TV: Stream TV & Movies"
+    },
+    {
+      "id": "1506496657",
+      "country": "us",
+      "note": "Erudite Trivia: Spin the Brain"
+    },
+    {
+      "id": "952578473",
+      "country": "us",
+      "note": "TimeTree: Shared Calendar"
+    },
+    {
+      "id": "6808328469",
+      "country": "us",
+      "note": "Collektik"
+    },
+    {
+      "id": "1195541934",
+      "country": "us",
+      "note": "My Recipe Box: Cookbook & Plan"
+    },
+    {
+      "id": "542090992",
+      "country": "au",
+      "note": "SBS On Demand"
+    },
+    {
+      "id": "6758053806",
+      "country": "us",
+      "note": "Kesef: Expense Tracker"
+    },
+    {
+      "id": "6819290590",
+      "country": "us",
+      "note": "Glimli – Night Light"
+    },
+    {
+      "id": "1627714743",
+      "country": "us",
+      "note": "EatBeat: Weekly Meal Planner"
+    },
+    {
+      "id": "1606094061",
+      "country": "us",
+      "note": "Beep Test Pro"
+    },
+    {
+      "id": "417328133",
+      "country": "us",
+      "note": "MAXIM KOREA"
+    },
+    {
+      "id": "6753683618",
+      "country": "us",
+      "note": "GoomY: save your recipes"
+    },
+    {
+      "id": "304608425",
+      "country": "us",
+      "note": "KakaoMap - Korea No.1 Map"
+    },
+    {
+      "id": "6772514158",
+      "country": "us",
+      "note": "Hockey Mini Games"
+    },
+    {
+      "id": "1104165041",
+      "country": "us",
+      "note": "Supershift - Shift Calendar"
+    },
+    {
+      "id": "6813376985",
+      "country": "us",
+      "note": "PapaMap"
+    },
+    {
+      "id": "1622598042",
+      "country": "us",
+      "note": "TV Launcher - Live US Channels"
+    },
+    {
+      "id": "1563254124",
+      "country": "us",
+      "note": "Delm8 City Navigation, Maps UK"
+    },
+    {
+      "id": "1533473030",
+      "country": "us",
+      "note": "BS Companion"
+    },
+    {
+      "id": "6459060454",
+      "country": "us",
+      "note": "Assemble with Care"
+    },
+    {
+      "id": "6754280964",
+      "country": "us",
+      "note": "JuJuBit: AI Custom 3D Shop"
+    },
+    {
+      "id": "361273585",
+      "country": "us",
+      "note": "Plane Finder ⁃ Flight Tracker"
+    },
+    {
+      "id": "1269475215",
+      "country": "us",
+      "note": "Hue Haunted House"
+    },
+    {
+      "id": "505492501",
+      "country": "us",
+      "note": "Star TV - Dizi İzle - Canlı TV"
+    },
+    {
+      "id": "6452079114",
+      "country": "us",
+      "note": "Scooter Tools"
+    },
+    {
+      "id": "6738962638",
+      "country": "us",
+      "note": "Stamp Value Identifier: Stampy"
+    },
+    {
+      "id": "535811906",
+      "country": "us",
+      "note": "GoDaddy: Websites & Marketing"
+    },
+    {
+      "id": "377388936",
+      "country": "gb",
+      "note": "BBC Sport - News & Live Scores"
+    },
+    {
+      "id": "1002043426",
+      "country": "us",
+      "note": "Lingokids: Games & Shows"
+    },
+    {
+      "id": "1446201476",
+      "country": "us",
+      "note": "BoomBar"
+    },
+    {
+      "id": "6449848963",
+      "country": "us",
+      "note": "Slice & Dice"
+    },
+    {
+      "id": "1562974920",
+      "country": "us",
+      "note": "Mixbook: Photo Book & Album"
+    },
+    {
+      "id": "6798033658",
+      "country": "us",
+      "note": "Hoverpoint: Drone No-Fly Zones"
+    },
+    {
+      "id": "6446242162",
+      "country": "us",
+      "note": "Player for Watch"
+    },
+    {
+      "id": "1458762050",
+      "country": "us",
+      "note": "Knighthood"
+    },
+    {
+      "id": "1644899340",
+      "country": "us",
+      "note": "Peuka - Parking & Tickets"
+    },
+    {
+      "id": "6474068353",
+      "country": "us",
+      "note": "StromNow EV Charging Map"
+    },
+    {
+      "id": "1668588896",
+      "country": "us",
+      "note": "LightPlan: Sun Path & Shadow"
+    },
+    {
+      "id": "6744095828",
+      "country": "us",
+      "note": "Crsel: Carousel, Collage Maker"
+    },
+    {
+      "id": "1118441024",
+      "country": "us",
+      "note": "Bloons Supermonkey 2"
+    },
+    {
+      "id": "6809037738",
+      "country": "us",
+      "note": "GPSense — GPS Test & Status"
+    },
+    {
+      "id": "6746770866",
+      "country": "us",
+      "note": "Elva: AI Video Director Agent"
+    },
+    {
+      "id": "1465399598",
+      "country": "us",
+      "note": "Momenzo: Real Estate Videos"
+    },
+    {
+      "id": "6777213989",
+      "country": "us",
+      "note": "Pounce: tile jump strategy"
+    },
+    {
+      "id": "6758715548",
+      "country": "de",
+      "note": "Lebenssignal"
+    },
+    {
+      "id": "6477535785",
+      "country": "de",
+      "note": "WC Finder"
+    },
+    {
+      "id": "6759795698",
+      "country": "us",
+      "note": "Giggle Pops"
+    },
+    {
+      "id": "6798665290",
+      "country": "us",
+      "note": "C-Cook:ノンフライヤーの温度・時間設定管理アプリ"
+    },
+    {
+      "id": "6798767414",
+      "country": "us",
+      "note": "ClimbCam"
+    },
+    {
+      "id": "1024203364",
+      "country": "us",
+      "note": "Danske Aviser - Denmark news"
+    },
+    {
+      "id": "6745961146",
+      "country": "de",
+      "note": "EÜR & EAR Einfach Buchhaltung"
+    },
+    {
+      "id": "6469040590",
+      "country": "us",
+      "note": "Cooking World!"
+    },
+    {
+      "id": "301521403",
+      "country": "us",
+      "note": "Nike Training Club"
+    },
+    {
+      "id": "1041734680",
+      "country": "us",
+      "note": "Fitness Test Pro Elite"
+    },
+    {
+      "id": "6746701133",
+      "country": "us",
+      "note": "Design Family Life"
+    },
+    {
+      "id": "6809440146",
+      "country": "de",
+      "note": "Mykotop"
+    },
+    {
+      "id": "6811290737",
+      "country": "us",
+      "note": "Shell Keyboard"
+    },
+    {
+      "id": "6772487648",
+      "country": "us",
+      "note": "Mijote: Recipe Book & Keeper"
+    },
+    {
+      "id": "6783049854",
+      "country": "us",
+      "note": "kiko: Costco Companion"
+    },
+    {
+      "id": "1453651052",
+      "country": "us",
+      "note": "Archero"
+    },
+    {
+      "id": "311548709",
+      "country": "us",
+      "note": "Wells Fargo Mobile®"
+    },
+    {
+      "id": "975017240",
+      "country": "us",
+      "note": "Focus - Deep Work Timer"
+    },
+    {
+      "id": "586683407",
+      "country": "us",
+      "note": "Microsoft Excel"
+    },
+    {
+      "id": "6755623391",
+      "country": "us",
+      "note": "Hanping Cantonese Dictionary"
+    },
+    {
+      "id": "6777863511",
+      "country": "us",
+      "note": "Arrow Block 3D - Tap Maze Pro"
+    },
+    {
+      "id": "6759365425",
+      "country": "us",
+      "note": "Wheel of Names: Random Picker"
+    },
+    {
+      "id": "6754616988",
+      "country": "us",
+      "note": "Business Inc Tycoon Simulator"
+    },
+    {
+      "id": "6755731135",
+      "country": "us",
+      "note": "FUTGenie"
+    },
+    {
+      "id": "6736774022",
+      "country": "us",
+      "note": "Baseball Hits 26"
+    },
+    {
+      "id": "1440301673",
+      "country": "us",
+      "note": "Dott – Moving us closer"
+    },
+    {
+      "id": "6482291732",
+      "country": "us",
+      "note": "Lucky Defense!"
+    },
+    {
+      "id": "6786178362",
+      "country": "us",
+      "note": "GoGirl: Girly Maps & Pink GPS"
+    },
+    {
+      "id": "711455226",
+      "country": "us",
+      "note": "Forge of Empires: Build a City"
+    },
+    {
+      "id": "455004730",
+      "country": "us",
+      "note": "Marriott Bonvoy: Book Hotels"
+    },
+    {
+      "id": "6761748870",
+      "country": "us",
+      "note": "PulseFolio"
+    },
+    {
+      "id": "310755560",
+      "country": "us",
+      "note": "Rebtel: Top-ups And Calls"
+    },
+    {
+      "id": "6762511332",
+      "country": "us",
+      "note": "Pocket: Expense Tracker"
+    },
+    {
+      "id": "859243872",
+      "country": "us",
+      "note": "ABA English - Learn English"
+    },
+    {
+      "id": "1575690768",
+      "country": "us",
+      "note": "Langaku: Bilingual Manga"
+    },
+    {
+      "id": "1057889290",
+      "country": "us",
+      "note": "Tomb of the Mask: Pixel Maze"
+    },
+    {
+      "id": "1478108023",
+      "country": "us",
+      "note": "Breeze - No Chat, Just Dates"
+    },
+    {
+      "id": "6444451090",
+      "country": "us",
+      "note": "Club iGen"
+    },
+    {
+      "id": "6776756035",
+      "country": "us",
+      "note": "38-0-0: Football Squad Draft"
+    },
+    {
+      "id": "606927881",
+      "country": "us",
+      "note": "Takealot - Mobile Shopping App"
+    },
+    {
+      "id": "6451048056",
+      "country": "us",
+      "note": "MotiTan: Japanese Vocabulary"
+    },
+    {
+      "id": "6761459822",
+      "country": "us",
+      "note": "RockHoundR: Rockhounding Map"
+    },
+    {
+      "id": "821068605",
+      "country": "us",
+      "note": "Gaia: Streaming Consciousness"
+    },
+    {
+      "id": "6745806705",
+      "country": "us",
+      "note": "Patrol Prep: Police Exam Coach"
+    },
+    {
+      "id": "423642917",
+      "country": "us",
+      "note": "ALPA Mobile"
+    },
+    {
+      "id": "6752982989",
+      "country": "us",
+      "note": "mori: memento mori countdowns"
+    },
+    {
+      "id": "6789727432",
+      "country": "us",
+      "note": "Alpingo: Trails, GPS & Mining"
+    },
+    {
+      "id": "6761979905",
+      "country": "us",
+      "note": "MotiSpi: Japanese Conversation"
+    },
+    {
+      "id": "6814248214",
+      "country": "us",
+      "note": "Golf: The Journey - Career Sim"
+    },
+    {
+      "id": "6793985010",
+      "country": "us",
+      "note": "Bean Wizard"
+    },
+    {
+      "id": "6754231707",
+      "country": "us",
+      "note": "Serato DJ"
+    },
+    {
+      "id": "6746194884",
+      "country": "us",
+      "note": "Harvee: Watch Stress Monitor"
+    },
+    {
+      "id": "1069236120",
+      "country": "us",
+      "note": "Green the Planet 2"
+    },
+    {
+      "id": "325307477",
+      "country": "us",
+      "note": "AudioTools, dB, Sound & Audio"
+    },
+    {
+      "id": "1177870786",
+      "country": "us",
+      "note": "WikiTest"
+    },
+    {
+      "id": "6761194879",
+      "country": "us",
+      "note": "RIGLOG: Trucking Expense Log"
+    },
+    {
+      "id": "6745964306",
+      "country": "us",
+      "note": "Minipuzzles - Daily Challenges"
+    },
+    {
+      "id": "6744049261",
+      "country": "us",
+      "note": "Block Color Mania, Puzzle Game"
+    },
+    {
+      "id": "968585775",
+      "country": "us",
+      "note": "BandLab – Music Maker & Beats"
+    },
+    {
+      "id": "1531561063",
+      "country": "us",
+      "note": "Zoom Earth - Weather Forecast"
+    },
+    {
+      "id": "6755425765",
+      "country": "us",
+      "note": "GeoHunter"
+    },
+    {
+      "id": "6476917854",
+      "country": "us",
+      "note": "BALLISTiQ-Shooter's Assistant"
+    },
+    {
+      "id": "1502447854",
+      "country": "us",
+      "note": "Match 3D"
+    },
+    {
+      "id": "6766319193",
+      "country": "us",
+      "note": "Penguin: Couple Question Cards"
+    },
+    {
+      "id": "6763239887",
+      "country": "us",
+      "note": "First Team Manager 2027"
+    },
+    {
+      "id": "6741714480",
+      "country": "us",
+      "note": "Immobilien Bot. Find rentals"
+    },
+    {
+      "id": "1562661709",
+      "country": "us",
+      "note": "Panorama Scroll Carousel Maker"
+    },
+    {
+      "id": "6820550814",
+      "country": "us",
+      "note": "Chřibský průvodce"
+    },
+    {
+      "id": "878042995",
+      "country": "us",
+      "note": "Logo Maker: Art Design Creator"
+    },
+    {
+      "id": "1092689152",
+      "country": "us",
+      "note": "CodyCross: Crossword Puzzles"
+    },
+    {
+      "id": "1198176727",
+      "country": "us",
+      "note": "Controller for HomeKit"
+    },
+    {
+      "id": "6744976219",
+      "country": "us",
+      "note": "One More Shot - AI Music Video"
+    },
+    {
+      "id": "1208244349",
+      "country": "us",
+      "note": "Clawbert"
+    },
+    {
+      "id": "6787809637",
+      "country": "us",
+      "note": "MotoTracker"
+    },
+    {
+      "id": "357815924",
+      "country": "us",
+      "note": "Drumline"
+    },
+    {
+      "id": "1171358257",
+      "country": "us",
+      "note": "Filmr - Pro Video Editor"
+    },
+    {
+      "id": "1643481036",
+      "country": "us",
+      "note": "Hidden Objects - Find It Out®"
+    },
+    {
+      "id": "1250946975",
+      "country": "us",
+      "note": "Hily Dating App: Meet. Date."
+    },
+    {
+      "id": "1073082439",
+      "country": "us",
+      "note": "My Aurora Forecast & Alerts"
+    },
+    {
+      "id": "1457185832",
+      "country": "us",
+      "note": "Headway - Daily Micro Learning"
+    },
+    {
+      "id": "1075462280",
+      "country": "us",
+      "note": "My Aurora Forecast Pro"
+    },
+    {
+      "id": "406889139",
+      "country": "us",
+      "note": "Coin Master"
+    },
+    {
+      "id": "382030091",
+      "country": "gb",
+      "note": "Paddy Power Sports Betting"
+    },
+    {
+      "id": "6757609398",
+      "country": "us",
+      "note": "Matchday: Soccer Card Game"
+    },
+    {
+      "id": "513850893",
+      "country": "us",
+      "note": "DMV Genie: Permit Test 2026"
+    },
+    {
+      "id": "428237841",
+      "country": "gb",
+      "note": "Sky Bet - Sports Betting"
+    },
+    {
+      "id": "927420451",
+      "country": "jp",
+      "note": "ユニゾンリーグ-本格RPG/ロールプレイングゲーム-"
+    },
+    {
+      "id": "6445937968",
+      "country": "us",
+      "note": "Super Snail"
+    },
+    {
+      "id": "6740399679",
+      "country": "us",
+      "note": "AURA AI: Texting Assistant"
+    },
+    {
+      "id": "1628762035",
+      "country": "us",
+      "note": "Mystical Mixing"
+    },
+    {
+      "id": "1104649303",
+      "country": "us",
+      "note": "My Moon Phase Pro - Alerts"
+    },
+    {
+      "id": "1424517685",
+      "country": "us",
+      "note": "Drive Weather"
+    },
+    {
+      "id": "1048742145",
+      "country": "us",
+      "note": "FLYLOG.io - For Pilots"
+    },
+    {
+      "id": "336200559",
+      "country": "us",
+      "note": "BruttoNetto – Salary Austria"
+    },
+    {
+      "id": "975770717",
+      "country": "us",
+      "note": "My Earthquake Alerts Pro"
+    },
+    {
+      "id": "1596971856",
+      "country": "us",
+      "note": "Plant Identifier: Plantiary"
+    },
+    {
+      "id": "1601130294",
+      "country": "us",
+      "note": "My Business Control"
+    },
+    {
+      "id": "6759890451",
+      "country": "us",
+      "note": "Piggy Jam - Traffic Escape Out"
+    },
+    {
+      "id": "6818823762",
+      "country": "us",
+      "note": "Telltale: Meeting Stress Coach"
+    },
+    {
+      "id": "6782352375",
+      "country": "us",
+      "note": "Canada Prospector"
+    },
+    {
+      "id": "6763518834",
+      "country": "us",
+      "note": "NaviBeat"
+    },
+    {
+      "id": "6757679404",
+      "country": "us",
+      "note": "CUStats Go - AI Usage Tracker"
+    },
+    {
+      "id": "975709372",
+      "country": "us",
+      "note": "My Earthquake Alerts & Feed"
+    },
+    {
+      "id": "6757540822",
+      "country": "us",
+      "note": "Word Search Hotel"
+    },
+    {
+      "id": "6759825363",
+      "country": "us",
+      "note": "Otiggo Route Planner"
+    },
+    {
+      "id": "389638243",
+      "country": "us",
+      "note": "Plenty of Fish : Dating App"
+    },
+    {
+      "id": "957143504",
+      "country": "us",
+      "note": "Tide Charts"
+    },
+    {
+      "id": "1558236648",
+      "country": "us",
+      "note": "Packet Sender - UDP/TCP/HTTP"
+    },
+    {
+      "id": "6756026967",
+      "country": "us",
+      "note": "GoToAppleMaps: Place Converter"
+    },
+    {
+      "id": "641992398",
+      "country": "us",
+      "note": "WNBA: Live Games & Scores"
+    },
+    {
+      "id": "647275629",
+      "country": "us",
+      "note": "Live TV – IP TV"
+    },
+    {
+      "id": "6819809029",
+      "country": "us",
+      "note": "Iahadut HaTora"
+    },
+    {
+      "id": "1487652920",
+      "country": "gb",
+      "note": "Mercedes-Benz"
+    },
+    {
+      "id": "6792345460",
+      "country": "us",
+      "note": "ShadeTraceMap"
+    },
+    {
+      "id": "6766306736",
+      "country": "us",
+      "note": "Trivora"
+    },
+    {
+      "id": "407690035",
+      "country": "us",
+      "note": "HotelTonight: Hotel Booking"
+    },
+    {
+      "id": "1175031995",
+      "country": "us",
+      "note": "My Lightning Tracker Pro"
+    },
+    {
+      "id": "410148139",
+      "country": "us",
+      "note": "NOAA Weather Radio"
+    },
+    {
+      "id": "917176209",
+      "country": "us",
+      "note": "Thinkrolls 1: Puzzles for Kids"
+    },
+    {
+      "id": "1201725025",
+      "country": "us",
+      "note": "Faladdin Astrology & Horoscope"
+    },
+    {
+      "id": "6761026960",
+      "country": "us",
+      "note": "Weather Time Widget"
+    },
+    {
+      "id": "1536411052",
+      "country": "us",
+      "note": "Scanner: Scan Documents·"
+    },
+    {
+      "id": "6796041389",
+      "country": "us",
+      "note": "Cancel Subscriptions: Submo"
+    },
+    {
+      "id": "1474049638",
+      "country": "jp",
+      "note": "StudyCast（スタキャス）勉強タイマーで集中力が継続！"
+    },
+    {
+      "id": "6498938838",
+      "country": "us",
+      "note": "Livity: Sleep & Health Tracker"
+    },
+    {
+      "id": "529463906",
+      "country": "us",
+      "note": "Paris Match : Actu & People"
+    },
+    {
+      "id": "6793605332",
+      "country": "us",
+      "note": "Knighter: Fate"
+    },
+    {
+      "id": "6807445484",
+      "country": "us",
+      "note": "Rush Casino Trainer Club"
+    },
+    {
+      "id": "473628024",
+      "country": "us",
+      "note": "The Ultimate Buzzer Pro"
+    },
+    {
+      "id": "1547114259",
+      "country": "us",
+      "note": "Parqet - Portfolio Tracker"
+    },
+    {
+      "id": "6473036578",
+      "country": "us",
+      "note": "InstaEnglish—Speak&Learn Fast"
+    },
+    {
+      "id": "368677368",
+      "country": "us",
+      "note": "Uber - Rides, Eats, Hotels"
+    },
+    {
+      "id": "1038240859",
+      "country": "us",
+      "note": "albo - Tu dinero, más tuyo"
+    },
+    {
+      "id": "1094254051",
+      "country": "de",
+      "note": "Outbank: Banking & Finanzen"
+    },
+    {
+      "id": "505365608",
+      "country": "us",
+      "note": "WikiCamps Australia"
+    },
+    {
+      "id": "488165644",
+      "country": "us",
+      "note": "PolyNome: THE Metronome"
+    },
+    {
+      "id": "6742114767",
+      "country": "us",
+      "note": "FrostGuard"
+    },
+    {
+      "id": "1522870046",
+      "country": "us",
+      "note": "Device Monitor²"
+    },
+    {
+      "id": "1214681230",
+      "country": "us",
+      "note": "S'hail"
+    },
+    {
+      "id": "6770260745",
+      "country": "us",
+      "note": "AI App Builder Architect"
+    },
+    {
+      "id": "1212118228",
+      "country": "us",
+      "note": "OnPitch - Vocal Pitch Monitor"
+    },
+    {
+      "id": "529379082",
+      "country": "us",
+      "note": "Lyft"
+    },
+    {
+      "id": "6801256233",
+      "country": "us",
+      "note": "Halcyon Forecast"
+    },
+    {
+      "id": "6745130802",
+      "country": "us",
+      "note": "TimeGuessr"
+    },
+    {
+      "id": "6761920888",
+      "country": "us",
+      "note": "TOPIK Note"
+    },
+    {
+      "id": "1010178487",
+      "country": "us",
+      "note": "COLREG 72: Rules of the Road"
+    },
+    {
+      "id": "1020486527",
+      "country": "us",
+      "note": "My Hurricane Tracker Pro"
+    },
+    {
+      "id": "895761422",
+      "country": "us",
+      "note": "LINE Bubble 2"
+    },
+    {
+      "id": "542317657",
+      "country": "us",
+      "note": "Yle Areena"
+    },
+    {
+      "id": "1099771240",
+      "country": "us",
+      "note": "30 Day Fitness - Home Workout"
+    },
+    {
+      "id": "892589817",
+      "country": "us",
+      "note": "Weather mini - Trip Forecasts"
+    },
+    {
+      "id": "1460290478",
+      "country": "us",
+      "note": "Transcribe Audio to Text Notes"
+    },
+    {
+      "id": "6818096981",
+      "country": "us",
+      "note": "Swipe Your President 2027"
+    },
+    {
+      "id": "6810920070",
+      "country": "us",
+      "note": "DarkDeepWeb - AI Browser"
+    },
+    {
+      "id": "1040093707",
+      "country": "us",
+      "note": "iScanner: PDF Document Scanner"
+    },
+    {
+      "id": "1175031987",
+      "country": "us",
+      "note": "My Lightning Tracker & Alerts"
+    },
+    {
+      "id": "6757274956",
+      "country": "us",
+      "note": "Pour de Vrai"
+    },
+    {
+      "id": "6757428581",
+      "country": "us",
+      "note": "DMV: Practice Test Before Exam"
+    },
+    {
+      "id": "6670477092",
+      "country": "gb",
+      "note": "Campuscard Berlin/Brandenburg"
+    },
+    {
+      "id": "869642260",
+      "country": "us",
+      "note": "iPA Phonetics"
+    },
+    {
+      "id": "6740288292",
+      "country": "us",
+      "note": "Savewise: Credit Card Rewards"
+    },
+    {
+      "id": "6753151233",
+      "country": "us",
+      "note": "Melimelo - Household Organizer"
+    },
+    {
+      "id": "6744235731",
+      "country": "us",
+      "note": "Crostic Guru - Guess The Words"
+    },
+    {
+      "id": "395148744",
+      "country": "us",
+      "note": "Hurricane Center"
+    },
+    {
+      "id": "498958864",
+      "country": "us",
+      "note": "Aviasales. Cheap Air Tickets"
+    },
+    {
+      "id": "6760749374",
+      "country": "us",
+      "note": "YOMITORI｜2-Player Online Game"
+    },
+    {
+      "id": "1499417636",
+      "country": "us",
+      "note": "Circle o Fifths: Guitar+Piano"
+    },
+    {
+      "id": "1598506904",
+      "country": "us",
+      "note": "Word Maker - Puzzle Game"
+    },
+    {
+      "id": "1474606532",
+      "country": "us",
+      "note": "Haptics - Test Haptic Feedback"
+    },
+    {
+      "id": "6790887946",
+      "country": "us",
+      "note": "Sonio - Retro Classic Player"
+    },
+    {
+      "id": "1551292695",
+      "country": "us",
+      "note": "Proxyman - Capture HTTPS"
+    },
+    {
+      "id": "1250049341",
+      "country": "us",
+      "note": "Homer: The Home Management App"
+    },
+    {
+      "id": "6784683538",
+      "country": "us",
+      "note": "Weather Cat: Cat Calendar"
+    },
+    {
+      "id": "1370327708",
+      "country": "us",
+      "note": "RunMotion Coach: Running Plan"
+    },
+    {
+      "id": "1441648201",
+      "country": "us",
+      "note": "Super Stylist Fashion Makeover"
+    },
+    {
+      "id": "1280254438",
+      "country": "us",
+      "note": "Zen Koi 2"
+    },
+    {
+      "id": "6818290047",
+      "country": "de",
+      "note": "Fahrio – Fahrtenbuch"
+    },
+    {
+      "id": "896694807",
+      "country": "us",
+      "note": "Git client - Working Copy"
+    },
+    {
+      "id": "1598039955",
+      "country": "us",
+      "note": "Weather - The Daily Weather"
+    },
+    {
+      "id": "6781251566",
+      "country": "us",
+      "note": "Blood Pressure Log: SnapSana"
+    },
+    {
+      "id": "1413085106",
+      "country": "us",
+      "note": "Bacon – The Game"
+    },
+    {
+      "id": "1564051387",
+      "country": "us",
+      "note": "OnPhone: Second Number & eSIM"
+    },
+    {
+      "id": "400101401",
+      "country": "kr",
+      "note": "TVING"
+    },
+    {
+      "id": "1104649246",
+      "country": "us",
+      "note": "My Moon Phase - Lunar Calendar"
+    },
+    {
+      "id": "940268124",
+      "country": "us",
+      "note": "Medly"
+    },
+    {
+      "id": "1508115448",
+      "country": "us",
+      "note": "CONFIRMED | Sneakers & more"
+    },
+    {
+      "id": "6759328000",
+      "country": "us",
+      "note": "HTML Viewer : Editor & Creator"
+    },
+    {
+      "id": "529996768",
+      "country": "us",
+      "note": "Bingo Blitz™ - BINGO Games"
+    },
+    {
+      "id": "1463267540",
+      "country": "us",
+      "note": "Migii JLPT: JLPT test N5-N1"
+    },
+    {
+      "id": "6797843147",
+      "country": "us",
+      "note": "Offline Word Puzzles: 4 Modes"
+    },
+    {
+      "id": "6743985316",
+      "country": "us",
+      "note": "OCMedic"
+    },
+    {
+      "id": "1547124979",
+      "country": "us",
+      "note": "§ 34a GewO Lern-App"
+    },
+    {
+      "id": "6748039058",
+      "country": "gb",
+      "note": "ShroomCast: Mushroom Forecast"
+    },
+    {
+      "id": "1331794412",
+      "country": "us",
+      "note": "Bricks n Balls - Block Breaker"
+    },
+    {
+      "id": "6482289804",
+      "country": "us",
+      "note": "Donna AI Song & Music Maker"
+    },
+    {
+      "id": "382005326",
+      "country": "us",
+      "note": "GContact"
+    },
+    {
+      "id": "6752649300",
+      "country": "in",
+      "note": "Quitli - Frei von P*rnos"
+    },
+    {
+      "id": "6793144772",
+      "country": "us",
+      "note": "Islandwide Weather"
+    },
+    {
+      "id": "1410126781",
+      "country": "us",
+      "note": "Planta: Plant & Garden Care"
+    },
+    {
+      "id": "495546638",
+      "country": "us",
+      "note": "Thermo-hygrometer"
+    },
+    {
+      "id": "6759213045",
+      "country": "us",
+      "note": "SSH Term X"
+    },
+    {
+      "id": "6737673198",
+      "country": "us",
+      "note": "Smart Receipts: Scan & Track"
+    },
+    {
+      "id": "6800233515",
+      "country": "us",
+      "note": "PetList: Pet Care Companion"
+    },
+    {
+      "id": "1352211125",
+      "country": "us",
+      "note": "Tide Alert (NOAA) - Tide Chart"
+    },
+    {
+      "id": "6809037928",
+      "country": "us",
+      "note": "CaseX（ケースエックス）| スマホの中の事件"
+    },
+    {
+      "id": "1602635337",
+      "country": "us",
+      "note": "Smart Printer App - Air Print"
+    },
+    {
+      "id": "6812860288",
+      "country": "gb",
+      "note": "Sillaxe: GPS & Alerts"
+    },
+    {
+      "id": "892542000",
+      "country": "us",
+      "note": "Board Game Stats"
+    },
+    {
+      "id": "6499447166",
+      "country": "us",
+      "note": "eNES: NES & SNES Retro Emu"
+    },
+    {
+      "id": "6755528083",
+      "country": "us",
+      "note": "Clean AI・Phone Storage Cleanup"
+    },
+    {
+      "id": "410395246",
+      "country": "us",
+      "note": "Microsoft OneNote"
+    },
+    {
+      "id": "1153883316",
+      "country": "us",
+      "note": "Word Cookies!®"
+    },
+    {
+      "id": "579897691",
+      "country": "us",
+      "note": "Easy Invoice Maker & Generator"
+    },
+    {
+      "id": "6770432142",
+      "country": "us",
+      "note": "DraftCode: Code & Text Editor"
+    },
+    {
+      "id": "1551966953",
+      "country": "us",
+      "note": "Derbyshire Walks"
+    },
+    {
+      "id": "1589762792",
+      "country": "us",
+      "note": "Jigsawscapes® - Jigsaw Puzzles"
+    },
+    {
+      "id": "6755465172",
+      "country": "us",
+      "note": "CADDY+"
+    },
+    {
+      "id": "6823427139",
+      "country": "us",
+      "note": "SkyWatch Weather"
+    },
+    {
+      "id": "667935767",
+      "country": "de",
+      "note": "ADN Animation Digital Network"
+    },
+    {
+      "id": "486059426",
+      "country": "us",
+      "note": "NOAA Weather Radar"
+    },
+    {
+      "id": "6473904105",
+      "country": "us",
+      "note": "Melkah: Find Your Life Partner"
+    },
+    {
+      "id": "656971078",
+      "country": "us",
+      "note": "Episode - Choose Your Story"
+    },
+    {
+      "id": "1032267351",
+      "country": "us",
+      "note": "Period Tracker and Calendar"
+    },
+    {
+      "id": "1492055171",
+      "country": "us",
+      "note": "Expenses: Spending Tracker"
+    },
+    {
+      "id": "1457810302",
+      "country": "us",
+      "note": "Hello Aurora: Northern Lights"
+    },
+    {
+      "id": "6596787726",
+      "country": "us",
+      "note": "Capybara Go!"
+    },
+    {
+      "id": "1576470577",
+      "country": "us",
+      "note": "Dream Hopper"
+    },
+    {
+      "id": "6819053945",
+      "country": "us",
+      "note": "Paradox Switch"
+    },
+    {
+      "id": "960457446",
+      "country": "us",
+      "note": "Flush Toilet Finder Pro"
+    },
+    {
+      "id": "671352640",
+      "country": "us",
+      "note": "Moon Phase Calendar Plus"
+    },
+    {
+      "id": "1142166193",
+      "country": "us",
+      "note": "Archery Club"
+    },
+    {
+      "id": "1669203073",
+      "country": "us",
+      "note": "Wemu: WeMuslim, Athan&Qibla"
+    },
+    {
+      "id": "804031883",
+      "country": "us",
+      "note": "My Tide Times Pro - Tide Chart"
+    },
+    {
+      "id": "1515433542",
+      "country": "us",
+      "note": "Evolve: Self-Care & ADHD Coach"
+    },
+    {
+      "id": "6791412029",
+      "country": "us",
+      "note": "MeiGen: AI Art & Video Gallery"
+    },
+    {
+      "id": "1147891367",
+      "country": "us",
+      "note": "Swift Invoice, Invoice Maker"
+    },
+    {
+      "id": "6757545135",
+      "country": "us",
+      "note": "MeroTalk | LINE Analysis"
+    },
+    {
+      "id": "6470352981",
+      "country": "us",
+      "note": "Truck Maps Navigation"
+    },
+    {
+      "id": "946917251",
+      "country": "us",
+      "note": "Magic Touch: Wizard for Hire"
+    },
+    {
+      "id": "370362301",
+      "country": "us",
+      "note": "NS Travel Planner"
+    },
+    {
+      "id": "6749829392",
+      "country": "us",
+      "note": "SurfMap: Personalized Forecast"
+    },
+    {
+      "id": "1039370458",
+      "country": "us",
+      "note": "Workout Planner - Gym Life"
+    },
+    {
+      "id": "6744604397",
+      "country": "us",
+      "note": "Bleap"
+    },
+    {
+      "id": "6757373350",
+      "country": "us",
+      "note": "OneThing Daily"
+    },
+    {
+      "id": "1339323033",
+      "country": "us",
+      "note": "Prix carburant"
+    },
+    {
+      "id": "6503916757",
+      "country": "us",
+      "note": "Passion Trade"
+    },
+    {
+      "id": "6780047452",
+      "country": "us",
+      "note": "VintBuddy"
+    },
+    {
+      "id": "1309253074",
+      "country": "us",
+      "note": "Complete Anatomy for iPhone"
+    },
+    {
+      "id": "540236748",
+      "country": "us",
+      "note": "Invoice2go: Easy Invoice Maker"
+    },
+    {
+      "id": "1481825715",
+      "country": "us",
+      "note": "Prepry - ARDMS & CCI Exam Prep"
+    },
+    {
+      "id": "1131203560",
+      "country": "us",
+      "note": "Kahoot! Play & Create Quizzes"
+    },
+    {
+      "id": "520400855",
+      "country": "us",
+      "note": "SEEK Jobs: Find Work in NZ"
+    },
+    {
+      "id": "1671248086",
+      "country": "us",
+      "note": "Puppetry: AI Talking Photos"
+    },
+    {
+      "id": "6780554627",
+      "country": "us",
+      "note": "Ranking the Friends Party Game"
+    },
+    {
+      "id": "6796775271",
+      "country": "us",
+      "note": "Stay On Target 1138"
+    },
+    {
+      "id": "703439482",
+      "country": "us",
+      "note": "Cookie Clickers"
+    },
+    {
+      "id": "6737941519",
+      "country": "us",
+      "note": "AI Video Eraser: Remove Object"
+    },
+    {
+      "id": "1065101150",
+      "country": "us",
+      "note": "Lokum: Turkish Dating & Chat"
+    },
+    {
+      "id": "358790776",
+      "country": "us",
+      "note": "TD Canada"
+    },
+    {
+      "id": "1264546236",
+      "country": "us",
+      "note": "BetterMe Well-Being Coach"
+    },
+    {
+      "id": "1371461117",
+      "country": "us",
+      "note": "Weather NOW: Live Storm Radar"
+    },
+    {
+      "id": "6819364326",
+      "country": "us",
+      "note": "Shigis Hundred Chart"
+    },
+    {
+      "id": "954363569",
+      "country": "us",
+      "note": "Carista OBD2"
+    },
+    {
+      "id": "1206041425",
+      "country": "us",
+      "note": "Drivvo - Car Expense Tracker"
+    },
+    {
+      "id": "1567047859",
+      "country": "us",
+      "note": "ECG+ | Your Watch ECG Reader"
+    },
+    {
+      "id": "6807886879",
+      "country": "us",
+      "note": "TerraGrid: MGRS Tactical GPS"
+    },
+    {
+      "id": "512939461",
+      "country": "us",
+      "note": "Subway Surfers"
+    },
+    {
+      "id": "934536011",
+      "country": "us",
+      "note": "ECS Revision"
+    },
+    {
+      "id": "6752251959",
+      "country": "us",
+      "note": "Harvest King: Farm Defense TD"
+    },
+    {
+      "id": "6762502852",
+      "country": "us",
+      "note": "Refloom"
+    },
+    {
+      "id": "6755092832",
+      "country": "us",
+      "note": "Plan together | Pairto"
+    },
+    {
+      "id": "574399713",
+      "country": "us",
+      "note": "PocketRadar: Animated Rain Map"
+    },
+    {
+      "id": "6788845290",
+      "country": "us",
+      "note": "Mileage Log: Trajo"
+    },
+    {
+      "id": "1528834650",
+      "country": "us",
+      "note": "carVertical: Check Car History"
+    },
+    {
+      "id": "1503665233",
+      "country": "us",
+      "note": "Call Recorder for iPhone."
+    },
+    {
+      "id": "6741497228",
+      "country": "us",
+      "note": "Subflow | Track subscriptions"
+    },
+    {
+      "id": "911006986",
+      "country": "us",
+      "note": "Banner Saga"
+    },
+    {
+      "id": "6504156082",
+      "country": "us",
+      "note": "Chodesh Hebrew Date & Calendar"
+    },
+    {
+      "id": "962284784",
+      "country": "us",
+      "note": "STARZPLAY ستارزبلاي"
+    },
+    {
+      "id": "6753882010",
+      "country": "us",
+      "note": "Astro-Cartography"
+    },
+    {
+      "id": "1635542796",
+      "country": "gb",
+      "note": "Harz App - mit Stempelheft"
+    },
+    {
+      "id": "1464163709",
+      "country": "us",
+      "note": "WISO Steuer - Steuererklärung"
+    },
+    {
+      "id": "1505371720",
+      "country": "us",
+      "note": "TD Easy Trade"
+    },
+    {
+      "id": "1596059191",
+      "country": "us",
+      "note": "Parental Control App Kids360"
+    },
+    {
+      "id": "6757978247",
+      "country": "us",
+      "note": "Miso Cook: AI Recipe Keeper"
+    },
+    {
+      "id": "6502307144",
+      "country": "us",
+      "note": "Coffee Meets Bagel: Dating App"
+    },
+    {
+      "id": "6816912456",
+      "country": "us",
+      "note": "Matchday: Football Tracker"
+    },
+    {
+      "id": "6806766126",
+      "country": "us",
+      "note": "P&L Journal"
+    },
+    {
+      "id": "6745872842",
+      "country": "us",
+      "note": "Smart Air Printer - AnyPrint"
+    },
+    {
+      "id": "6799553175",
+      "country": "us",
+      "note": "VivaLingua: Call Translator"
+    },
+    {
+      "id": "6759906972",
+      "country": "us",
+      "note": "Mon-Reliquat : budget"
+    },
+    {
+      "id": "6742088871",
+      "country": "au",
+      "note": "MYOB Assist: Invoice & Capture"
+    },
+    {
+      "id": "814112299",
+      "country": "us",
+      "note": "Pump Log® - Track Breast Milk"
+    },
+    {
+      "id": "1510976142",
+      "country": "us",
+      "note": "Lunii"
+    },
+    {
+      "id": "908649054",
+      "country": "us",
+      "note": "widget weather"
+    },
+    {
+      "id": "582790430",
+      "country": "us",
+      "note": "SeatGeek - Buy Event Tickets"
+    },
+    {
+      "id": "367623543",
+      "country": "us",
+      "note": "FOX News: US & World Headlines"
+    },
+    {
+      "id": "1455771430",
+      "country": "us",
+      "note": "Jetting for Dellorto VHSH PRO"
+    },
+    {
+      "id": "1314407112",
+      "country": "us",
+      "note": "Fishing Barometer - Fishermen"
+    },
+    {
+      "id": "551448817",
+      "country": "us",
+      "note": "Baby Tracker & Newborn Log"
+    },
+    {
+      "id": "6503228738",
+      "country": "us",
+      "note": "Go Go Muffin"
+    },
+    {
+      "id": "455487988",
+      "country": "us",
+      "note": "Timecard Pro - Hours Tracker"
+    },
+    {
+      "id": "6811366526",
+      "country": "us",
+      "note": "One Move: Sun Tzu & Classics"
+    },
+    {
+      "id": "6803514636",
+      "country": "us",
+      "note": "Pops Flow"
+    },
+    {
+      "id": "329913454",
+      "country": "us",
+      "note": "Crunchyroll"
+    },
+    {
+      "id": "6757016336",
+      "country": "us",
+      "note": "TV Remote Control · Universal"
+    },
+    {
+      "id": "6816107392",
+      "country": "us",
+      "note": "PhiPhi: Philosophical Wisdom"
+    },
+    {
+      "id": "1145275343",
+      "country": "us",
+      "note": "Super Mario Run"
+    },
+    {
+      "id": "895353739",
+      "country": "us",
+      "note": "HBX | Globally Curated Fashion"
+    },
+    {
+      "id": "1441670803",
+      "country": "us",
+      "note": "Flip Runner"
+    },
+    {
+      "id": "6479331793",
+      "country": "us",
+      "note": "FaxFlow - Send Fax from iPhone"
+    },
+    {
+      "id": "6787198381",
+      "country": "us",
+      "note": "WristTales"
+    },
+    {
+      "id": "1490240246",
+      "country": "us",
+      "note": "Bowling Crew — 3D Sport Game"
+    },
+    {
+      "id": "1207472156",
+      "country": "us",
+      "note": "Wordscapes - Word Game"
+    },
+    {
+      "id": "6670242138",
+      "country": "us",
+      "note": "AR Drawing App - Sketchify"
+    },
+    {
+      "id": "6822176433",
+      "country": "us",
+      "note": "Hoomu"
+    },
+    {
+      "id": "1144871267",
+      "country": "us",
+      "note": "Pregnancy Tracker・App by Moms"
+    },
+    {
+      "id": "1459260306",
+      "country": "us",
+      "note": "Fastic Weight Loss & Fasting"
+    },
+    {
+      "id": "6742110991",
+      "country": "us",
+      "note": "NCLEX 2026 Simple Exam Prep"
+    },
+    {
+      "id": "1117841866",
+      "country": "us",
+      "note": "Empires & Puzzles: Match-3 RPG"
+    },
+    {
+      "id": "1484468651",
+      "country": "us",
+      "note": "Dice Dreams™"
+    },
+    {
+      "id": "927006017",
+      "country": "us",
+      "note": "AdVenture Capitalist Tycoon"
+    },
+    {
+      "id": "6788678207",
+      "country": "us",
+      "note": "BIFOR - gry na imprezę"
+    },
+    {
+      "id": "6757424575",
+      "country": "us",
+      "note": "Pop Arrow - Arrowscapes"
+    },
+    {
+      "id": "6760661273",
+      "country": "us",
+      "note": "Selene Moon Calendar"
+    },
+    {
+      "id": "1457145842",
+      "country": "us",
+      "note": "Trip Planner - NSW & Sydney"
+    },
+    {
+      "id": "6755181812",
+      "country": "us",
+      "note": "Seenless: Anon Story Viewer"
+    },
+    {
+      "id": "454558592",
+      "country": "us",
+      "note": "IBKR Mobile - Invest Worldwide"
+    },
+    {
+      "id": "1007287939",
+      "country": "us",
+      "note": "Trucker Path Load Board"
+    },
+    {
+      "id": "570685951",
+      "country": "ca",
+      "note": "Amex Canada"
+    },
+    {
+      "id": "993445822",
+      "country": "au",
+      "note": "AUS Rain Radar - Old BoM Radar"
+    },
+    {
+      "id": "905746421",
+      "country": "us",
+      "note": "Evermusic Pro: music player"
+    },
+    {
+      "id": "6756195790",
+      "country": "us",
+      "note": "TV Remote - Clicker"
+    },
+    {
+      "id": "1480168311",
+      "country": "us",
+      "note": "MedAT 2go by MEDBREAKER"
+    },
+    {
+      "id": "6819636266",
+      "country": "us",
+      "note": "Loes: de Nederlandse AI chat"
+    },
+    {
+      "id": "1050171910",
+      "country": "us",
+      "note": "Free VPN by Free VPN .org™"
+    },
+    {
+      "id": "6754256220",
+      "country": "us",
+      "note": "VinciFi - Stocks & Markets"
+    },
+    {
+      "id": "6791036273",
+      "country": "us",
+      "note": "PickClub - Pickleball League"
+    },
+    {
+      "id": "1529716191",
+      "country": "us",
+      "note": "ListenBook Pro: book player"
+    },
+    {
+      "id": "1138436619",
+      "country": "us",
+      "note": "Montessori Preschool, Kids 3-7"
+    },
+    {
+      "id": "1122649984",
+      "country": "us",
+      "note": "Prisma: Photo Editor, Filters"
+    },
+    {
+      "id": "6819873630",
+      "country": "us",
+      "note": "Soccer AI Coach – UpKick"
+    },
+    {
+      "id": "6752605548",
+      "country": "us",
+      "note": "No Reel For Instagram"
+    },
+    {
+      "id": "811255761",
+      "country": "us",
+      "note": "Jetting Max Kart for Rotax Max"
+    },
+    {
+      "id": "1627776848",
+      "country": "us",
+      "note": "CellWalk"
+    },
+    {
+      "id": "6760442800",
+      "country": "us",
+      "note": "ChronoListen: Audiobook Player"
+    },
+    {
+      "id": "1485257715",
+      "country": "us",
+      "note": "VoiceNotes: Audio Recordings"
+    },
+    {
+      "id": "556540446",
+      "country": "us",
+      "note": "MyBook: books and audiobooks"
+    },
+    {
+      "id": "6740255326",
+      "country": "us",
+      "note": "Learn English: Lingo AI"
+    },
+    {
+      "id": "1668145786",
+      "country": "us",
+      "note": "Meine SI Mobile"
+    },
+    {
+      "id": "6451134060",
+      "country": "us",
+      "note": "PCG France pro"
+    },
+    {
+      "id": "441977097",
+      "country": "us",
+      "note": "Pregnancy Tracker App - Sprout"
+    },
+    {
+      "id": "6761864604",
+      "country": "us",
+      "note": "Facebook Creator Studio"
+    },
+    {
+      "id": "1448689686",
+      "country": "us",
+      "note": "Map Measure : Field Area Calc"
+    },
+    {
+      "id": "395972146",
+      "country": "gb",
+      "note": "discovery+ | Stream TV Shows"
+    },
+    {
+      "id": "6811939858",
+      "country": "de",
+      "note": "Carilo – Pflegegrad Tagebuch"
+    },
+    {
+      "id": "6504182653",
+      "country": "us",
+      "note": "UniRemote：Universal TV Remote"
+    },
+    {
+      "id": "6738348238",
+      "country": "us",
+      "note": "Chérubins : Histoires audio"
+    },
+    {
+      "id": "1446283219",
+      "country": "us",
+      "note": "Baby Daybook - Newborn Tracker"
+    },
+    {
+      "id": "1215933788",
+      "country": "us",
+      "note": "Scrabble® GO – Fun with Words!"
+    },
+    {
+      "id": "621106129",
+      "country": "jp",
+      "note": "クイズRPG 魔法使いと黒猫のウィズ"
+    },
+    {
+      "id": "6810376836",
+      "country": "us",
+      "note": "Aviator Watch E6B Slide Rule"
+    },
+    {
+      "id": "358845668",
+      "country": "us",
+      "note": "ICD10 Consult"
+    },
+    {
+      "id": "289616509",
+      "country": "us",
+      "note": "Mobile Mouse WIFI Remote"
+    },
+    {
+      "id": "6771997373",
+      "country": "au",
+      "note": "WeatherAU Forecast"
+    },
+    {
+      "id": "6756574546",
+      "country": "us",
+      "note": "Mona: Kids Fever & Symptom Log"
+    },
+    {
+      "id": "6821346427",
+      "country": "us",
+      "note": "Familjekalender – familjens år"
+    },
+    {
+      "id": "6502996298",
+      "country": "us",
+      "note": "No Shorts: Blocker for YouTube"
+    },
+    {
+      "id": "1063261476",
+      "country": "us",
+      "note": "BC Pill Reminder"
+    },
+    {
+      "id": "917288465",
+      "country": "us",
+      "note": "Mapstr – Save & Follow Places"
+    },
+    {
+      "id": "6760283330",
+      "country": "us",
+      "note": "Pine Player Neo"
+    },
+    {
+      "id": "6760953373",
+      "country": "us",
+      "note": "There: Your Travel Map"
+    },
+    {
+      "id": "6770984110",
+      "country": "us",
+      "note": "Obsidian Read"
+    },
+    {
+      "id": "1164801111",
+      "country": "us",
+      "note": "AutoSleep: Watch Sleep Tracker"
+    },
+    {
+      "id": "1549914827",
+      "country": "us",
+      "note": "Railroad Ink Challenge"
+    },
+    {
+      "id": "6815360762",
+      "country": "us",
+      "note": "Blitzblick 0-100"
+    },
+    {
+      "id": "6737430333",
+      "country": "us",
+      "note": "Australian Health Identifiers"
+    },
+    {
+      "id": "6753126737",
+      "country": "us",
+      "note": "TripSpire: Trip Planner & Map"
+    },
+    {
+      "id": "1502936453",
+      "country": "us",
+      "note": "LADDER Strength Training Plans"
+    },
+    {
+      "id": "6753807741",
+      "country": "us",
+      "note": "frenzy - friends only"
+    },
+    {
+      "id": "6821453516",
+      "country": "us",
+      "note": "Laturit"
+    },
+    {
+      "id": "364387007",
+      "country": "us",
+      "note": "The Wall Street Journal News"
+    },
+    {
+      "id": "615538630",
+      "country": "us",
+      "note": "Geofency - Time Tracking"
+    },
+    {
+      "id": "6816892749",
+      "country": "us",
+      "note": "Lonto - Long Screenshots"
+    },
+    {
+      "id": "1222844050",
+      "country": "us",
+      "note": "CricHeroes-Cricket Scoring App"
+    },
+    {
+      "id": "6756776435",
+      "country": "us",
+      "note": "Provideo:Vlog & Video Maker"
+    },
+    {
+      "id": "6748950306",
+      "country": "us",
+      "note": "Solitaire Associations Journey"
+    },
+    {
+      "id": "458225159",
+      "country": "us",
+      "note": "Weather Hi-Def Radar Forecast"
+    },
+    {
+      "id": "1559420347",
+      "country": "us",
+      "note": "Baby Tracker by Mjello"
+    },
+    {
+      "id": "6773563365",
+      "country": "us",
+      "note": "Roomly - AI Interior Design"
+    },
+    {
+      "id": "6754384363",
+      "country": "gb",
+      "note": "UniHomes"
+    },
+    {
+      "id": "1524577846",
+      "country": "us",
+      "note": "PepCalc: Peptide Calculator"
+    },
+    {
+      "id": "1584550483",
+      "country": "us",
+      "note": "Hidden Folks+"
+    },
+    {
+      "id": "1551277937",
+      "country": "us",
+      "note": "MD Widgets: Live Wallpaper"
+    },
+    {
+      "id": "832444399",
+      "country": "us",
+      "note": "Pedbone"
+    },
+    {
+      "id": "432749899",
+      "country": "us",
+      "note": "BiliCalc"
+    },
+    {
+      "id": "6820549671",
+      "country": "us",
+      "note": "SoulTuner"
+    },
+    {
+      "id": "418535251",
+      "country": "us",
+      "note": "sahibinden #AlSatKiralaKesfet"
+    },
+    {
+      "id": "723795263",
+      "country": "us",
+      "note": "Trivia Crack Premium Quiz Game"
+    },
+    {
+      "id": "288429040",
+      "country": "us",
+      "note": "LinkedIn: Community & Network"
+    },
+    {
+      "id": "6808932056",
+      "country": "us",
+      "note": "Winterarc - 90-Day Challenge"
+    },
+    {
+      "id": "405075943",
+      "country": "us",
+      "note": "AllTrails: Hike, Bike & Run"
+    },
+    {
+      "id": "964743113",
+      "country": "us",
+      "note": "LOOPIMAL by YATATOY"
+    },
+    {
+      "id": "1369317521",
+      "country": "us",
+      "note": "Game of Thrones Casino Slots"
+    },
+    {
+      "id": "6781699989",
+      "country": "us",
+      "note": "SportVitals: Daily Readiness"
+    },
+    {
+      "id": "6736602846",
+      "country": "br",
+      "note": "Repertório: ENEM e vestibular"
+    },
+    {
+      "id": "1566663161",
+      "country": "us",
+      "note": "Card Guardians - Deck builder"
+    },
+    {
+      "id": "6758051554",
+      "country": "gb",
+      "note": "IDEL Pro"
+    },
+    {
+      "id": "6445950258",
+      "country": "us",
+      "note": "Browser for Watch"
+    },
+    {
+      "id": "6756630305",
+      "country": "us",
+      "note": "Birdigo: Word Game"
+    },
+    {
+      "id": "522815204",
+      "country": "de",
+      "note": "NOS TV"
+    },
+    {
+      "id": "1019382747",
+      "country": "us",
+      "note": "Filmora: AI Video Editor&Maker"
+    },
+    {
+      "id": "6752921928",
+      "country": "us",
+      "note": "MigraineZen: Headache Forecast"
+    }
   ]
 }
